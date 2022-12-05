@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_body">24dp</dimen>
+    <dimen name="text_size_h1">32dp</dimen>
+    <dimen name="text_size_h2">28dp</dimen>
+    <dimen name="padding_body">20dp</dimen>
+    <dimen name="padding_textbox">10dp</dimen>
+    <dimen name="logo_height">200dp</dimen>
+</resources>
