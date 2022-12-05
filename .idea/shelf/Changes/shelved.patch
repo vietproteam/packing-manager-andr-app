@@ -1,0 +1,28 @@
+Index: app/src/main/java/com/example/parkingmanager/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport android.content.Intent;\nimport android.media.MediaPlayer;\nimport android.os.Bundle;\nimport android.os.Handler;\nimport android.view.animation.Animation;\nimport android.view.animation.AnimationUtils;\nimport android.widget.ImageView;\nimport android.widget.TextView;\n\nimport com.example.parkingmanager.activities.HomeActivity;\n\npublic class MainActivity extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main);\n        final MediaPlayer mp = MediaPlayer.create(this, R.raw.whoosh);\n        mp.setVolume(0.2f, 0.2f);\n        mp.start();\n\n        ImageView img = (ImageView)findViewById(R.id.img_logo_splash);\n        Animation aniImage = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.splash_screen_ani);\n        img.startAnimation(aniImage);\n\n        TextView textView = (TextView) findViewById(R.id.txt_splash);\n        Animation aniText = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.splash_text);\n        textView.startAnimation(aniText);\n\n        //hide the action bar\n        getSupportActionBar().hide();\n\n        //splash screen\n        new Handler().postDelayed(new Runnable() {\n            @Override\n            public void run() {\n                Intent intent = new Intent(MainActivity.this, HomeActivity.class);\n                startActivity(intent);\n                finish();\n            }\n        }, 2500);\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/MainActivity.java b/app/src/main/java/com/example/parkingmanager/MainActivity.java
+--- a/app/src/main/java/com/example/parkingmanager/MainActivity.java	(revision 3e3b46eeebdf00fb235221f09d105cdbc7c3afc8)
++++ b/app/src/main/java/com/example/parkingmanager/MainActivity.java	(date 1670014301536)
+@@ -20,7 +20,7 @@
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main);
+         final MediaPlayer mp = MediaPlayer.create(this, R.raw.whoosh);
+-        mp.setVolume(0.2f, 0.2f);
++        mp.setVolume(0.1f, 0.1f);
+         mp.start();
+ 
+         ImageView img = (ImageView)findViewById(R.id.img_logo_splash);
+@@ -42,6 +42,6 @@
+                 startActivity(intent);
+                 finish();
+             }
+-        }, 2500);
++        }, 3000);
+     }
+ }
+\ No newline at end of file
