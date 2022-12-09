@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_1"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activities.UserManager">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="138dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/circle_input"
+
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="3dp"
+            android:background="@drawable/input_1"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/group_293"
+        android:layout_width="match_parent"
+        android:layout_height="342dp"
+        android:layout_marginLeft="@dimen/padding_body"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="@dimen/padding_body">
+
+        <TextView
+            android:id="@+id/tvposition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding_body"
+            android:layout_marginTop="5dp"
+            android:text="position"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="335dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="30dp"
+
+            android:background="@drawable/round_input">
+
+            <Spinner
+                android:id="@+id/spPosition"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/padding_body"></Spinner>
+        </RelativeLayout>
+
+
+        <TextView
+
+            android:layout_width="74dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="90dp"
+            android:text="Full Name"
+            android:textColor="#1A2530"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/full_name"
+            android:layout_width="335dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="112dp"
+            android:background="@drawable/round_input">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent">
+
+            </EditText>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/Email"
+            android:layout_width="74dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="170dp"
+            android:text="Phone"
+            android:textColor="#1A2530"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            />
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="335dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="192dp"
+            android:background="@drawable/round_input">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:inputType="number">
+
+            </EditText>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/Password"
+            android:layout_width="74dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="250dp"
+            android:text="Password"
+            android:textColor="#1A2530"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            />
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="335dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="272dp"
+            android:background="@drawable/round_input">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:color/transparent"
+                android:inputType="textPassword">
+
+            </EditText>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/round_button"
+        android:padding="@dimen/padding_textbox"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_body" />
+</LinearLayout>
