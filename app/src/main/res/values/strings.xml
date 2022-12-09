@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">Parking Manager</string>
     <string name="slogan">Hello world!</string>
+
+    <string-array name="position">
+        <item>Manager</item>
+        <item>Staff</item>
+        <item>Protector</item>
+    </string-array>
 </resources>
