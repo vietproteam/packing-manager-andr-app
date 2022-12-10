@@ -4,12 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgtech"
+    android:background="@drawable/bg_circle_blue"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".activities.HomeActivity">
-    <TextView
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="30sp"/>
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_colorFilter="@color/primaryTextColor"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true" />
 
 </LinearLayout>

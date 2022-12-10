@@ -2,6 +2,17 @@
 <resources>
     <string name="app_name">Parking Manager</string>
     <string name="slogan">Hello world!</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="user_name">Username</string>
+    <string name="card_number">Read your card</string>
+    <string name="position">Choose a position</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 
     <string-array name="position">
         <item>Manager</item>

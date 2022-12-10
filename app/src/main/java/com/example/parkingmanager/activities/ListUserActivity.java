@@ -2,37 +2,28 @@
 //
 //import java.util.ArrayList;
 //
-//import android.annotation.SuppressLint;
 //import android.os.Bundle;
 //import android.app.Activity;
 //import android.view.View;
 //import android.view.View.OnClickListener;
 //import android.widget.Button;
-//import android.widget.CheckBox;
 //import android.widget.EditText;
 //import android.widget.ImageButton;
 //import android.widget.ListView;
 //import android.widget.RadioGroup;
 //
 //import com.example.parkingmanager.R;
+//import com.example.parkingmanager.entities.SuperUser;
 //
-//public class ListUserScreen extends Activity {
+//public class ListUserActivity extends Activity {
+//    ListView lvUser;
+//    ArrayList<SuperUser> dsUser;
 //
-//    ArrayList<User> arrEmployee=new ArrayList<User>();
-//    //Sử dụng MyArrayAdapter thay thì ArrayAdapter
-//    myadappter adapter=null;
-//    ListView lvNhanvien=null;
 //
-//    Button btnNhap;
-//    ImageButton btnRemoveAll;
-//    EditText editMa,editTen;
-//    RadioGroup genderGroup;
-//
-//    @SuppressLint("MissingInflatedId")
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_list_user_sceen);
+//        setContentView(R.layout.activity_list_user);
 //
 //        btnNhap=(Button) findViewById(R.id.btnEdit);
 //        btnRemoveAll=(ImageButton) findViewById(R.id.btndelete);
@@ -41,7 +32,7 @@
 //        genderGroup=(RadioGroup) findViewById(R.id.radioGroup1);
 //
 //        lvNhanvien=(ListView) findViewById(R.id.imgitem);
-//        arrEmployee=new ArrayList<User>();
+//        arrEmployee=new ArrayList<SuperUser>();
 //        //Khởi tạo đối tượng adapter và gán Data source
 //        adapter=new myadappter(
 //                this,
@@ -74,7 +65,7 @@
 //        if(genderGroup.getCheckedRadioButtonId()==R.id.rdoNu)
 //            gioitinh=true;
 //        //Tạo một employee
-//        User emp=new User();
+//        SuperUser emp=new SuperUser();
 //        emp.setId(ma);
 //        emp.setName(ten);
 //        emp.setGender(gioitinh);

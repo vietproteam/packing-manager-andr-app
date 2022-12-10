@@ -4,136 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_1"
+    android:background="@drawable/bg_circle_blue"
     android:orientation="vertical"
-
+    android:padding="@dimen/padding_body"
     tools:context=".activities.MyInfoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:gravity="center">
 
-        <ImageView
-            android:layout_width="138dp"
-            android:layout_height="132dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/circle_input"
-
-            android:src="@drawable/avatar" />
-
-        <TextView
-            android:id="@+id/Name"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginBottom="3dp"
-            android:background="@drawable/input_1"
-            android:gravity="center_horizontal"
-            android:padding="5dp"
-            android:text="Name"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/profile_image_size"
+            android:layout_height="@dimen/profile_image_size"
+            android:src="@drawable/person"
+            app:civ_border_color="@color/primaryColor"
+            app:civ_border_width="@dimen/border_width" />
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="40dp">
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:gravity="bottom">
 
         <EditText
-
-            android:id="@+id/etEmail"
-            android:layout_width="330dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_body"
+            android:autofillHints="phone"
             android:background="@drawable/round_input"
-            android:hint="Email"
+            android:hint="@string/name"
+            android:inputType="text|textPersonName"
+            android:padding="@dimen/padding_textbox"
+            android:textAlignment="center"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_size_body" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_body"
+            android:autofillHints="phone"
+            android:background="@drawable/round_input"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="@dimen/padding_textbox"
             android:textAlignment="center"
             android:textColor="@color/primaryColor"
             android:textSize="@dimen/text_size_body" />
 
-
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/etEmail"
-            android:background="@drawable/edit"></ImageButton>
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-
-        >
-
         <EditText
             android:id="@+id/etPhone"
-            android:layout_width="330dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_body"
+            android:autofillHints="phone"
             android:background="@drawable/round_input"
-            android:hint="Phone"
-            android:inputType="number"
-            android:padding="10dp"
+            android:hint="@string/phone"
+            android:inputType="phone"
+            android:padding="@dimen/padding_textbox"
             android:textAlignment="center"
             android:textSize="@dimen/text_size_body" />
 
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/etPhone"
-            android:background="@drawable/edit"></ImageButton>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp">
-
         <EditText
             android:id="@+id/etPassword"
-            android:layout_width="330dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_body"
+            android:autofillHints="password"
             android:background="@drawable/round_input"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="@dimen/padding_textbox"
             android:textAlignment="center"
             android:textColor="@color/primaryColor"
             android:textSize="@dimen/text_size_body" />
 
-        <ImageButton
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/etPassword"
-            android:background="@drawable/edit"></ImageButton>
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_verticle">
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/round_button"
-        android:padding="@dimen/padding_textbox"
-        android:text="Save"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_body" />
+            <Button
+                android:id="@+id/btnSave"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/padding_textbox"
+                android:text="@string/save"
+                android:textSize="@dimen/text_size_body" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/padding_textbox"
+                android:text="@string/cancel"
+                android:textSize="@dimen/text_size_body" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
