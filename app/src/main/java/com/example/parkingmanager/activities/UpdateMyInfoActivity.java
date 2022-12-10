@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.parkingmanager.R;
 
-public class MyInfoActivity extends AppCompatActivity {
+public class UpdateMyInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_info);
+        setContentView(R.layout.activity_update_my_info);
     }
 }

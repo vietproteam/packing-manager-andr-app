@@ -52,7 +52,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.MyInfoActivity"
+            android:name=".activities.UpdateMyInfoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
