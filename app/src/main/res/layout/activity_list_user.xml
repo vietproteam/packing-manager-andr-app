@@ -18,7 +18,7 @@
         android:textSize="@dimen/text_size_h1" />
 
     <ListView
-        android:id="@+id/imgitem"
+        android:id="@+id/lvUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

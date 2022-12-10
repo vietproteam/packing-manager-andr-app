@@ -1,21 +1,27 @@
 package com.example.parkingmanager.entities;
 
 public class Position {
-    private String id;
+    private int id;
     private String name;
     private String description;
 
-    public Position(String id, String name, String description) {
+    public Position(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public String getId() {
+    public Position(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.description = "This is a description";
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

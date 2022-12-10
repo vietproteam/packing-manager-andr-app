@@ -1,62 +1,61 @@
-//package com.example.parkingmanager.activities;
-//
-//import java.util.ArrayList;
-//
-//import android.os.Bundle;
-//import android.app.Activity;
-//import android.view.View;
-//import android.view.View.OnClickListener;
-//import android.widget.Button;
-//import android.widget.EditText;
-//import android.widget.ImageButton;
-//import android.widget.ListView;
-//import android.widget.RadioGroup;
-//
-//import com.example.parkingmanager.R;
-//import com.example.parkingmanager.entities.SuperUser;
-//
-//public class ListUserActivity extends Activity {
-//    ListView lvUser;
-//    ArrayList<SuperUser> dsUser;
-//
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_list_user);
-//
-//        btnNhap=(Button) findViewById(R.id.btnEdit);
-//        btnRemoveAll=(ImageButton) findViewById(R.id.btndelete);
-//        editMa=(EditText) findViewById(R.id.txtMaNV);
-//        editTen=(EditText) findViewById(R.id.txtTenNV);
-//        genderGroup=(RadioGroup) findViewById(R.id.radioGroup1);
-//
-//        lvNhanvien=(ListView) findViewById(R.id.imgitem);
-//        arrEmployee=new ArrayList<SuperUser>();
-//        //Khởi tạo đối tượng adapter và gán Data source
-//        adapter=new myadappter(
-//                this,
-//                R.layout.mylistview,// lấy custom layout
-//                arrEmployee/*thiết lập data source*/);
-//        lvNhanvien.setAdapter(adapter);//gán Adapter vào Lisview
-//
-//        btnNhap.setOnClickListener(new OnClickListener() {
-//
-//            @Override
-//            public void onClick(View arg0) {
-//                // TODO Auto-generated method stub
-//                xulyNhap();
-//            }
-//        });
-//        btnRemoveAll.setOnClickListener(new OnClickListener() {
-//
-//            @Override
-//            public void onClick(View arg0) {
-//                xulyXoa();
-//            }
-//        });
-//    }
-//    //gọi hàm xử lý nhập thông tin nhân viên
+package com.example.parkingmanager.activities;
+
+import java.util.ArrayList;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import com.example.parkingmanager.R;
+import com.example.parkingmanager.entities.Position;
+import com.example.parkingmanager.entities.User;
+import com.example.parkingmanager.entities.UserAdapter;
+
+public class ListUserActivity extends Activity {
+
+    private ListView listView;
+    private ArrayList<User> list;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list_user);
+        ArrayList userList = getListData();
+        final ListView lv = (ListView) findViewById(R.id.lvUser);
+        lv.setAdapter(new UserAdapter(this, userList));
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                User user = (User) lv.getItemAtPosition(position);
+                Toast.makeText(ListUserActivity.this, "Selected :" + " " + user.getName()+", "+ user.getPositions().getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private ArrayList getListData() {
+        Position position = new Position(1, "Manager");
+        ArrayList<User> results = new ArrayList<User>();
+        User user = new User(1,"John Doe","johndoe","1234567890123456","Manager", position);
+        results.add(user);
+        user = new User(2,"Jane Doe","janedoe","1234567890123456","Manager", position);
+        results.add(user);
+        user = new User(3,"John Smith","johnsmith","1234567890123456","Manager", position);
+        results.add(user);
+        user = new User(4,"Jane Smith","janesmith","1234567890123456","Manager", position);
+        results.add(user);
+        return results;
+    }
+    //gọi hàm xử lý nhập thông tin nhân viên
 //    public void xulyNhap()
 //    {
 //        String ma=editMa.getText()+"";
@@ -100,4 +99,4 @@
 //        //Sau khi xóa xong thì gọi update giao diện
 //        adapter.notifyDataSetChanged();
 //    }
-//}
+}
