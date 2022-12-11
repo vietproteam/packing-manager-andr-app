@@ -55,48 +55,4 @@ public class ListUserActivity extends Activity {
         results.add(user);
         return results;
     }
-    //gọi hàm xử lý nhập thông tin nhân viên
-//    public void xulyNhap()
-//    {
-//        String ma=editMa.getText()+"";
-//        String ten=editTen.getText()+"";
-//        boolean gioitinh=false;//Nam =false
-//        if(genderGroup.getCheckedRadioButtonId()==R.id.rdoNu)
-//            gioitinh=true;
-//        //Tạo một employee
-//        SuperUser emp=new SuperUser();
-//        emp.setId(ma);
-//        emp.setName(ten);
-//        emp.setGender(gioitinh);
-//        //Đưa vào danh sách
-//        arrEmployee.add(emp);
-//        //gọi hàm cập nhật giao diện
-//        adapter.notifyDataSetChanged();
-//        //Sau khi update thì xóa trắng dữ liệu và cho editma focus
-//        editMa.setText("");
-//        editTen.setText("");
-//        editMa.requestFocus();
-//    }
-//    //hàm xử lý xóa
-//    public void xulyXoa()
-//    {
-//        //ta nên đi ngược danh sách, kiểm tra phần tử nào checked
-//        //thì xóa đúng vị trí đó ra khỏi arrEmployee
-//        for(int i=lvNhanvien.getChildCount()-1;i>=0;i--)
-//        {
-//            //lấy ra dòng thứ i trong ListView
-//            //Dòng thứ i sẽ có 3 phần tử: ImageView, TextView, Checkbox
-//            View v=lvNhanvien.getChildAt(i);
-//            //Ta chỉ lấy CheckBox ra kiểm tra
-////            CheckBox chk=(CheckBox) v.findViewById(R.id.chkitem);
-//            //Nếu nó Checked thì xóa ra khỏi arrEmployee
-////            if(chk.isChecked())
-////            {
-////                //xóa phần tử thứ i ra khỏi danh sách
-////                arrEmployee.remove(i);
-////            }
-//        }
-//        //Sau khi xóa xong thì gọi update giao diện
-//        adapter.notifyDataSetChanged();
-//    }
 }

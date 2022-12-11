@@ -23,7 +23,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/calendar" />
+                android:background="@drawable/ic_calendar" />
             <EditText
                 android:id="@+id/edFrom"
                 android:layout_width="0dp"
@@ -31,7 +31,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="2dp"
                 android:layout_weight="3.5"
-                android:background="@drawable/input_1"
+                android:background="@drawable/txt_square"
                 android:hint="From: DD/MM/YYYY"
                 android:inputType="date"
                 android:paddingLeft="10dp"
@@ -54,14 +54,14 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/calendar"></ImageView>
+                android:background="@drawable/ic_calendar"></ImageView>
             <EditText
                 android:id="@+id/edTo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="5dp"
                 android:layout_weight="3.5"
-                android:background="@drawable/input_1"
+                android:background="@drawable/txt_square"
                 android:hint="To: DD/MM/YYYY"
                 android:inputType="date"
                 android:paddingLeft="10dp"
@@ -124,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/btn_square"
         android:padding="@dimen/padding_textbox"
         android:text="Save"
         android:textColor="@color/white"
