@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="10"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
@@ -22,6 +23,14 @@
             android:src="@drawable/person"
             app:civ_border_color="@color/primaryColor"
             app:civ_border_width="@dimen/border_width" />
+
+        <ImageButton
+            android:id="@+id/btnCamera"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_camera_alt_24"
+            android:contentDescription="TODO" />
     </LinearLayout>
 
     <LinearLayout

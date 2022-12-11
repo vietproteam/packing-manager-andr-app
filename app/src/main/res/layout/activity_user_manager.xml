@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/padding_body"
-    tools:context=".activities.UserManagerActivity">
+    tools:context=".activities.UpdateMyInfoActivity">
 
 <!--User manager activity edit username,password,card number,position and delete user-->
     <TextView
