@@ -48,7 +48,7 @@ public class UserAdapter extends BaseAdapter {
         holder.uName.setText(listData.get(position).getName());
         holder.uUsername.setText(listData.get(position).getUsername());
         holder.uCardNumber.setText(listData.get(position).getCardNumberFormatted());
-        holder.uPosition.setText(listData.get(position).getPositions().getName()-);
+        holder.uPosition.setText(listData.get(position).getPositions().getName());
         return v;
     }
     static class ViewHolder {

@@ -5,6 +5,12 @@ public class Position {
     private String name;
     private String description;
 
+    public Position() {
+        this.id = 0;
+        this.name = "";
+        this.description = "";
+    }
+
     public Position(int id, String name, String description) {
         this.id = id;
         this.name = name;

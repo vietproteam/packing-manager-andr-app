@@ -10,7 +10,28 @@ public class User {
     private String cardNumber;
     private Position positions;
 
+//    Constructor no argument
+    public User() {
+        this.id = 0;
+        this.name = "";
+        this.password = "";
+        this.username = "";
+        this.cardNumber = "";
+        this.positions = new Position();
+    }
+
+//    Constructor with full parameters
     public User(int id, String name, String password, String username, String cardNumber, Position positions) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.username = username;
+        this.cardNumber = cardNumber;
+        this.positions = positions;
+    }
+
+//  Constructor missing cardNumber
+    public User(int id, String name, String password, String username, Position positions) {
         this.id = id;
         this.name = name;
         this.password = password;
@@ -56,7 +77,7 @@ public class User {
     }
 
     public String getCardNumberFormatted() {
-        return cardNumber.substring(0, 4) + "...";
+        return cardNumber.substring(0, 5) + "...";
     }
 
     public void setCardNumber(String cardNumber) {

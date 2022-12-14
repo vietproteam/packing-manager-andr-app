@@ -45,13 +45,13 @@ public class ListUserActivity extends Activity {
     private ArrayList getListData() {
         Position position = new Position(1, "Manager");
         ArrayList<User> results = new ArrayList<User>();
-        User user = new User(1,"John Doe","johndoe","1234567890123456","Manager", position);
+        User user = new User(1, "John","pass", "john", position);
         results.add(user);
-        user = new User(2,"Jane Doe","janedoe","1234567890123456","Manager", position);
+        user = new User(2,"Kathie", "pass","janedoe","1234567890123456", position);
         results.add(user);
-        user = new User(3,"John Smith","johnsmith","1234567890123456","Manager", position);
+        user = new User(3,"John Smith", "pass","johnsmith","1234567890123456", position);
         results.add(user);
-        user = new User(4,"Jane Smith","janesmith","1234567890123456","Manager", position);
+        user = new User(4,"Daria", "pass","janesmith","1234567890123456", position);
         results.add(user);
         return results;
     }
