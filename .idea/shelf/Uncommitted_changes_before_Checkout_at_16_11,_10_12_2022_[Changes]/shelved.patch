@@ -1,0 +1,36 @@
+Index: app/src/main/res/layout/activity_list_user.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:id=\"@+id/LinearLayout1\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:orientation=\"vertical\"\n    tools:context=\".MainActivity\">\n\n    <TextView\n        android:id=\"@+id/textView2\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:background=\"@color/primaryColor\"\n        android:gravity=\"center\"\n        android:text=\"Quản lý nhân viên\"\n        android:padding=\"@dimen/padding_body\"\n        android:textColor=\"#FFFFFF\"\n        android:textSize=\"@dimen/text_size_h1\" />\n\n    <ListView\n        android:id=\"@+id/imgitem\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"/>\n\n</LinearLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_list_user.xml b/app/src/main/res/layout/activity_list_user.xml
+--- a/app/src/main/res/layout/activity_list_user.xml	
++++ b/app/src/main/res/layout/activity_list_user.xml	
+@@ -17,9 +17,22 @@
+         android:textColor="#FFFFFF"
+         android:textSize="@dimen/text_size_h1" />
+ 
+-    <ListView
+-        android:id="@+id/imgitem"
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"/>
++    <ScrollView
++        android:layout_width="match_parent"
++        android:layout_height="match_parent">
++
++        <LinearLayout
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:orientation="vertical">
++
++            <ListView
++                android:id="@+id/lvUser"
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content" />
++        </LinearLayout>
++
++    </ScrollView>
++
+ 
+ </LinearLayout>
+\ No newline at end of file

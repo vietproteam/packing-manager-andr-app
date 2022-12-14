@@ -1,0 +1,201 @@
+Index: app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n    <dimen name=\"text_size_body\">24dp</dimen>\n    <dimen name=\"text_size_h1\">32dp</dimen>\n    <dimen name=\"text_size_h2\">28dp</dimen>\n    <dimen name=\"padding_body\">20dp</dimen>\n    <dimen name=\"padding_textbox\">10dp</dimen>\n    <dimen name=\"logo_height\">200dp</dimen>\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/dimens.xml b/app/src/main/res/values/dimens.xml
+--- a/app/src/main/res/values/dimens.xml	(revision f0e8d7f0d65145ad70ba2e919d1603326b3e4743)
++++ b/app/src/main/res/values/dimens.xml	(date 1670642846136)
+@@ -1,9 +1,9 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-    <dimen name="text_size_body">24dp</dimen>
+-    <dimen name="text_size_h1">32dp</dimen>
+-    <dimen name="text_size_h2">28dp</dimen>
+-    <dimen name="padding_body">20dp</dimen>
+-    <dimen name="padding_textbox">10dp</dimen>
+-    <dimen name="logo_height">200dp</dimen>
++    <dimen name="text_size_body">24sp</dimen>
++    <dimen name="text_size_h1">32sp</dimen>
++    <dimen name="text_size_h2">28sp</dimen>
++    <dimen name="padding_body">20sp</dimen>
++    <dimen name="padding_textbox">10sp</dimen>
++    <dimen name="logo_height">200sp</dimen>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:orientation=\"vertical\"\n    android:padding=\"@dimen/padding_body\"\n    tools:context=\".activities.LoginActivity\">\n\n    <ImageView\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"@dimen/logo_height\"\n        android:src=\"@drawable/parking_sign\" />\n\n    <TextView\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"20dp\"\n        android:textSize=\"@dimen/text_size_h1\"\n        android:gravity=\"center\"\n        android:text=\"Login\" />\n\n    <EditText\n        android:id=\"@+id/etEmail\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"20dp\"\n        android:background=\"@drawable/round_input\"\n        android:hint=\"Email\"\n        android:inputType=\"textEmailAddress\"\n        android:padding=\"@dimen/padding_textbox\"\n        android:textAlignment=\"center\"\n        android:textColor=\"@color/primaryColor\"\n        android:textColorHint=\"@color/primaryColor\"\n        android:textSize=\"@dimen/text_size_body\" />\n\n    <EditText\n        android:id=\"@+id/etPassword\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"20dp\"\n        android:background=\"@drawable/round_input\"\n        android:hint=\"Password\"\n        android:inputType=\"textPassword\"\n        android:padding=\"@dimen/padding_textbox\"\n        android:textAlignment=\"center\"\n        android:textColor=\"@color/primaryColor\"\n        android:textColorHint=\"@color/primaryColor\"\n        android:textSize=\"@dimen/text_size_body\" />\n\n    <Button\n        android:id=\"@+id/btnLogin\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"20dp\"\n        android:background=\"@drawable/round_button\"\n        android:padding=\"@dimen/padding_textbox\"\n        android:text=\"Login\"\n        android:textColor=\"@color/white\"\n        android:textSize=\"@dimen/text_size_body\" />\n\n    <TextView\n        android:id=\"@+id/tvRegister\"\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"20dp\"\n        android:gravity=\"center\"\n        android:text=\"Don't have an account? Register\"\n        android:textColor=\"@color/primaryColor\"\n        android:textSize=\"@dimen/text_size_body\" />\n\n    <TextView\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"wrap_content\"\n        android:layout_marginTop=\"10dp\"\n        android:gravity=\"center\"\n        android:text=\"Forgot Password?\"\n        android:textColor=\"@color/primaryColor\"\n        android:textSize=\"@dimen/text_size_body\" />\n\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision f0e8d7f0d65145ad70ba2e919d1603326b3e4743)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1670642846148)
+@@ -17,9 +17,9 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
++        android:text="Login"
+         android:textSize="@dimen/text_size_h1"
+-        android:gravity="center"
+-        android:text="Login" />
++        android:gravity="center" />
+ 
+     <EditText
+         android:id="@+id/etEmail"
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    id 'com.android.application'\n}\n\nandroid {\n    namespace 'com.example.parkingmanager'\n    compileSdk 32\n\n    defaultConfig {\n        applicationId \"com.example.parkingmanager\"\n        minSdk 30\n        targetSdk 32\n        versionCode 1\n        versionName \"1.0\"\n\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\n    }\n\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n    compileOptions {\n        sourceCompatibility JavaVersion.VERSION_1_8\n        targetCompatibility JavaVersion.VERSION_1_8\n    }\n}\n\n\n\n\ndependencies {\n\n    implementation 'androidx.appcompat:appcompat:1.5.1'\n    implementation 'com.google.android.material:material:1.7.0'\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\n    implementation 'androidx.camera:camera-view:1.1.0-beta02'\n    implementation 'androidx.camera:camera-lifecycle:1.0.2'\n    testImplementation 'junit:junit:4.13.2'\n    androidTestImplementation 'androidx.test.ext:junit:1.1.4'\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'\n    implementation \"com.google.android.material:compose-theme-adapter:1.1.16\"\n    implementation \"com.google.accompanist:accompanist-appcompat-theme:0.25.1\"\n    implementation 'com.google.android.material:material:<version>'\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision f0e8d7f0d65145ad70ba2e919d1603326b3e4743)
++++ b/app/build.gradle	(date 1670642846156)
+@@ -28,9 +28,6 @@
+     }
+ }
+ 
+-
+-
+-
+ dependencies {
+ 
+     implementation 'androidx.appcompat:appcompat:1.5.1'
+@@ -41,6 +38,7 @@
+     testImplementation 'junit:junit:4.13.2'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
++    implementation 'com.google.android.material:material:<version>'
+     implementation "com.google.android.material:compose-theme-adapter:1.1.16"
+     implementation "com.google.accompanist:accompanist-appcompat-theme:0.25.1"
+     implementation 'com.google.android.material:material:<version>'
+Index: app/src/main/res/layout/activity_authorize.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_authorize.xml b/app/src/main/res/layout/activity_authorize.xml
+new file mode 100644
+--- /dev/null	(date 1670642846168)
++++ b/app/src/main/res/layout/activity_authorize.xml	(date 1670642846168)
+@@ -0,0 +1,44 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:gravity="center"
++    android:orientation="vertical"
++    tools:context=".activities.AuthorizeActivity"
++    android:padding="@dimen/padding_body">
++
++    <TextView
++        android:id="@+id/textView"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:gravity="center"
++        android:text="Authorize your account"
++        android:textSize="@dimen/text_size_h1" />
++
++    <TextView
++        android:id="@+id/etCode"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="20dp"
++        android:background="@drawable/round_input"
++        android:hint="OTP Code"
++        android:inputType="text"
++        android:padding="@dimen/padding_textbox"
++        android:textAlignment="center"
++        android:textColor="@color/primaryColor"
++        android:textColorHint="@color/primaryColor"
++        android:textSize="@dimen/text_size_body" />
++
++    <Button
++        android:id="@+id/btnAuthorize"
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="20dp"
++        android:background="@drawable/round_button"
++        android:padding="@dimen/padding_textbox"
++        android:text="Send"
++        android:textSize="@dimen/text_size_body"
++        android:textColor="@color/white" />
++
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/parkingmanager/activities/AuthorizeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/activities/AuthorizeActivity.java b/app/src/main/java/com/example/parkingmanager/activities/AuthorizeActivity.java
+new file mode 100644
+--- /dev/null	(date 1670642846172)
++++ b/app/src/main/java/com/example/parkingmanager/activities/AuthorizeActivity.java	(date 1670642846172)
+@@ -0,0 +1,16 @@
++package com.example.parkingmanager.activities;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++import com.example.parkingmanager.R;
++
++public class AuthorizeActivity extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_authorize);
++    }
++}
+\ No newline at end of file
+Index: settings.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>pluginManagement {\n    repositories {\n        gradlePluginPortal()\n        google()\n        mavenCentral()\n    }\n}\ndependencyResolutionManagement {\n    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)\n    repositories {\n        google()\n        mavenCentral()\n    }\n}\nrootProject.name = \"Parking Manager\"\ninclude ':app'\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/settings.gradle b/settings.gradle
+--- a/settings.gradle	(revision f0e8d7f0d65145ad70ba2e919d1603326b3e4743)
++++ b/settings.gradle	(date 1670642846160)
+@@ -2,6 +2,7 @@
+     repositories {
+         gradlePluginPortal()
+         google()
++        jcenter()
+         mavenCentral()
+     }
+ }
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\">\n\n    <uses-permission android:name=\"android.permission.CAMERA\" />\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\n        android:fullBackupContent=\"@xml/backup_rules\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.ParkingManager\"\n        tools:targetApi=\"31\">\n<!--        <activity-->\n<!--            android:name=\".activities.ListUserSceen\"-->\n<!--            android:exported=\"false\">-->\n<!--            <meta-data-->\n<!--                android:name=\"android.app.lib_name\"-->\n<!--                android:value=\"\" />-->\n<!--        </activity>-->\n        <!-- <activity -->\n        <!-- android:name=\"\" -->\n        <!-- android:exported=\"false\"> -->\n        <!-- <meta-data -->\n        <!-- android:name=\"android.app.lib_name\" -->\n        <!-- android:value=\"\" /> -->\n        <!-- </activity> -->\n        <activity\n            android:name=\".activities.RevenueActivity\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".activities.UserManager\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".activities.LoginActivity\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".activities.MyInfoActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n<!--                <category android:name=\"android.intent.category.LAUNCHER\" />-->\n<!--            </intent-filter>-->\n<!--        </activity>-->\n<!--        <activity-->\n<!--            android:name=\".activities.testAc\"-->\n<!--            android:exported=\"true\">-->\n<!--            <intent-filter>-->\n<!--                <action android:name=\"android.intent.action.MAIN\" />-->\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".activities.RegisterActivity\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".MainActivity\"\n            android:exported=\"false\">\n\n\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".activities.HomeActivity\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n        <activity\n            android:name=\".activities.ParkingActivity\"\n            android:exported=\"false\">\n            <meta-data\n                android:name=\"android.app.lib_name\"\n                android:value=\"\" />\n        </activity>\n    </application>\n\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision f0e8d7f0d65145ad70ba2e919d1603326b3e4743)
++++ b/app/src/main/AndroidManifest.xml	(date 1670642846176)
+@@ -84,6 +84,13 @@
+             android:exported="false">
+ 
+ 
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++        <activity
++            android:name=".activities.AuthorizeActivity"
++            android:exported="false">
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
