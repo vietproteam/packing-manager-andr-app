@@ -29,7 +29,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:background="@drawable/ic_baseline_camera_alt_24"
+            android:background="@drawable/ic_camera"
             android:contentDescription="TODO" />
     </LinearLayout>
 

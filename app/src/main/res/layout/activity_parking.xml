@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 
-            android:background="@drawable/image">
+            android:background="@drawable/ic_image">
 
         </ImageView>
     </LinearLayout>
@@ -52,7 +52,7 @@
             android:layout_marginTop="5dp"
             android:hint="Loai xe"
             android:padding="8dp"
-            android:background="@drawable/input_1"
+            android:background="@drawable/txt_round"
             android:textSize="20sp"
             >
         </TextView>
@@ -69,7 +69,7 @@
             android:hint="Time In"
             android:layout_marginTop="5dp"
             android:padding="8dp"
-            android:background="@drawable/input_1"
+            android:background="@drawable/txt_round"
             android:textSize="20sp"
             >
         </TextView>
@@ -86,7 +86,7 @@
             android:hint="Time out"
             android:layout_marginTop="5dp"
             android:padding="8dp"
-            android:background="@drawable/input_1"
+            android:background="@drawable/txt_round"
             android:textSize="20sp"
             >
         </TextView>
@@ -103,7 +103,7 @@
             android:layout_marginTop="5dp"
             android:hint="BSX"
             android:padding="8dp"
-            android:background="@drawable/input_1"
+            android:background="@drawable/txt_round"
             android:textSize="20sp"
             >
         </EditText>
@@ -120,7 +120,7 @@
             android:layout_marginTop="5dp"
             android:hint="Tong tien"
             android:padding="6dp"
-            android:background="@drawable/input_1"
+            android:background="@drawable/txt_round"
             android:textSize="20sp">
         </TextView>
     </LinearLayout>
