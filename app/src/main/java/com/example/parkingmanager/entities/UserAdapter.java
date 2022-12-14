@@ -1,70 +1,60 @@
 package com.example.parkingmanager.entities;
 
-
+import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.example.parkingmanager.R;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
-private List<User> ListUsers;
-public void SetData(List<User> ListUsers){
-    this.ListUsers = ListUsers;
-    notifyDataSetChanged();
-}
-
-    @NonNull
+public class UserAdapter extends BaseAdapter {
+    private ArrayList<User> listData;
+    private LayoutInflater layoutInflater;
+    public UserAdapter(Context aContext, ArrayList<User> listData) {
+        this.listData = listData;
+        layoutInflater = LayoutInflater.from(aContext);
+    }
     @Override
-    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_my_info,parent,false);
-        return new UserViewHolder(view);
+    public int getCount() {
+        return listData.size();
     }
-
     @Override
-    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-    User user = ListUsers.get(position);
-    if (user == null){
-        return;
-
+    public Object getItem(int position) {
+        return listData.get(position);
     }
-    holder.tvName.setText(user.getName());
-    holder.tvEmail.setText(user.getEmail());
-    holder.tvPhone.setText(user.getPhone());
-
-
-}
-
     @Override
-    public int getItemCount() {
-    if (ListUsers != null){
-        return ListUsers.size();
+    public long getItemId(int position) {
+        return position;
     }
-        return 0;
-    }
-
-    public class UserViewHolder extends RecyclerView.ViewHolder {
-        private EditText tvName;
-        private EditText tvPassword;
-        private EditText tvEmail;
-        private EditText tvPhone;
-        private EditText tvPosition;
-
-        public UserViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            tvName = itemView.findViewById(R.id.tvName);
-            tvPassword = itemView.findViewById(R.id.tvPassword);
-            tvEmail = itemView.findViewById(R.id.tvEmail);
-            tvPhone = itemView.findViewById(R.id.tvPhone);
-
+    public View getView(int position, View v, ViewGroup vg) {
+        ViewHolder holder;
+        if (v == null) {
+            v = layoutInflater.inflate(R.layout.card_user, null);
+            holder = new ViewHolder();
+            holder.uName = (TextView) v.findViewById(R.id.tvName);
+            holder.uUsername = (TextView) v.findViewById(R.id.tvUsername);
+            holder.uCardNumber = (TextView) v.findViewById(R.id.tvCardNumber);
+            holder.uPosition = (TextView) v.findViewById(R.id.tvPosition);
+            v.setTag(holder);
+        } else {
+            holder = (ViewHolder) v.getTag();
         }
+        holder.uName.setText(listData.get(position).getName());
+        holder.uUsername.setText(listData.get(position).getUsername());
+        holder.uCardNumber.setText(listData.get(position).getCardNumberFormatted());
+        holder.uPosition.setText(listData.get(position).getPositions().getName());
+        return v;
     }
-
+    static class ViewHolder {
+        TextView uName;
+        TextView uUsername;
+        TextView uCardNumber;
+        TextView uPosition;
+    }
 }

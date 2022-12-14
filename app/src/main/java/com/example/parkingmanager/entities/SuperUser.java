@@ -8,11 +8,11 @@ public class SuperUser {
     @PrimaryKey(autoGenerate = true)
     private String id;
     private String name;
-    private boolean gender;
     private String phone;
     private String email;
     private String address;
-    private String position;
+    private String company;
+    private String taxNumber;
     private String password;
 
     public SuperUser(String id, String name, boolean gender, String phone, String email, String address, String position, String password) {
