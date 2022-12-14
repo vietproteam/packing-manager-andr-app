@@ -4,19 +4,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_circle_blue"
+
     android:orientation="vertical"
     tools:context=".activities.ParkingActivity">
 
-    <FrameLayout
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/container"
+        android:padding="5dp"
         android:layout_width="match_parent"
-        android:id="@+id/container">
+        android:layout_height="212dp"
 
-        <androidx.camera.view.PreviewView
-            android:layout_height="wrap_content"
+        android:orientation="vertical">
+<ImageButton
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:background="@drawable/ic_back"
+    android:layout_marginLeft="5dp"
+    >
+
+</ImageButton>
+        <ImageView
             android:layout_width="match_parent"
-            android:id="@+id/previewView" />
-    </FrameLayout>
+            android:layout_height="match_parent"
+
+            android:background="@drawable/image">
+
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+
+        android:padding="@dimen/padding_body">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transportation:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:hint="Loai xe"
+            android:padding="8dp"
+            android:background="@drawable/input_1"
+            android:textSize="20sp"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time in:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Time In"
+            android:layout_marginTop="5dp"
+            android:padding="8dp"
+            android:background="@drawable/input_1"
+            android:textSize="20sp"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time out:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Time out"
+            android:layout_marginTop="5dp"
+            android:padding="8dp"
+            android:background="@drawable/input_1"
+            android:textSize="20sp"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="License plate:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:hint="BSX"
+            android:padding="8dp"
+            android:background="@drawable/input_1"
+            android:textSize="20sp"
+            >
+        </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total:"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:hint="Tong tien"
+            android:padding="6dp"
+            android:background="@drawable/input_1"
+            android:textSize="20sp">
+        </TextView>
+    </LinearLayout>
 
 </LinearLayout>

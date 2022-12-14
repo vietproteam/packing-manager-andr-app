@@ -1,36 +1,70 @@
 package com.example.parkingmanager.entities;
 
-import android.app.Activity;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.EditText;
 
-import java.util.ArrayList;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class UserAdapter extends
-        ArrayAdapter<SuperUser> {
-    Activity context;
-    ArrayList<SuperUser> myArray;
-    int layoutId;
+import com.example.parkingmanager.R;
 
-    public UserAdapter(Activity context,
-                       int layoutId,
-                       ArrayList<SuperUser> arr) {
-        super(context, layoutId, arr);
-        this.context = context;
-        this.layoutId = layoutId;
-        this.myArray = arr;
+import java.util.List;
+
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
+private List<User> ListUsers;
+public void SetData(List<User> ListUsers){
+    this.ListUsers = ListUsers;
+    notifyDataSetChanged();
+}
+
+    @NonNull
+    @Override
+    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_my_info,parent,false);
+        return new UserViewHolder(view);
     }
 
-    public View getView(int position, View convertView,
-                        ViewGroup parent) {
-
-        LayoutInflater inflater =
-                context.getLayoutInflater();
-        convertView = inflater.inflate(layoutId, null);
-
-        return convertView;//trả về View này, tức là trả luôn
+    @Override
+    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+    User user = ListUsers.get(position);
+    if (user == null){
+        return;
 
     }
+    holder.tvName.setText(user.getName());
+    holder.tvEmail.setText(user.getEmail());
+    holder.tvPhone.setText(user.getPhone());
+
+
+}
+
+    @Override
+    public int getItemCount() {
+    if (ListUsers != null){
+        return ListUsers.size();
+    }
+        return 0;
+    }
+
+    public class UserViewHolder extends RecyclerView.ViewHolder {
+        private EditText tvName;
+        private EditText tvPassword;
+        private EditText tvEmail;
+        private EditText tvPhone;
+        private EditText tvPosition;
+
+        public UserViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            tvName = itemView.findViewById(R.id.tvName);
+            tvPassword = itemView.findViewById(R.id.tvPassword);
+            tvEmail = itemView.findViewById(R.id.tvEmail);
+            tvPhone = itemView.findViewById(R.id.tvPhone);
+
+        }
+    }
+
 }
