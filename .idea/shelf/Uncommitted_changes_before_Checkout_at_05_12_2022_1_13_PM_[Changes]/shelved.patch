@@ -1,0 +1,231 @@
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.ParkingManager\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".activities.MyInfoActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".activities.HomeActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	
++++ b/app/src/main/AndroidManifest.xml	
+@@ -13,6 +13,13 @@
+         android:theme="@style/Theme.ParkingManager"
+         tools:targetApi="31">
+         <activity
++            android:name=".LoginActivity"
++            android:exported="false">
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
++        <activity
+             android:name=".activities.MyInfoActivity"
+             android:exported="false">
+             <meta-data
+Index: app/src/main/res/layout/activity_my_info.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".activities.MyInfoActivity\">\r\n    <TextView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"MY INFO\">\r\n\r\n    </TextView>\r\n\r\n</LinearLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_my_info.xml b/app/src/main/res/layout/activity_my_info.xml
+--- a/app/src/main/res/layout/activity_my_info.xml	
++++ b/app/src/main/res/layout/activity_my_info.xml	
+@@ -4,12 +4,189 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".activities.MyInfoActivity">
+-    <TextView
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="MY INFO">
+-
+-    </TextView>
++
++    tools:context=".activities.MyInfoActivity"
++    android:orientation="vertical">
++
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content">
++
++
++        <ImageView
++            android:background="@color/cardview_shadow_start_color"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:padding="10dp"
++            android:src="@drawable/ic_launcher_foreground" />
++    </RelativeLayout>
++
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent">
++        <TextView
++            android:id="@+id/viewMyInfo"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_centerHorizontal="true"
++            android:layout_marginTop="20dp"
++            android:text="My Info"
++            android:textSize="40dp"
++            android:textStyle="bold"
++            android:textColor="#000000">
++        </TextView>
++        <TextView
++            android:id="@+id/viewName1"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="20dp"
++            android:layout_below="@+id/viewMyInfo"
++            android:layout_marginTop="40dp"
++            android:layout_marginRight="10dp"
++            android:text="Email:"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </TextView>
++        <TextView
++            android:id="@+id/viewttName1"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="10dp"
++            android:layout_toRightOf="@+id/viewName3"
++            android:layout_below="@+id/viewMyInfo"
++            android:layout_marginTop="40dp"
++            android:layout_marginRight="10dp"
++            android:text="Name:"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </TextView>
++        <TextView
++            android:id="@+id/viewName2"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="20dp"
++            android:layout_below="@+id/viewName1"
++            android:layout_marginTop="40dp"
++            android:layout_marginRight="10dp"
++            android:text="Phone:"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </TextView>
++        <TextView
++            android:id="@+id/viewttName2"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="10dp"
++            android:layout_toRightOf="@+id/viewName3"
++            android:layout_below="@+id/viewttName1"
++            android:layout_marginTop="40dp"
++            android:layout_marginRight="10dp"
++            android:text="Name:"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </TextView>
++        <TextView
++            android:id="@+id/viewName3"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="20dp"
++            android:layout_below="@+id/viewName2"
++            android:layout_marginTop="40dp"
++            android:layout_marginRight="10dp"
++            android:text="Password:"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </TextView>
++        <TextView
++            android:id="@+id/viewttName3"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="10dp"
++            android:layout_toRightOf="@+id/viewName3"
++            android:layout_below="@+id/viewttName2"
++            android:layout_marginTop="40dp"
++            android:layout_marginRight="10dp"
++            android:text="Name:"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </TextView>
++        <Button
++            android:id="@+id/btnEdit1"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="180dp"
++            android:layout_toRightOf="@+id/viewName3"
++            android:layout_below="@+id/viewMyInfo"
++            android:layout_marginTop="30dp"
++            android:layout_marginRight="10dp"
++            android:text="Edit"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </Button>
++        <Button
++            android:id="@+id/btnEdit2"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="180dp"
++            android:layout_toRightOf="@+id/viewName3"
++            android:layout_below="@+id/btnEdit1"
++            android:layout_marginTop="20dp"
++            android:layout_marginRight="10dp"
++            android:text="Edit"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </Button>
++        <Button
++            android:id="@+id/btnEdit3"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="180dp"
++            android:layout_toRightOf="@+id/viewName3"
++            android:layout_below="@+id/btnEdit2"
++            android:layout_marginTop="20dp"
++            android:layout_marginRight="10dp"
++            android:text="Edit"
++            android:textSize="20dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </Button>
++        <Button
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_marginLeft="20dp"
++            android:layout_below="@+id/btnEdit3"
++            android:layout_marginTop="20dp"
++            android:layout_marginRight="10dp"
++            android:layout_centerInParent="true"
++            android:text="Add"
++            android:textSize="30dp"
++            android:textStyle="bold"
++            android:textColor="#000000"
++            >
++        </Button>
++    </RelativeLayout>
++
++
++
++
+ 
+-</LinearLayout>
+\ No newline at end of file
++
++
++</LinearLayout>

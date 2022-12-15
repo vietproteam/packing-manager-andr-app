@@ -1,0 +1,35 @@
+Index: app/src/main/res/layout/activity_home.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:background=\"@drawable/bgtech\"\n    tools:context=\".activities.HomeActivity\">\n    <TextView\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"@string/app_name\"\n        android:textSize=\"30sp\"/>\n\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_home.xml b/app/src/main/res/layout/activity_home.xml
+--- a/app/src/main/res/layout/activity_home.xml	(revision 78a160cdaf456769dc9f1f41106940b34dc23746)
++++ b/app/src/main/res/layout/activity_home.xml	(date 1670663496549)
+@@ -4,12 +4,19 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    android:background="@drawable/bgtech"
++    android:background="@drawable/bg_circle_blue"
++    android:gravity="center_horizontal"
++    android:orientation="vertical"
+     tools:context=".activities.HomeActivity">
+-    <TextView
++
++    <com.airbnb.lottie.LottieAnimationView
++        android:id="@+id/animation_view"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="@string/app_name"
+-        android:textSize="30sp"/>
++        android:layout_gravity="center"
++        app:lottie_autoPlay="true"
++        app:lottie_colorFilter="@color/primaryTextColor"
++        app:lottie_fileName="loading.json"
++        app:lottie_loop="true" />
+ 
+ </LinearLayout>
+\ No newline at end of file

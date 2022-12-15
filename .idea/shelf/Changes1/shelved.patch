@@ -1,0 +1,24 @@
+Index: app/src/main/java/com/example/parkingmanager/activities/MyInfoActivity.java
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/activities/MyInfoActivity.java b/app/src/main/java/com/example/parkingmanager/activities/MyInfoActivity.java
+deleted file mode 100644
+--- a/app/src/main/java/com/example/parkingmanager/activities/MyInfoActivity.java	(revision fe1286f2e88bfc7b5940539d811548f6427541d5)
++++ /dev/null	(revision fe1286f2e88bfc7b5940539d811548f6427541d5)
+@@ -1,16 +0,0 @@
+-package com.example.parkingmanager.activities;
+-
+-import androidx.appcompat.app.AppCompatActivity;
+-
+-import android.os.Bundle;
+-
+-import com.example.parkingmanager.R;
+-
+-public class MyInfoActivity extends AppCompatActivity {
+-
+-    @Override
+-    protected void onCreate(Bundle savedInstanceState) {
+-        super.onCreate(savedInstanceState);
+-        setContentView(R.layout.activity_my_info);
+-    }
+-}
+\ No newline at end of file
