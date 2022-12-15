@@ -1,12 +1,13 @@
 package com.example.parkingmanager.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity (tableName = "positions")
 public class Position {
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    @NonNull private int id;
     private String name;
     private String description;
 

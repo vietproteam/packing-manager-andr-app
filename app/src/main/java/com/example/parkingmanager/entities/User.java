@@ -1,5 +1,6 @@
 package com.example.parkingmanager.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,11 +8,12 @@ import java.util.Enumeration;
 @Entity (tableName = "users")
 public class User {
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    @NonNull private int id;
     private String name;
     private String password;
     private String username;
     private String cardNumber;
+    private int idPosition;
     private Position positions;
 
 //    Constructor no argument
@@ -92,11 +94,20 @@ public class User {
         this.cardNumber = cardNumber;
     }
 
-    public Position getPositions() {
+    public Position  getPositions() {
         return positions;
     }
 
+
     public void setPositions(Position positions) {
         this.positions = positions;
+    }
+
+    public int getIdPosition() {
+        return idPosition;
+    }
+
+    public void setIdPosition(int idPosition) {
+        this.idPosition = idPosition;
     }
 }
