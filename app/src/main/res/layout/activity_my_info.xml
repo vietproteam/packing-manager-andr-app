@@ -53,7 +53,7 @@
             android:id="@+id/profile_image"
             android:layout_width="@dimen/profile_image_size"
             android:layout_height="@dimen/profile_image_size"
-            android:src="@drawable/person"
+            android:src="@drawable/ic_person"
             app:civ_border_color="@color/primaryColor"
             app:civ_border_width="@dimen/border_width" />
     </LinearLayout>
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="@dimen/margin_body"
-            android:background="@drawable/round_in"
+            android:background="@drawable/txt_round"
             android:hint="Email"
             android:padding="10dp"
             android:textSize="25dp"></TextView>
@@ -92,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="@dimen/margin_body"
-            android:background="@drawable/round_in"
+            android:background="@drawable/txt_round"
             android:hint="Phone"
             android:padding="10dp"
             android:textSize="25dp"></TextView>
@@ -101,7 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="@dimen/margin_body"
-            android:background="@drawable/round_in"
+            android:background="@drawable/txt_round"
             android:hint="Password"
             android:inputType="textPassword"
             android:padding="10dp"

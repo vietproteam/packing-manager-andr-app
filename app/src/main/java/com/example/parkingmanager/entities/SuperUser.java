@@ -8,21 +8,32 @@ public class SuperUser {
     @PrimaryKey(autoGenerate = true)
     private String id;
     private String name;
-    private boolean gender;
     private String phone;
     private String email;
     private String address;
-    private String position;
+    private String company;
+    private String taxNumber;
     private String password;
 
-    public SuperUser(String id, String name, boolean gender, String phone, String email, String address, String position, String password) {
+    public SuperUser() {
+        this.id = "";
+        this.name = "";
+        this.phone = "";
+        this.email = "";
+        this.address = "";
+        this.company = "";
+        this.taxNumber = "";
+        this.password = "";
+    }
+
+    public SuperUser(String id, String name, String phone, String email, String address, String company, String taxNumber, String password) {
         this.id = id;
         this.name = name;
-        this.gender = gender;
         this.phone = phone;
         this.email = email;
         this.address = address;
-        this.position = position;
+        this.company = company;
+        this.taxNumber = taxNumber;
         this.password = password;
     }
 
@@ -40,14 +51,6 @@ public class SuperUser {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
     }
 
     public String getPhone() {
@@ -74,12 +77,20 @@ public class SuperUser {
         this.address = address;
     }
 
-    public String getPosition() {
-        return position;
+    public String getCompany() {
+        return company;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getTaxNumber() {
+        return taxNumber;
+    }
+
+    public void setTaxNumber(String taxNumber) {
+        this.taxNumber = taxNumber;
     }
 
     public String getPassword() {

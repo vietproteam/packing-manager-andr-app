@@ -7,27 +7,48 @@ import java.util.Enumeration;
 @Entity (tableName = "users")
 public class User {
     @PrimaryKey(autoGenerate = true)
-    private String id;
+    private int id;
     private String name;
     private String password;
-    private String email;
-    private String phone;
-    private Enumeration<Position> position;
+    private String username;
+    private String cardNumber;
+    private Position positions;
 
-    public User(String id, String name, String password, String email, String phone, Enumeration<Position> position) {
+//    Constructor no argument
+    public User() {
+        this.id = 0;
+        this.name = "";
+        this.password = "";
+        this.username = "";
+        this.cardNumber = "";
+        this.positions = new Position();
+    }
+
+//    Constructor with full parameters
+    public User(int id, String name, String password, String username, String cardNumber, Position positions) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.email = email;
-        this.phone = phone;
-        this.position = position;
+        this.username = username;
+        this.cardNumber = cardNumber;
+        this.positions = positions;
     }
 
-    public String getId() {
+//  Constructor missing cardNumber
+    public User(int id, String name, String password, String username, Position positions) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.username = username;
+        this.cardNumber = cardNumber;
+        this.positions = positions;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -47,27 +68,35 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public String getCardNumberFormatted() {
+        if (cardNumber==null) {
+            return "no card";
+        } else {
+            return cardNumber.substring(0, 5) + "...";
+        }
     }
 
-    public Enumeration<Position> getPosition() {
-        return position;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public void setPosition(Enumeration<Position> position) {
-        this.position = position;
+    public Position getPositions() {
+        return positions;
+    }
+
+    public void setPositions(Position positions) {
+        this.positions = positions;
     }
 }

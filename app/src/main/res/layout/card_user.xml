@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_body">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/text_size_body"
+        android:id="@+id/tvName"
+        android:text="@string/name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvName"
+        android:textSize="@dimen/text_size_quote"
+        android:id="@+id/tvUsername"
+        android:text="@string/user_name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:textSize="@dimen/text_size_quote"
+        android:id="@+id/tvCardNumber"
+        android:text="12345..."/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvCardNumber"
+        android:textSize="@dimen/text_size_quote"
+        android:id="@+id/tvPosition"
+        android:text="@string/position"/>
+</RelativeLayout>

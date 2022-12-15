@@ -1,30 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
-    <RelativeLayout
-        android:layout_width="match_parent"
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/imgitem"-->
+    <!--        android:layout_width="22dip"-->
+    <!--        android:layout_height="22dip"-->
+    <!--        android:layout_marginTop="4dp"-->
+    <!--        android:contentDescription="here"-->
+    <!--        android:paddingLeft="2dp"-->
+    <!--        android:paddingTop="2dp"-->
+    <!--        android:paddingRight="2dp"-->
+    <!--        android:src="@drawable/parking_sign" />-->
+
+    <TextView
+        android:id="@+id/txtTenNV"
+        android:layout_width="0dip"
         android:layout_height="wrap_content"
-        android:padding="10dp">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:src="@drawable/person" />
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:layout_marginStart="10dp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/imageView1"
-            android:text="TextView"
-            android:textSize="16sp" />
+        android:layout_marginTop="4dp"
+        android:layout_weight="2"
+        android:paddingLeft="2dp"
+        android:paddingTop="2dp"
+        android:paddingRight="2dp"
+        android:text="tran van a"
+        android:textColor="@color/primaryDarkColor"
+        android:textSize="@dimen/text_size_body" />
 
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btnedit"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:drawableEnd="@drawable/ic_edit"
+        />
 
-
-</androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/btndelete"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:drawableEnd="@drawable/ic_delete" />
+</LinearLayout>

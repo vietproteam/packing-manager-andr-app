@@ -3,11 +3,12 @@
     <dimen name="text_size_body">24sp</dimen>
     <dimen name="text_size_h1">32sp</dimen>
     <dimen name="text_size_h2">28sp</dimen>
+    <dimen name="text_size_quote">20dp</dimen>
     <dimen name="padding_body">20sp</dimen>
     <dimen name="padding_textbox">10sp</dimen>
+    <dimen name="margin_body">10sp</dimen>
+    <dimen name="margin_verticle">30sp</dimen>
     <dimen name="logo_height">200sp</dimen>
     <dimen name="border_width">2sp</dimen>
     <dimen name="profile_image_size">160sp</dimen>
-    <dimen name="margin_body">10sp</dimen>
-    <dimen name="margin_verticle">30sp</dimen>
 </resources>
