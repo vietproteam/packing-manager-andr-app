@@ -81,7 +81,11 @@ public class User {
     }
 
     public String getCardNumberFormatted() {
-        return cardNumber.substring(0, 5) + "...";
+        if (cardNumber==null) {
+            return "no card";
+        } else {
+            return cardNumber.substring(0, 5) + "...";
+        }
     }
 
     public void setCardNumber(String cardNumber) {
