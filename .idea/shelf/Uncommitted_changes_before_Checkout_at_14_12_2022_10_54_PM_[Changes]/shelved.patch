@@ -1,0 +1,29 @@
+Index: app/src/main/java/com/example/parkingmanager/database/UserDAO.java
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/database/UserDAO.java b/app/src/main/java/com/example/parkingmanager/DAO/UserDAO.java
+rename from app/src/main/java/com/example/parkingmanager/database/UserDAO.java
+rename to app/src/main/java/com/example/parkingmanager/DAO/UserDAO.java
+--- a/app/src/main/java/com/example/parkingmanager/database/UserDAO.java	
++++ b/app/src/main/java/com/example/parkingmanager/DAO/UserDAO.java	
+@@ -1,4 +1,4 @@
+-package com.example.parkingmanager.database;
++package com.example.parkingmanager.DAO;
+ 
+ import androidx.room.Dao;
+ import androidx.room.Insert;
+Index: app/src/main/java/com/example/parkingmanager/database/UserDB.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager.database;\r\n\r\n\r\nimport android.content.Context;\r\n\r\nimport androidx.room.Database;\r\nimport androidx.room.Room;\r\nimport androidx.room.RoomDatabase;\r\n\r\nimport com.example.parkingmanager.entities.User;\r\n\r\n@Database(entities = {User.class}, version = 1)\r\npublic abstract class UserDB extends RoomDatabase {\r\n\r\n\r\n    public static final String DB_NAME = \"user_db\";\r\n    private static UserDB instance;\r\n\r\n    public static synchronized UserDB getInstance(Context context) {\r\n        if (instance == null) {\r\n            instance = Room.databaseBuilder(context.getApplicationContext(),\r\n                    UserDB.class, DB_NAME)\r\n                    .allowMainThreadQueries()\r\n                    .build();\r\n        }\r\n        return instance;\r\n    }\r\n\r\n    public abstract UserDAO userDAO();\r\n}\r\n\r\n
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/database/UserDB.java b/app/src/main/java/com/example/parkingmanager/database/UserDB.java
+--- a/app/src/main/java/com/example/parkingmanager/database/UserDB.java	
++++ b/app/src/main/java/com/example/parkingmanager/database/UserDB.java	
+@@ -7,6 +7,7 @@
+ import androidx.room.Room;
+ import androidx.room.RoomDatabase;
+ 
++import com.example.parkingmanager.DAO.UserDAO;
+ import com.example.parkingmanager.entities.User;
+ 
+ @Database(entities = {User.class}, version = 1)

@@ -1,0 +1,1748 @@
+Index: app/src/main/res/layout/activity_user_manager.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/bg_circle_blue\"\r\n    android:gravity=\"center\"\r\n    android:orientation=\"vertical\"\r\n    android:padding=\"@dimen/padding_body\"\r\n    tools:context=\".activities.UpdateMyInfoActivity\">\r\n\r\n<!--User manager activity edit username,password,card number,position and delete user-->\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/margin_body\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textAlignment=\"center\"\r\n        android:id=\"@+id/tvUserNames\"\r\n        android:hint=\"@string/user_name\"\r\n        />\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/margin_body\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textAlignment=\"center\"\r\n        android:id=\"@+id/tvPasswords\"\r\n        android:hint=\"@string/password\"\r\n        />\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/margin_body\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textAlignment=\"center\"\r\n        android:id=\"@+id/tvCardNumbers\"\r\n        android:hint=\"@string/card_number\"\r\n        />\r\n\r\n<!--    dropdown position-->\r\n    <Spinner\r\n        android:id=\"@+id/spPositions\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/margin_body\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:contentDescription=\"@string/app_name\"\r\n        android:hint=\"@string/position\"\r\n        android:minHeight=\"48dp\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:textAlignment=\"center\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n\r\n    <Button\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/margin_body\"\r\n        android:background=\"@drawable/round_button\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryTextColor\"\r\n        android:textAlignment=\"center\"\r\n        android:id=\"@+id/btnUpdate\"\r\n        android:text=\"@string/update\"\r\n        />\r\n\r\n    <Button\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"@dimen/margin_body\"\r\n        android:background=\"@drawable/round_button\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryTextColor\"\r\n        android:textAlignment=\"center\"\r\n        android:id=\"@+id/btnDelete\"\r\n        android:text=\"@string/delete\"\r\n        />\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_user_manager.xml b/app/src/main/res/layout/activity_user_manager.xml
+--- a/app/src/main/res/layout/activity_user_manager.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_user_manager.xml	(date 1671041819655)
+@@ -15,7 +15,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin_body"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:padding="@dimen/padding_textbox"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -28,7 +28,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin_body"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:padding="@dimen/padding_textbox"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -41,7 +41,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin_body"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:padding="@dimen/padding_textbox"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -56,7 +56,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin_body"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:contentDescription="@string/app_name"
+         android:hint="@string/position"
+         android:minHeight="48dp"
+@@ -69,7 +69,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin_body"
+-        android:background="@drawable/round_button"
++        android:background="@drawable/btn_square"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryTextColor"
+         android:textAlignment="center"
+@@ -81,7 +81,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin_body"
+-        android:background="@drawable/round_button"
++        android:background="@drawable/btn_square"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryTextColor"
+         android:textAlignment="center"
+Index: app/src/main/res/layout/activity_update_my_info.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/bg_circle_blue\"\r\n    android:orientation=\"vertical\"\r\n    android:padding=\"@dimen/padding_body\"\r\n    tools:context=\".activities.UpdateMyInfoActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_weight=\"10\"\r\n        android:gravity=\"center\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <de.hdodenhof.circleimageview.CircleImageView\r\n            android:id=\"@+id/profile_image\"\r\n            android:layout_width=\"@dimen/profile_image_size\"\r\n            android:layout_height=\"@dimen/profile_image_size\"\r\n            android:src=\"@drawable/person\"\r\n            app:civ_border_color=\"@color/primaryColor\"\r\n            app:civ_border_width=\"@dimen/border_width\" />\r\n\r\n        <ImageButton\r\n            android:id=\"@+id/btnCamera\"\r\n            android:layout_width=\"48dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_gravity=\"center\"\r\n            android:background=\"@drawable/ic_baseline_camera_alt_24\"\r\n            android:contentDescription=\"TODO\" />\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_weight=\"6\"\r\n        android:orientation=\"vertical\"\r\n        android:gravity=\"bottom\">\r\n\r\n        <EditText\r\n            android:id=\"@+id/etName\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:autofillHints=\"phone\"\r\n            android:background=\"@drawable/round_input\"\r\n            android:hint=\"@string/name\"\r\n            android:inputType=\"text|textPersonName\"\r\n            android:padding=\"@dimen/padding_textbox\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"@color/primaryColor\"\r\n            android:textSize=\"@dimen/text_size_body\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/etEmail\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:autofillHints=\"phone\"\r\n            android:background=\"@drawable/round_input\"\r\n            android:hint=\"@string/email\"\r\n            android:inputType=\"textEmailAddress\"\r\n            android:padding=\"@dimen/padding_textbox\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"@color/primaryColor\"\r\n            android:textSize=\"@dimen/text_size_body\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/etPhone\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:autofillHints=\"phone\"\r\n            android:background=\"@drawable/round_input\"\r\n            android:hint=\"@string/phone\"\r\n            android:inputType=\"phone\"\r\n            android:padding=\"@dimen/padding_textbox\"\r\n            android:textAlignment=\"center\"\r\n            android:textSize=\"@dimen/text_size_body\" />\r\n\r\n        <EditText\r\n            android:id=\"@+id/etPassword\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:autofillHints=\"password\"\r\n            android:background=\"@drawable/round_input\"\r\n            android:hint=\"@string/password\"\r\n            android:inputType=\"textPassword\"\r\n            android:padding=\"@dimen/padding_textbox\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"@color/primaryColor\"\r\n            android:textSize=\"@dimen/text_size_body\" />\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginVertical=\"@dimen/margin_verticle\">\r\n\r\n            <Button\r\n                android:id=\"@+id/btnSave\"\r\n                style=\"?android:attr/buttonBarButtonStyle\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:padding=\"@dimen/padding_textbox\"\r\n                android:text=\"@string/save\"\r\n                android:textSize=\"@dimen/text_size_body\" />\r\n\r\n            <Button\r\n                android:id=\"@+id/btnCancel\"\r\n                style=\"?android:attr/buttonBarButtonStyle\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_weight=\"1\"\r\n                android:padding=\"@dimen/padding_textbox\"\r\n                android:text=\"@string/cancel\"\r\n                android:textSize=\"@dimen/text_size_body\" />\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_update_my_info.xml b/app/src/main/res/layout/activity_update_my_info.xml
+--- a/app/src/main/res/layout/activity_update_my_info.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_update_my_info.xml	(date 1671041819655)
+@@ -20,7 +20,7 @@
+             android:id="@+id/profile_image"
+             android:layout_width="@dimen/profile_image_size"
+             android:layout_height="@dimen/profile_image_size"
+-            android:src="@drawable/person"
++            android:src="@drawable/ic_person"
+             app:civ_border_color="@color/primaryColor"
+             app:civ_border_width="@dimen/border_width" />
+ 
+@@ -29,7 +29,7 @@
+             android:layout_width="48dp"
+             android:layout_height="48dp"
+             android:layout_gravity="center"
+-            android:background="@drawable/ic_baseline_camera_alt_24"
++            android:background="@drawable/ic_camera"
+             android:contentDescription="TODO" />
+     </LinearLayout>
+ 
+@@ -46,7 +46,7 @@
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_body"
+             android:autofillHints="phone"
+-            android:background="@drawable/round_input"
++            android:background="@drawable/btn_round"
+             android:hint="@string/name"
+             android:inputType="text|textPersonName"
+             android:padding="@dimen/padding_textbox"
+@@ -60,7 +60,7 @@
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_body"
+             android:autofillHints="phone"
+-            android:background="@drawable/round_input"
++            android:background="@drawable/btn_round"
+             android:hint="@string/email"
+             android:inputType="textEmailAddress"
+             android:padding="@dimen/padding_textbox"
+@@ -74,7 +74,7 @@
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_body"
+             android:autofillHints="phone"
+-            android:background="@drawable/round_input"
++            android:background="@drawable/btn_round"
+             android:hint="@string/phone"
+             android:inputType="phone"
+             android:padding="@dimen/padding_textbox"
+@@ -87,7 +87,7 @@
+             android:layout_height="wrap_content"
+             android:layout_marginTop="@dimen/margin_body"
+             android:autofillHints="password"
+-            android:background="@drawable/round_input"
++            android:background="@drawable/btn_round"
+             android:hint="@string/password"
+             android:inputType="textPassword"
+             android:padding="@dimen/padding_textbox"
+Index: app/src/main/java/com/example/parkingmanager/entities/UserAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager.entities;\r\n\r\n\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.EditText;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport com.example.parkingmanager.R;\r\n\r\nimport java.util.List;\r\n\r\npublic class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{\r\nprivate List<User> ListUsers;\r\npublic void SetData(List<User> ListUsers){\r\n    this.ListUsers = ListUsers;\r\n    notifyDataSetChanged();\r\n}\r\n\r\n    @NonNull\r\n    @Override\r\n    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {\r\n    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_my_info,parent,false);\r\n        return new UserViewHolder(view);\r\n    }\r\n\r\n    @Override\r\n    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {\r\n    User user = ListUsers.get(position);\r\n    if (user == null){\r\n        return;\r\n\r\n    }\r\n    holder.tvName.setText(user.getName());\r\n    holder.tvEmail.setText(user.getEmail());\r\n    holder.tvPhone.setText(user.getPhone());\r\n\r\n\r\n}\r\n\r\n    @Override\r\n    public int getItemCount() {\r\n    if (ListUsers != null){\r\n        return ListUsers.size();\r\n    }\r\n        return 0;\r\n    }\r\n\r\n    public class UserViewHolder extends RecyclerView.ViewHolder {\r\n        private EditText tvName;\r\n        private EditText tvPassword;\r\n        private EditText tvEmail;\r\n        private EditText tvPhone;\r\n        private EditText tvPosition;\r\n\r\n        public UserViewHolder(@NonNull View itemView) {\r\n            super(itemView);\r\n\r\n            tvName = itemView.findViewById(R.id.tvName);\r\n            tvPassword = itemView.findViewById(R.id.tvPassword);\r\n            tvEmail = itemView.findViewById(R.id.tvEmail);\r\n            tvPhone = itemView.findViewById(R.id.tvPhone);\r\n\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/entities/UserAdapter.java b/app/src/main/java/com/example/parkingmanager/entities/UserAdapter.java
+--- a/app/src/main/java/com/example/parkingmanager/entities/UserAdapter.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/entities/UserAdapter.java	(date 1671040205221)
+@@ -1,70 +1,60 @@
+ package com.example.parkingmanager.entities;
+ 
+-
++import android.app.Activity;
++import android.content.Context;
+ import android.view.LayoutInflater;
+ import android.view.View;
+ import android.view.ViewGroup;
+-import android.widget.EditText;
+-
+-import androidx.annotation.NonNull;
+-import androidx.recyclerview.widget.RecyclerView;
++import android.widget.ArrayAdapter;
++import android.widget.BaseAdapter;
++import android.widget.TextView;
+ 
+ import com.example.parkingmanager.R;
+ 
+-import java.util.List;
++import java.util.ArrayList;
+ 
+-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
+-private List<User> ListUsers;
+-public void SetData(List<User> ListUsers){
+-    this.ListUsers = ListUsers;
+-    notifyDataSetChanged();
+-}
+-
+-    @NonNull
++public class UserAdapter extends BaseAdapter {
++    private ArrayList<User> listData;
++    private LayoutInflater layoutInflater;
++    public UserAdapter(Context aContext, ArrayList<User> listData) {
++        this.listData = listData;
++        layoutInflater = LayoutInflater.from(aContext);
++    }
+     @Override
+-    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+-    View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_my_info,parent,false);
+-        return new UserViewHolder(view);
++    public int getCount() {
++        return listData.size();
+     }
+-
+     @Override
+-    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
+-    User user = ListUsers.get(position);
+-    if (user == null){
+-        return;
+-
++    public Object getItem(int position) {
++        return listData.get(position);
+     }
+-    holder.tvName.setText(user.getName());
+-    holder.tvEmail.setText(user.getEmail());
+-    holder.tvPhone.setText(user.getPhone());
+-
+-
+-}
+-
+     @Override
+-    public int getItemCount() {
+-    if (ListUsers != null){
+-        return ListUsers.size();
++    public long getItemId(int position) {
++        return position;
+     }
+-        return 0;
+-    }
+-
+-    public class UserViewHolder extends RecyclerView.ViewHolder {
+-        private EditText tvName;
+-        private EditText tvPassword;
+-        private EditText tvEmail;
+-        private EditText tvPhone;
+-        private EditText tvPosition;
+-
+-        public UserViewHolder(@NonNull View itemView) {
+-            super(itemView);
+-
+-            tvName = itemView.findViewById(R.id.tvName);
+-            tvPassword = itemView.findViewById(R.id.tvPassword);
+-            tvEmail = itemView.findViewById(R.id.tvEmail);
+-            tvPhone = itemView.findViewById(R.id.tvPhone);
+-
++    public View getView(int position, View v, ViewGroup vg) {
++        ViewHolder holder;
++        if (v == null) {
++            v = layoutInflater.inflate(R.layout.card_user, null);
++            holder = new ViewHolder();
++            holder.uName = (TextView) v.findViewById(R.id.tvName);
++            holder.uUsername = (TextView) v.findViewById(R.id.tvUsername);
++            holder.uCardNumber = (TextView) v.findViewById(R.id.tvCardNumber);
++            holder.uPosition = (TextView) v.findViewById(R.id.tvPosition);
++            v.setTag(holder);
++        } else {
++            holder = (ViewHolder) v.getTag();
+         }
++        holder.uName.setText(listData.get(position).getName());
++        holder.uUsername.setText(listData.get(position).getUsername());
++        holder.uCardNumber.setText(listData.get(position).getCardNumberFormatted());
++        holder.uPosition.setText(listData.get(position).getPositions().getName());
++        return v;
+     }
+-
+-}
++    static class ViewHolder {
++        TextView uName;
++        TextView uUsername;
++        TextView uCardNumber;
++        TextView uPosition;
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/layout/mylistview.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.cardview.widget.CardView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:id=\"@+id/LinearLayout1\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"horizontal\">\r\n    <RelativeLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:padding=\"10dp\">\r\n        <de.hdodenhof.circleimageview.CircleImageView\r\n            android:id=\"@+id/imageView1\"\r\n            android:layout_width=\"70dp\"\r\n            android:layout_height=\"70dp\"\r\n            android:src=\"@drawable/person\" />\r\n        <TextView\r\n            android:id=\"@+id/textView1\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:textColor=\"#000000\"\r\n            android:layout_marginStart=\"10dp\"\r\n            android:layout_centerVertical=\"true\"\r\n            android:layout_toEndOf=\"@+id/imageView1\"\r\n            android:text=\"TextView\"\r\n            android:textSize=\"16sp\" />\r\n\r\n    </RelativeLayout>\r\n\r\n\r\n</androidx.cardview.widget.CardView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/mylistview.xml b/app/src/main/res/layout/mylistview.xml
+--- a/app/src/main/res/layout/mylistview.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/mylistview.xml	(date 1671040205253)
+@@ -1,30 +1,46 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/LinearLayout1"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:orientation="horizontal">
+-    <RelativeLayout
+-        android:layout_width="match_parent"
+-        android:layout_height="wrap_content"
+-        android:padding="10dp">
+-        <de.hdodenhof.circleimageview.CircleImageView
+-            android:id="@+id/imageView1"
+-            android:layout_width="70dp"
+-            android:layout_height="70dp"
+-            android:src="@drawable/person" />
+-        <TextView
+-            android:id="@+id/textView1"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:textColor="#000000"
+-            android:layout_marginStart="10dp"
+-            android:layout_centerVertical="true"
+-            android:layout_toEndOf="@+id/imageView1"
+-            android:text="TextView"
+-            android:textSize="16sp" />
++
++    <!--    <ImageView-->
++    <!--        android:id="@+id/imgitem"-->
++    <!--        android:layout_width="22dip"-->
++    <!--        android:layout_height="22dip"-->
++    <!--        android:layout_marginTop="4dp"-->
++    <!--        android:contentDescription="here"-->
++    <!--        android:paddingLeft="2dp"-->
++    <!--        android:paddingTop="2dp"-->
++    <!--        android:paddingRight="2dp"-->
++    <!--        android:src="@drawable/parking_sign" />-->
++
++    <TextView
++        android:id="@+id/txtTenNV"
++        android:layout_width="0dip"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="4dp"
++        android:layout_weight="2"
++        android:paddingLeft="2dp"
++        android:paddingTop="2dp"
++        android:paddingRight="2dp"
++        android:text="tran van a"
++        android:textColor="@color/primaryDarkColor"
++        android:textSize="@dimen/text_size_body" />
+ 
+-    </RelativeLayout>
++    <Button
++        android:id="@+id/btnedit"
++        android:layout_width="100dp"
++        android:layout_height="40dp"
++        android:backgroundTint="@color/white"
++        android:drawableEnd="@drawable/ic_edit"
++        />
+ 
+-
+-</androidx.cardview.widget.CardView>
+\ No newline at end of file
++    <Button
++        android:id="@+id/btndelete"
++        android:layout_width="100dp"
++        android:layout_height="40dp"
++        android:backgroundTint="@color/white"
++        android:drawableEnd="@drawable/ic_delete" />
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_list_user.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/LinearLayout1\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".MainActivity\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/textView2\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"@color/primaryColor\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Quản lý nhân viên\"\r\n        android:padding=\"@dimen/padding_body\"\r\n        android:textColor=\"#FFFFFF\"\r\n        android:textSize=\"@dimen/text_size_h1\" />\r\n\r\n    <ListView\r\n        android:id=\"@+id/imgitem\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\" />\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_list_user.xml b/app/src/main/res/layout/activity_list_user.xml
+--- a/app/src/main/res/layout/activity_list_user.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_list_user.xml	(date 1671041819653)
+@@ -18,7 +18,7 @@
+         android:textSize="@dimen/text_size_h1" />
+ 
+     <ListView
+-        android:id="@+id/imgitem"
++        android:id="@+id/lvUser"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" />
+ 
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\">\r\n\r\n    <uses-permission android:name=\"android.permission.CAMERA\" />\r\n    <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"\r\n        />\r\n    <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"@string/app_name\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.ParkingManager\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".activities.RevenueActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".activities.MyInfoActivity\"\r\n            android:exported=\"false\">\r\n\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n\r\n        <activity\r\n            android:name=\".activities.LoginActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n<!--        <activity-->\r\n<!--            android:name=\".activities.ParkingActivity\"-->\r\n<!--            android:exported=\"true\">-->\r\n<!--            <intent-filter>-->\r\n<!--                <action android:name=\"android.intent.action.MAIN\" />-->\r\n\r\n<!--                <category android:name=\"android.intent.category.LAUNCHER\" />-->\r\n<!--            </intent-filter>-->\r\n\r\n<!--            <meta-data-->\r\n<!--                android:name=\"android.app.lib_name\"-->\r\n<!--                android:value=\"\" />-->\r\n<!--        </activity>-->\r\n        <activity\r\n            android:name=\".activities.UpdateMyInfoActivity\"\r\n            android:exported=\"true\">\r\n\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".activities.RegisterActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n        <activity\r\n            android:name=\".activities.HomeActivity\"\r\n            android:exported=\"false\">\r\n            <meta-data\r\n                android:name=\"android.app.lib_name\"\r\n                android:value=\"\" />\r\n        </activity>\r\n\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/AndroidManifest.xml	(date 1671040205206)
+@@ -3,8 +3,7 @@
+     xmlns:tools="http://schemas.android.com/tools">
+ 
+     <uses-permission android:name="android.permission.CAMERA" />
+-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+-        />
++    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+ 
+     <application
+@@ -17,6 +16,20 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.ParkingManager"
+         tools:targetApi="31">
++<!--        <activity-->
++<!--            android:name=".activities.ListUserSceen"-->
++<!--            android:exported="false">-->
++<!--            <meta-data-->
++<!--                android:name="android.app.lib_name"-->
++<!--                android:value="" />-->
++<!--        </activity>-->
++        <!-- <activity -->
++        <!-- android:name="" -->
++        <!-- android:exported="false"> -->
++        <!-- <meta-data -->
++        <!-- android:name="android.app.lib_name" -->
++        <!-- android:value="" /> -->
++        <!-- </activity> -->
+         <activity
+             android:name=".activities.RevenueActivity"
+             android:exported="false">
+@@ -25,14 +38,16 @@
+                 android:value="" />
+         </activity>
+         <activity
+-            android:name=".activities.MyInfoActivity"
+-            android:exported="false">
+-
++            android:name=".activities.ListUserActivity"
++            android:exported="true">
++            <intent-filter>
++                <action android:name="android.intent.action.MAIN" />
++                <category android:name="android.intent.category.LAUNCHER" />
++            </intent-filter>
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+-
+         <activity
+             android:name=".activities.LoginActivity"
+             android:exported="false">
+@@ -40,28 +55,9 @@
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+-<!--        <activity-->
+-<!--            android:name=".activities.ParkingActivity"-->
+-<!--            android:exported="true">-->
+-<!--            <intent-filter>-->
+-<!--                <action android:name="android.intent.action.MAIN" />-->
+-
+-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+-<!--            </intent-filter>-->
+-
+-<!--            <meta-data-->
+-<!--                android:name="android.app.lib_name"-->
+-<!--                android:value="" />-->
+-<!--        </activity>-->
+         <activity
+             android:name=".activities.UpdateMyInfoActivity"
+             android:exported="true">
+-
+-            <intent-filter>
+-                <action android:name="android.intent.action.MAIN" />
+-
+-                <category android:name="android.intent.category.LAUNCHER" />
+-            </intent-filter>
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+@@ -76,6 +72,8 @@
+         <activity
+             android:name=".MainActivity"
+             android:exported="false">
++
++
+             <meta-data
+                 android:name="android.app.lib_name"
+                 android:value="" />
+@@ -87,7 +85,13 @@
+                 android:name="android.app.lib_name"
+                 android:value="" />
+         </activity>
+-
++        <activity
++            android:name=".activities.ParkingActivity"
++            android:exported="false">
++            <meta-data
++                android:name="android.app.lib_name"
++                android:value="" />
++        </activity>
+     </application>
+ 
+ </manifest>
+\ No newline at end of file
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.android.application'\r\n}\r\n\r\nandroid {\r\n    namespace 'com.example.parkingmanager'\r\n    compileSdk 33\r\n\r\n    defaultConfig {\r\n        applicationId \"com.example.parkingmanager\"\r\n        minSdk 30\r\n        targetSdk 33\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n}\r\n\r\n\r\ndependencies {\r\n    implementation 'androidx.appcompat:appcompat:1.5.1'\r\n    implementation 'com.google.android.material:material:1.7.0'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'androidx.camera:camera-view:1.1.0-beta02'\r\n    implementation 'androidx.camera:camera-lifecycle:1.0.2'\r\n//    implementation 'com.google.android.gms:play-services-cast-framework:21.0.1'\r\n\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.4'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'\r\n    implementation \"com.google.android.material:compose-theme-adapter:1.1.16\"\r\n    implementation \"com.google.accompanist:accompanist-appcompat-theme:0.25.1\"\r\n\r\n    // Import libraries\r\n    implementation 'com.google.android.material:material:1.7.0-alpha02'\r\n    implementation \"com.airbnb.android:lottie:5.2.0\"\r\n    implementation 'de.hdodenhof:circleimageview:3.1.0'\r\n\r\n\r\n\r\n    implementation \"androidx.room:room-runtime:2.4.3\"\r\n//    annotationProcessor \"androidx.room:room-compiler:2.4.3\"\r\n    //\r\n    implementation \"androidx.recyclerview:recyclerview:1.1.0\"\r\n    implementation 'com.github.dhaval2404:imagepicker:2.1'\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/build.gradle	(date 1671041819648)
+@@ -31,20 +31,18 @@
+ 
+ dependencies {
+     implementation 'androidx.appcompat:appcompat:1.5.1'
+-    implementation 'com.google.android.material:material:1.7.0'
++    implementation 'com.google.android.material:material:1.8.0-beta01'
+     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+-    implementation 'androidx.camera:camera-view:1.1.0-beta02'
+-    implementation 'androidx.camera:camera-lifecycle:1.0.2'
+-//    implementation 'com.google.android.gms:play-services-cast-framework:21.0.1'
+-
++    implementation 'androidx.camera:camera-view:1.3.0-alpha02'
++    implementation 'androidx.camera:camera-lifecycle:1.3.0-alpha02'
+     testImplementation 'junit:junit:4.13.2'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+-    implementation "com.google.android.material:compose-theme-adapter:1.1.16"
+-    implementation "com.google.accompanist:accompanist-appcompat-theme:0.25.1"
++    implementation 'com.google.android.material:compose-theme-adapter:1.2.1'
++    implementation 'com.google.accompanist:accompanist-appcompat-theme:0.28.0'
+ 
+     // Import libraries
+-    implementation 'com.google.android.material:material:1.7.0-alpha02'
++    implementation 'com.google.android.material:material:1.8.0-beta01'
+     implementation "com.airbnb.android:lottie:5.2.0"
+     implementation 'de.hdodenhof:circleimageview:3.1.0'
+ 
+@@ -53,7 +51,7 @@
+     implementation "androidx.room:room-runtime:2.4.3"
+ //    annotationProcessor "androidx.room:room-compiler:2.4.3"
+     //
+-    implementation "androidx.recyclerview:recyclerview:1.1.0"
++    implementation "androidx.recyclerview:recyclerview:1.2.1"
+     implementation 'com.github.dhaval2404:imagepicker:2.1'
+ 
+ 
+Index: app/src/main/java/com/example/parkingmanager/activities/ListUserActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//package com.example.parkingmanager.activities;\r\n//\r\n//import java.util.ArrayList;\r\n//\r\n//import android.os.Bundle;\r\n//import android.app.Activity;\r\n//import android.view.View;\r\n//import android.view.View.OnClickListener;\r\n//import android.widget.Button;\r\n//import android.widget.EditText;\r\n//import android.widget.ImageButton;\r\n//import android.widget.ListView;\r\n//import android.widget.RadioGroup;\r\n//\r\n//import com.example.parkingmanager.R;\r\n//import com.example.parkingmanager.entities.SuperUser;\r\n//\r\n//public class ListUserActivity extends Activity {\r\n//    ListView lvUser;\r\n//    ArrayList<SuperUser> dsUser;\r\n//\r\n//\r\n//    @Override\r\n//    protected void onCreate(Bundle savedInstanceState) {\r\n//        super.onCreate(savedInstanceState);\r\n//        setContentView(R.layout.activity_list_user);\r\n//\r\n//        btnNhap=(Button) findViewById(R.id.btnEdit);\r\n//        btnRemoveAll=(ImageButton) findViewById(R.id.btndelete);\r\n//        editMa=(EditText) findViewById(R.id.txtMaNV);\r\n//        editTen=(EditText) findViewById(R.id.txtTenNV);\r\n//        genderGroup=(RadioGroup) findViewById(R.id.radioGroup1);\r\n//\r\n//        lvNhanvien=(ListView) findViewById(R.id.imgitem);\r\n//        arrEmployee=new ArrayList<SuperUser>();\r\n//        //Khởi tạo đối tượng adapter và gán Data source\r\n//        adapter=new myadappter(\r\n//                this,\r\n//                R.layout.mylistview,// lấy custom layout\r\n//                arrEmployee/*thiết lập data source*/);\r\n//        lvNhanvien.setAdapter(adapter);//gán Adapter vào Lisview\r\n//\r\n//        btnNhap.setOnClickListener(new OnClickListener() {\r\n//\r\n//            @Override\r\n//            public void onClick(View arg0) {\r\n//                // TODO Auto-generated method stub\r\n//                xulyNhap();\r\n//            }\r\n//        });\r\n//        btnRemoveAll.setOnClickListener(new OnClickListener() {\r\n//\r\n//            @Override\r\n//            public void onClick(View arg0) {\r\n//                xulyXoa();\r\n//            }\r\n//        });\r\n//    }\r\n//    //gọi hàm xử lý nhập thông tin nhân viên\r\n//    public void xulyNhap()\r\n//    {\r\n//        String ma=editMa.getText()+\"\";\r\n//        String ten=editTen.getText()+\"\";\r\n//        boolean gioitinh=false;//Nam =false\r\n//        if(genderGroup.getCheckedRadioButtonId()==R.id.rdoNu)\r\n//            gioitinh=true;\r\n//        //Tạo một employee\r\n//        SuperUser emp=new SuperUser();\r\n//        emp.setId(ma);\r\n//        emp.setName(ten);\r\n//        emp.setGender(gioitinh);\r\n//        //Đưa vào danh sách\r\n//        arrEmployee.add(emp);\r\n//        //gọi hàm cập nhật giao diện\r\n//        adapter.notifyDataSetChanged();\r\n//        //Sau khi update thì xóa trắng dữ liệu và cho editma focus\r\n//        editMa.setText(\"\");\r\n//        editTen.setText(\"\");\r\n//        editMa.requestFocus();\r\n//    }\r\n//    //hàm xử lý xóa\r\n//    public void xulyXoa()\r\n//    {\r\n//        //ta nên đi ngược danh sách, kiểm tra phần tử nào checked\r\n//        //thì xóa đúng vị trí đó ra khỏi arrEmployee\r\n//        for(int i=lvNhanvien.getChildCount()-1;i>=0;i--)\r\n//        {\r\n//            //lấy ra dòng thứ i trong ListView\r\n//            //Dòng thứ i sẽ có 3 phần tử: ImageView, TextView, Checkbox\r\n//            View v=lvNhanvien.getChildAt(i);\r\n//            //Ta chỉ lấy CheckBox ra kiểm tra\r\n////            CheckBox chk=(CheckBox) v.findViewById(R.id.chkitem);\r\n//            //Nếu nó Checked thì xóa ra khỏi arrEmployee\r\n////            if(chk.isChecked())\r\n////            {\r\n////                //xóa phần tử thứ i ra khỏi danh sách\r\n////                arrEmployee.remove(i);\r\n////            }\r\n//        }\r\n//        //Sau khi xóa xong thì gọi update giao diện\r\n//        adapter.notifyDataSetChanged();\r\n//    }\r\n//}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/activities/ListUserActivity.java b/app/src/main/java/com/example/parkingmanager/activities/ListUserActivity.java
+--- a/app/src/main/java/com/example/parkingmanager/activities/ListUserActivity.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/activities/ListUserActivity.java	(date 1671040205206)
+@@ -1,103 +1,58 @@
+-//package com.example.parkingmanager.activities;
+-//
+-//import java.util.ArrayList;
+-//
+-//import android.os.Bundle;
+-//import android.app.Activity;
+-//import android.view.View;
+-//import android.view.View.OnClickListener;
+-//import android.widget.Button;
+-//import android.widget.EditText;
+-//import android.widget.ImageButton;
+-//import android.widget.ListView;
+-//import android.widget.RadioGroup;
+-//
+-//import com.example.parkingmanager.R;
+-//import com.example.parkingmanager.entities.SuperUser;
+-//
+-//public class ListUserActivity extends Activity {
+-//    ListView lvUser;
+-//    ArrayList<SuperUser> dsUser;
+-//
+-//
+-//    @Override
+-//    protected void onCreate(Bundle savedInstanceState) {
+-//        super.onCreate(savedInstanceState);
+-//        setContentView(R.layout.activity_list_user);
+-//
+-//        btnNhap=(Button) findViewById(R.id.btnEdit);
+-//        btnRemoveAll=(ImageButton) findViewById(R.id.btndelete);
+-//        editMa=(EditText) findViewById(R.id.txtMaNV);
+-//        editTen=(EditText) findViewById(R.id.txtTenNV);
+-//        genderGroup=(RadioGroup) findViewById(R.id.radioGroup1);
+-//
+-//        lvNhanvien=(ListView) findViewById(R.id.imgitem);
+-//        arrEmployee=new ArrayList<SuperUser>();
+-//        //Khởi tạo đối tượng adapter và gán Data source
+-//        adapter=new myadappter(
+-//                this,
+-//                R.layout.mylistview,// lấy custom layout
+-//                arrEmployee/*thiết lập data source*/);
+-//        lvNhanvien.setAdapter(adapter);//gán Adapter vào Lisview
+-//
+-//        btnNhap.setOnClickListener(new OnClickListener() {
+-//
+-//            @Override
+-//            public void onClick(View arg0) {
+-//                // TODO Auto-generated method stub
+-//                xulyNhap();
+-//            }
+-//        });
+-//        btnRemoveAll.setOnClickListener(new OnClickListener() {
+-//
+-//            @Override
+-//            public void onClick(View arg0) {
+-//                xulyXoa();
+-//            }
+-//        });
+-//    }
+-//    //gọi hàm xử lý nhập thông tin nhân viên
+-//    public void xulyNhap()
+-//    {
+-//        String ma=editMa.getText()+"";
+-//        String ten=editTen.getText()+"";
+-//        boolean gioitinh=false;//Nam =false
+-//        if(genderGroup.getCheckedRadioButtonId()==R.id.rdoNu)
+-//            gioitinh=true;
+-//        //Tạo một employee
+-//        SuperUser emp=new SuperUser();
+-//        emp.setId(ma);
+-//        emp.setName(ten);
+-//        emp.setGender(gioitinh);
+-//        //Đưa vào danh sách
+-//        arrEmployee.add(emp);
+-//        //gọi hàm cập nhật giao diện
+-//        adapter.notifyDataSetChanged();
+-//        //Sau khi update thì xóa trắng dữ liệu và cho editma focus
+-//        editMa.setText("");
+-//        editTen.setText("");
+-//        editMa.requestFocus();
+-//    }
+-//    //hàm xử lý xóa
+-//    public void xulyXoa()
+-//    {
+-//        //ta nên đi ngược danh sách, kiểm tra phần tử nào checked
+-//        //thì xóa đúng vị trí đó ra khỏi arrEmployee
+-//        for(int i=lvNhanvien.getChildCount()-1;i>=0;i--)
+-//        {
+-//            //lấy ra dòng thứ i trong ListView
+-//            //Dòng thứ i sẽ có 3 phần tử: ImageView, TextView, Checkbox
+-//            View v=lvNhanvien.getChildAt(i);
+-//            //Ta chỉ lấy CheckBox ra kiểm tra
+-////            CheckBox chk=(CheckBox) v.findViewById(R.id.chkitem);
+-//            //Nếu nó Checked thì xóa ra khỏi arrEmployee
+-////            if(chk.isChecked())
+-////            {
+-////                //xóa phần tử thứ i ra khỏi danh sách
+-////                arrEmployee.remove(i);
+-////            }
+-//        }
+-//        //Sau khi xóa xong thì gọi update giao diện
+-//        adapter.notifyDataSetChanged();
+-//    }
+-//}
+\ No newline at end of file
++package com.example.parkingmanager.activities;
++
++import java.util.ArrayList;
++
++import android.os.Bundle;
++import android.app.Activity;
++import android.view.View;
++import android.view.View.OnClickListener;
++import android.widget.AdapterView;
++import android.widget.Button;
++import android.widget.EditText;
++import android.widget.ImageButton;
++import android.widget.ListView;
++import android.widget.RadioGroup;
++import android.widget.Toast;
++
++import com.example.parkingmanager.R;
++import com.example.parkingmanager.entities.Position;
++import com.example.parkingmanager.entities.User;
++import com.example.parkingmanager.entities.UserAdapter;
++
++public class ListUserActivity extends Activity {
++
++    private ListView listView;
++    private ArrayList<User> list;
++
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_list_user);
++        ArrayList userList = getListData();
++        final ListView lv = (ListView) findViewById(R.id.lvUser);
++        lv.setAdapter(new UserAdapter(this, userList));
++        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
++            @Override
++            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
++                User user = (User) lv.getItemAtPosition(position);
++                Toast.makeText(ListUserActivity.this, "Selected :" + " " + user.getName()+", "+ user.getPositions().getName(), Toast.LENGTH_SHORT).show();
++            }
++        });
++
++    }
++
++    private ArrayList getListData() {
++        Position position = new Position(1, "Manager");
++        ArrayList<User> results = new ArrayList<User>();
++        User user = new User(1, "John","pass", "john", position);
++        results.add(user);
++        user = new User(2,"Kathie", "pass","janedoe","1234567890123456", position);
++        results.add(user);
++        user = new User(3,"John Smith", "pass","johnsmith","1234567890123456", position);
++        results.add(user);
++        user = new User(4,"Daria", "pass","janesmith","1234567890123456", position);
++        results.add(user);
++        return results;
++    }
++}
+\ No newline at end of file
+Index: app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+===================================================================
+diff --git a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml b/app/src/main/res/drawable-v24/ic_launcher_foreground.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable-v24/ic_launcher_foreground.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,35 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108">
+-  <group android:scaleX="0.24046876"
+-      android:scaleY="0.24046876"
+-      android:translateX="23.22"
+-      android:translateY="23.22">
+-    <path
+-        android:pathData="M127.86,1.41C79.03,1.41 39.45,40.99 39.45,89.82c0,44.93 37.43,107.51 77.86,159.35c5.34,6.85 15.76,6.85 21.11,0c40.42,-51.84 77.86,-114.41 77.86,-159.35C216.27,40.99 176.68,1.41 127.86,1.41z"
+-        android:strokeLineJoin="miter"
+-        android:strokeWidth="2.81"
+-        android:fillColor="#E75132"
+-        android:fillType="nonZero"
+-        android:strokeColor="#00000000"
+-        android:strokeLineCap="butt"/>
+-    <path
+-        android:pathData="M127.86,148.97c-5.67,0 -11.15,-0.8 -16.34,-2.28c-9.62,-2.75 -18.25,-7.87 -25.2,-14.69c-10.97,-10.76 -17.78,-25.76 -17.78,-42.34C68.54,56.9 95.1,30.35 127.86,30.35s59.31,26.55 59.31,59.31S160.62,148.97 127.86,148.97z"
+-        android:strokeLineJoin="miter"
+-        android:strokeWidth="2.81"
+-        android:fillColor="#EDF2F5"
+-        android:fillType="nonZero"
+-        android:strokeColor="#00000000"
+-        android:strokeLineCap="butt"/>
+-    <path
+-        android:pathData="M128.73,54.62l-17.59,0c-4.08,0 -7.39,3.31 -7.39,7.39l0,33.42l0,24.86c0,4.08 3.31,7.39 7.39,7.39c4.08,0 7.39,-3.31 7.39,-7.39l0,-17.48l10.2,0c12.8,0 23.22,-10.42 23.22,-23.22L151.96,77.84C151.96,65.04 141.54,54.62 128.73,54.62zM137.18,79.59c0,4.66 -3.79,8.45 -8.45,8.45l-10.2,0l0,-18.65l10.2,0c4.66,0 8.45,3.79 8.45,8.45L137.18,79.59z"
+-        android:strokeLineJoin="miter"
+-        android:strokeWidth="2.81"
+-        android:fillColor="#092B47"
+-        android:fillType="nonZero"
+-        android:strokeColor="#00000000"
+-        android:strokeLineCap="butt"/>
+-  </group>
+-</vector>
+Index: app/src/main/res/drawable/round_input.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/round_input.xml b/app/src/main/res/drawable/round_input.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/round_input.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+-
+-    <item android:state_pressed="true">
+-        <shape android:shape="rectangle">
+-            <solid android:color="@color/primaryTextColor" />
+-            <corners android:radius="30dp" />
+-        </shape>
+-    </item>
+-
+-    <item>
+-        <shape android:shape="rectangle">
+-            <stroke android:width="1dp" android:color="@color/primaryDarkColor" />
+-            <solid android:color="@color/white" />
+-            <corners android:radius="30dp" />
+-        </shape>
+-    </item>
+-</selector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/circle_input.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/circle_input.xml b/app/src/main/res/drawable/circle_input.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/circle_input.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+-
+-
+-    <item android:state_pressed="true">
+-        <shape android:shape="rectangle">
+-            <solid android:color="@color/primaryTextColor" />
+-            <corners android:radius="300dp" />
+-        </shape>
+-    </item>
+-
+-    <item>
+-        <shape android:shape="rectangle">
+-            <stroke android:width="2dp" android:color="@color/primaryDarkColor" />
+-            <solid android:color="@color/white" />
+-            <corners android:radius="300dp" />
+-        </shape>
+-    </item>
+-</selector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/delete.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/delete.xml b/app/src/main/res/drawable/delete.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/delete.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,15 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
+-    android:height="108dp"
+-    android:viewportWidth="108"
+-    android:viewportHeight="108"
+-    android:tint="#4068CD">
+-  <group android:scaleX="2.61"
+-      android:scaleY="2.61"
+-      android:translateX="22.68"
+-      android:translateY="22.68">
+-    <path
+-        android:fillColor="@android:color/white"
+-        android:pathData="M6,19c0,1.1 0.9,2 2,2h8c1.1,0 2,-0.9 2,-2V7H6v12zM19,4h-3.5l-1,-1h-5l-1,1H5v2h14V4z"/>
+-  </group>
+-</vector>
+Index: app/src/main/res/drawable/round_in.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/round_in.xml b/app/src/main/res/drawable/round_in.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/round_in.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,24 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<vector
+-    xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:aapt="http://schemas.android.com/aapt"
+-    android:width="335dp"
+-    android:height="48dp"
+-    android:viewportWidth="335"
+-    android:viewportHeight="48"
+-    >
+-
+-    <group>
+-
+-        <clip-path
+-            android:pathData="M24 0H311C324.255 0 335 10.7452 335 24C335 37.2548 324.255 48 311 48H24C10.7452 48 0 37.2548 0 24C0 10.7452 10.7452 0 24 0Z"
+-            />
+-
+-        <path
+-            android:pathData="M0 0V48H335V0"
+-            android:fillColor="#EDE6E6"
+-            />
+-
+-    </group>
+-
+-</vector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/person.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/person.xml b/app/src/main/res/drawable/person.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/person.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,5 +0,0 @@
+-<vector android:height="200dp"
+-    android:viewportHeight="24" android:viewportWidth="24"
+-    android:width="200dp" xmlns:android="http://schemas.android.com/apk/res/android">
+-    <path android:fillColor="@android:color/holo_blue_bright" android:pathData="M12,12c2.21,0 4,-1.79 4,-4s-1.79,-4 -4,-4 -4,1.79 -4,4 1.79,4 4,4zM12,14c-2.67,0 -8,1.34 -8,4v2h16v-2c0,-2.66 -5.33,-4 -8,-4z"/>
+-</vector>
+Index: app/src/main/res/drawable/parking_sign.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/parking_sign.xml b/app/src/main/res/drawable/parking_sign.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/parking_sign.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,31 +0,0 @@
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="256dp"
+-    android:height="256dp"
+-    android:autoMirrored="true"
+-    android:viewportWidth="256"
+-    android:viewportHeight="256">
+-    <path
+-        android:fillColor="@color/secondaryDarkColor"
+-        android:fillType="nonZero"
+-        android:pathData="M127.86,1.41C79.03,1.41 39.45,40.99 39.45,89.82c0,44.93 37.43,107.51 77.86,159.35c5.34,6.85 15.76,6.85 21.11,0c40.42,-51.84 77.86,-114.41 77.86,-159.35C216.27,40.99 176.68,1.41 127.86,1.41z"
+-        android:strokeWidth="2.81"
+-        android:strokeColor="#00000000"
+-        android:strokeLineCap="butt"
+-        android:strokeLineJoin="miter" />
+-    <path
+-        android:fillColor="#EDF2F5"
+-        android:fillType="nonZero"
+-        android:pathData="M127.86,148.97c-5.67,0 -11.15,-0.8 -16.34,-2.28c-9.62,-2.75 -18.25,-7.87 -25.2,-14.69c-10.97,-10.76 -17.78,-25.76 -17.78,-42.34C68.54,56.9 95.1,30.35 127.86,30.35s59.31,26.55 59.31,59.31S160.62,148.97 127.86,148.97z"
+-        android:strokeWidth="2.81"
+-        android:strokeColor="#00000000"
+-        android:strokeLineCap="butt"
+-        android:strokeLineJoin="miter" />
+-    <path
+-        android:fillColor="@color/primaryDarkColor"
+-        android:fillType="nonZero"
+-        android:pathData="M128.73,54.62l-17.59,0c-4.08,0 -7.39,3.31 -7.39,7.39l0,33.42l0,24.86c0,4.08 3.31,7.39 7.39,7.39c4.08,0 7.39,-3.31 7.39,-7.39l0,-17.48l10.2,0c12.8,0 23.22,-10.42 23.22,-23.22L151.96,77.84C151.96,65.04 141.54,54.62 128.73,54.62zM137.18,79.59c0,4.66 -3.79,8.45 -8.45,8.45l-10.2,0l0,-18.65l10.2,0c4.66,0 8.45,3.79 8.45,8.45L137.18,79.59z"
+-        android:strokeWidth="2.81"
+-        android:strokeColor="#00000000"
+-        android:strokeLineCap="butt"
+-        android:strokeLineJoin="miter" />
+-</vector>
+Index: app/src/main/res/drawable/calendar.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/calendar.xml b/app/src/main/res/drawable/calendar.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/calendar.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,5 +0,0 @@
+-<vector android:height="24dp"
+-    android:viewportHeight="24" android:viewportWidth="24"
+-    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+-    <path android:fillColor="@android:color/white" android:pathData="M19,4h-1V2h-2v2H8V2H6v2H5C3.89,4 3.01,4.9 3.01,6L3,20c0,1.1 0.89,2 2,2h14c1.1,0 2,-0.9 2,-2V6C21,4.9 20.1,4 19,4zM19,20H5V10h14V20zM9,14H7v-2h2V14zM13,14h-2v-2h2V14zM17,14h-2v-2h2V14zM9,18H7v-2h2V18zM13,18h-2v-2h2V18zM17,18h-2v-2h2V18z"/>
+-</vector>
+Index: app/src/main/res/drawable/input_1.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/input_1.xml b/app/src/main/res/drawable/input_1.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/input_1.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+-
+-    <item android:state_pressed="true">
+-        <shape android:shape="rectangle">
+-            <solid android:color="@color/primaryTextColor" />
+-            <corners android:radius="10dp" />
+-        </shape>
+-    </item>
+-
+-    <item>
+-        <shape android:shape="rectangle">
+-            <stroke android:width="1dp" android:color="@color/primaryDarkColor" />
+-            <solid android:color="@color/white" />
+-            <corners android:radius="10dp" />
+-        </shape>
+-    </item>
+-</selector>
+\ No newline at end of file
+Index: app/src/main/res/drawable/image.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/image.xml b/app/src/main/res/drawable/image.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/image.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,5 +0,0 @@
+-<vector android:height="24dp" android:tint="#009CFE"
+-    android:viewportHeight="24" android:viewportWidth="24"
+-    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+-    <path android:fillColor="@android:color/white" android:pathData="M21,19V5c0,-1.1 -0.9,-2 -2,-2H5c-1.1,0 -2,0.9 -2,2v14c0,1.1 0.9,2 2,2h14c1.1,0 2,-0.9 2,-2zM8.5,13.5l2.5,3.01L14.5,12l4.5,6H5l3.5,-4.5z"/>
+-</vector>
+Index: app/src/main/res/drawable/ic_baseline_camera_alt_24.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml b/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,6 +0,0 @@
+-<vector android:height="24dp" android:tint="#1A1D21"
+-    android:viewportHeight="24" android:viewportWidth="24"
+-    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+-    <path android:fillColor="@android:color/white" android:pathData="M12,12m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0"/>
+-    <path android:fillColor="@android:color/white" android:pathData="M9,2L7.17,4L4,4c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2L22,6c0,-1.1 -0.9,-2 -2,-2h-3.17L15,2L9,2zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5z"/>
+-</vector>
+Index: app/src/main/res/drawable/round_button.xml
+===================================================================
+diff --git a/app/src/main/res/drawable/round_button.xml b/app/src/main/res/drawable/round_button.xml
+deleted file mode 100644
+--- a/app/src/main/res/drawable/round_button.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ /dev/null	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
+@@ -1,17 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+-
+-    <item android:state_pressed="true">
+-        <shape android:shape="rectangle">
+-            <solid android:color="@color/primaryDarkColor" />
+-            <corners android:radius="30dp" />
+-        </shape>
+-    </item>
+-
+-    <item>
+-        <shape android:shape="rectangle">
+-            <solid android:color="@color/primaryColor" />
+-            <corners android:radius="30dp" />
+-        </shape>
+-    </item>
+-</selector>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_revenue.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/bg_circle_blue\"\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".activities.RevenueActivity\">\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"200dp\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"@dimen/padding_body\">\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_marginTop=\"20dp\"\r\n            android:orientation=\"horizontal\"\r\n            android:weightSum=\"4\">\r\n            <ImageView\r\n                android:layout_width=\"0dp\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_weight=\"0.5\"\r\n                android:background=\"@drawable/calendar\" />\r\n            <EditText\r\n                android:id=\"@+id/edFrom\"\r\n                android:layout_width=\"0dp\"\r\n                android:layout_height=\"match_parent\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_marginBottom=\"2dp\"\r\n                android:layout_weight=\"3.5\"\r\n                android:background=\"@drawable/input_1\"\r\n                android:hint=\"From: DD/MM/YYYY\"\r\n                android:inputType=\"date\"\r\n                android:paddingLeft=\"10dp\"\r\n                android:textSize=\"18dp\"></EditText>\r\n        </LinearLayout>\r\n        <View\r\n            android:layout_width=\"25dp\"\r\n            android:layout_height=\"25dp\"\r\n            android:layout_gravity=\"center_horizontal\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:background=\"@drawable/ic_down\"></View>\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"50dp\"\r\n            android:orientation=\"horizontal\"\r\n            android:weightSum=\"4\">\r\n            <ImageView\r\n\r\n                android:layout_width=\"0dp\"\r\n                android:layout_height=\"40dp\"\r\n                android:layout_marginTop=\"5dp\"\r\n                android:layout_weight=\"0.5\"\r\n                android:background=\"@drawable/calendar\"></ImageView>\r\n            <EditText\r\n                android:id=\"@+id/edTo\"\r\n                android:layout_width=\"0dp\"\r\n                android:layout_height=\"match_parent\"\r\n                android:layout_marginBottom=\"5dp\"\r\n                android:layout_weight=\"3.5\"\r\n                android:background=\"@drawable/input_1\"\r\n                android:hint=\"To: DD/MM/YYYY\"\r\n                android:inputType=\"date\"\r\n                android:paddingLeft=\"10dp\"\r\n                android:textSize=\"18dp\">\r\n            </EditText>\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"220dp\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"@dimen/padding_body\">\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:text=\"Revenue\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"20dp\"\r\n            android:textStyle=\"bold\">\r\n        </TextView>\r\n        <TextView\r\n            android:id=\"@+id/tvRevenue\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@color/white\"\r\n            android:hint=\"0 VND\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"30dp\"\r\n            android:textStyle=\"bold\">\r\n        </TextView>\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:text=\"Quantity\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"20dp\"\r\n            android:textStyle=\"bold\">\r\n        </TextView>\r\n        <TextView\r\n            android:id=\"@+id/tvTotal\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginLeft=\"10dp\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@color/white\"\r\n            android:hint=\"0\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"30dp\"\r\n            android:textStyle=\"bold\">\r\n        </TextView>\r\n    </LinearLayout>\r\n\r\n    <Button\r\n        android:id=\"@+id/btnSave\"\r\n        android:layout_width=\"250dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_gravity=\"center\"\r\n        android:layout_marginTop=\"40dp\"\r\n        android:background=\"@drawable/round_button\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:text=\"Save\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_revenue.xml b/app/src/main/res/layout/activity_revenue.xml
+--- a/app/src/main/res/layout/activity_revenue.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_revenue.xml	(date 1671040205253)
+@@ -23,7 +23,7 @@
+                 android:layout_height="40dp"
+                 android:layout_marginTop="5dp"
+                 android:layout_weight="0.5"
+-                android:background="@drawable/calendar" />
++                android:background="@drawable/ic_calendar" />
+             <EditText
+                 android:id="@+id/edFrom"
+                 android:layout_width="0dp"
+@@ -31,7 +31,7 @@
+                 android:layout_marginTop="5dp"
+                 android:layout_marginBottom="2dp"
+                 android:layout_weight="3.5"
+-                android:background="@drawable/input_1"
++                android:background="@drawable/txt_square"
+                 android:hint="From: DD/MM/YYYY"
+                 android:inputType="date"
+                 android:paddingLeft="10dp"
+@@ -54,14 +54,14 @@
+                 android:layout_height="40dp"
+                 android:layout_marginTop="5dp"
+                 android:layout_weight="0.5"
+-                android:background="@drawable/calendar"></ImageView>
++                android:background="@drawable/ic_calendar"></ImageView>
+             <EditText
+                 android:id="@+id/edTo"
+                 android:layout_width="0dp"
+                 android:layout_height="match_parent"
+                 android:layout_marginBottom="5dp"
+                 android:layout_weight="3.5"
+-                android:background="@drawable/input_1"
++                android:background="@drawable/txt_square"
+                 android:hint="To: DD/MM/YYYY"
+                 android:inputType="date"
+                 android:paddingLeft="10dp"
+@@ -124,7 +124,7 @@
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginTop="40dp"
+-        android:background="@drawable/round_button"
++        android:background="@drawable/btn_square"
+         android:padding="@dimen/padding_textbox"
+         android:text="Save"
+         android:textColor="@color/white"
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@color/primaryTextColor\"/>\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\"/>\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+--- a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1671040205253)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+     <background android:drawable="@color/primaryTextColor"/>
+-    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
++    <foreground android:drawable="@drawable/ic_launcher"/>
+ </adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@color/primaryTextColor\"/>\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\"/>\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+--- a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1671040205253)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+     <background android:drawable="@color/primaryTextColor"/>
+-    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
++    <foreground android:drawable="@drawable/ic_launcher"/>
+ </adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_register.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:padding=\"20dp\"\r\n    tools:context=\".activities.RegisterActivity\">\r\n\r\n\r\n    <ImageView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"@dimen/logo_height\"\r\n        android:src=\"@drawable/parking_sign\"\r\n        android:contentDescription=\"@string/app_name\"/>\r\n\r\n    <EditText\r\n        android:id=\"@+id/etName\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:hint=\"Name\"\r\n        android:inputType=\"textPersonName\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:textAlignment=\"center\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textColorHint=\"@color/primaryColor\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etEmail\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:hint=\"Email\"\r\n        android:inputType=\"textEmailAddress\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:textAlignment=\"center\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textColorHint=\"@color/primaryColor\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etPassword\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:hint=\"Password\"\r\n        android:inputType=\"textPassword\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:textAlignment=\"center\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textColorHint=\"@color/primaryColor\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etConfirmPassword\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:hint=\"Confirm Password\"\r\n        android:inputType=\"textPassword\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:textAlignment=\"center\"\r\n        android:textSize=\"@dimen/text_size_body\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textColorHint=\"@color/primaryColor\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btnRegister\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:background=\"@drawable/round_button\"\r\n        android:text=\"Register\"\r\n        android:textSize=\"24dp\"\r\n        android:textColor=\"@color/primaryTextColor\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/tvLogin\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Login\"\r\n        android:textSize=\"24dp\"\r\n        android:textColor=\"@color/secondaryTextColor\"/>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_register.xml b/app/src/main/res/layout/activity_register.xml
+--- a/app/src/main/res/layout/activity_register.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_register.xml	(date 1671040205253)
+@@ -11,7 +11,7 @@
+     <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/logo_height"
+-        android:src="@drawable/parking_sign"
++        android:src="@drawable/ic_logo"
+         android:contentDescription="@string/app_name"/>
+ 
+     <EditText
+@@ -22,7 +22,7 @@
+         android:hint="Name"
+         android:inputType="textPersonName"
+         android:padding="@dimen/padding_textbox"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:textAlignment="center"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -36,7 +36,7 @@
+         android:hint="Email"
+         android:inputType="textEmailAddress"
+         android:padding="@dimen/padding_textbox"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:textAlignment="center"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -50,7 +50,7 @@
+         android:hint="Password"
+         android:inputType="textPassword"
+         android:padding="@dimen/padding_textbox"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:textAlignment="center"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -64,7 +64,7 @@
+         android:hint="Confirm Password"
+         android:inputType="textPassword"
+         android:padding="@dimen/padding_textbox"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:textAlignment="center"
+         android:textSize="@dimen/text_size_body"
+         android:textColor="@color/primaryColor"
+@@ -75,7 +75,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+-        android:background="@drawable/round_button"
++        android:background="@drawable/btn_square"
+         android:text="Register"
+         android:textSize="24dp"
+         android:textColor="@color/primaryTextColor" />
+Index: app/src/main/java/com/example/parkingmanager/entities/SuperUser.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager.entities;\r\n\r\nimport androidx.room.Entity;\r\nimport androidx.room.PrimaryKey;\r\n\r\n@Entity (tableName = \"super_users\")\r\npublic class SuperUser {\r\n    @PrimaryKey(autoGenerate = true)\r\n    private String id;\r\n    private String name;\r\n    private boolean gender;\r\n    private String phone;\r\n    private String email;\r\n    private String address;\r\n    private String position;\r\n    private String password;\r\n\r\n    public SuperUser(String id, String name, boolean gender, String phone, String email, String address, String position, String password) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.gender = gender;\r\n        this.phone = phone;\r\n        this.email = email;\r\n        this.address = address;\r\n        this.position = position;\r\n        this.password = password;\r\n    }\r\n\r\n    public String getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(String id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public boolean isGender() {\r\n        return gender;\r\n    }\r\n\r\n    public void setGender(boolean gender) {\r\n        this.gender = gender;\r\n    }\r\n\r\n    public String getPhone() {\r\n        return phone;\r\n    }\r\n\r\n    public void setPhone(String phone) {\r\n        this.phone = phone;\r\n    }\r\n\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public void setEmail(String email) {\r\n        this.email = email;\r\n    }\r\n\r\n    public String getAddress() {\r\n        return address;\r\n    }\r\n\r\n    public void setAddress(String address) {\r\n        this.address = address;\r\n    }\r\n\r\n    public String getPosition() {\r\n        return position;\r\n    }\r\n\r\n    public void setPosition(String position) {\r\n        this.position = position;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n        this.password = password;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/entities/SuperUser.java b/app/src/main/java/com/example/parkingmanager/entities/SuperUser.java
+--- a/app/src/main/java/com/example/parkingmanager/entities/SuperUser.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/entities/SuperUser.java	(date 1671041819652)
+@@ -8,21 +8,32 @@
+     @PrimaryKey(autoGenerate = true)
+     private String id;
+     private String name;
+-    private boolean gender;
+     private String phone;
+     private String email;
+     private String address;
+-    private String position;
++    private String company;
++    private String taxNumber;
+     private String password;
+ 
+-    public SuperUser(String id, String name, boolean gender, String phone, String email, String address, String position, String password) {
++    public SuperUser() {
++        this.id = "";
++        this.name = "";
++        this.phone = "";
++        this.email = "";
++        this.address = "";
++        this.company = "";
++        this.taxNumber = "";
++        this.password = "";
++    }
++
++    public SuperUser(String id, String name, String phone, String email, String address, String company, String taxNumber, String password) {
+         this.id = id;
+         this.name = name;
+-        this.gender = gender;
+         this.phone = phone;
+         this.email = email;
+         this.address = address;
+-        this.position = position;
++        this.company = company;
++        this.taxNumber = taxNumber;
+         this.password = password;
+     }
+ 
+@@ -42,14 +53,6 @@
+         this.name = name;
+     }
+ 
+-    public boolean isGender() {
+-        return gender;
+-    }
+-
+-    public void setGender(boolean gender) {
+-        this.gender = gender;
+-    }
+-
+     public String getPhone() {
+         return phone;
+     }
+@@ -74,12 +77,20 @@
+         this.address = address;
+     }
+ 
+-    public String getPosition() {
+-        return position;
++    public String getCompany() {
++        return company;
++    }
++
++    public void setCompany(String company) {
++        this.company = company;
++    }
++
++    public String getTaxNumber() {
++        return taxNumber;
+     }
+ 
+-    public void setPosition(String position) {
+-        this.position = position;
++    public void setTaxNumber(String taxNumber) {
++        this.taxNumber = taxNumber;
+     }
+ 
+     public String getPassword() {
+Index: app/src/main/res/layout/activity_main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:gravity=\"center\"\r\n    android:background=\"@color/primaryTextColor\"\r\n    tools:context=\".MainActivity\">\r\n    <ImageView\r\n        android:id=\"@+id/img_logo_splash\"\r\n        android:layout_width=\"200dp\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:src=\"@drawable/parking_sign\"\r\n        android:contentDescription=\"@string/app_name\"/>\r\n    <TextView\r\n        android:id=\"@+id/txt_splash\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"@string/app_name\"\r\n        android:textSize=\"30sp\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textStyle=\"bold\"\r\n        android:fontFamily=\"sans-serif-black\"/>\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main.xml b/app/src/main/res/layout/activity_main.xml
+--- a/app/src/main/res/layout/activity_main.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_main.xml	(date 1671040205253)
+@@ -11,7 +11,7 @@
+         android:id="@+id/img_logo_splash"
+         android:layout_width="200dp"
+         android:layout_height="wrap_content"
+-        android:src="@drawable/parking_sign"
++        android:src="@drawable/ic_logo"
+         android:contentDescription="@string/app_name"/>
+     <TextView
+         android:id="@+id/txt_splash"
+Index: app/src/main/java/com/example/parkingmanager/entities/Position.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager.entities;\r\n\r\nimport androidx.room.Entity;\r\nimport androidx.room.PrimaryKey;\r\n\r\n@Entity (tableName = \"positions\")\r\npublic class Position {\r\n    @PrimaryKey(autoGenerate = true)\r\n    private String id;\r\n    private String name;\r\n    private String description;\r\n\r\n    public Position(String id, String name, String description) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.description = description;\r\n    }\r\n\r\n    public String getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(String id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public String getDescription() {\r\n        return description;\r\n    }\r\n\r\n    public void setDescription(String description) {\r\n        this.description = description;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/entities/Position.java b/app/src/main/java/com/example/parkingmanager/entities/Position.java
+--- a/app/src/main/java/com/example/parkingmanager/entities/Position.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/entities/Position.java	(date 1671041819651)
+@@ -6,21 +6,33 @@
+ @Entity (tableName = "positions")
+ public class Position {
+     @PrimaryKey(autoGenerate = true)
+-    private String id;
++    private int id;
+     private String name;
+     private String description;
+ 
+-    public Position(String id, String name, String description) {
++    public Position() {
++        this.id = 0;
++        this.name = "";
++        this.description = "";
++    }
++
++    public Position(int id, String name, String description) {
+         this.id = id;
+         this.name = name;
+         this.description = description;
+     }
+ 
+-    public String getId() {
++    public Position(int id, String name) {
++        this.id = id;
++        this.name = name;
++        this.description = "This is a description";
++    }
++
++    public int getId() {
+         return id;
+     }
+ 
+-    public void setId(String id) {
++    public void setId(int id) {
+         this.id = id;
+     }
+ 
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    android:padding=\"@dimen/padding_body\"\r\n    tools:context=\".activities.LoginActivity\">\r\n\r\n    <ImageView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"@dimen/logo_height\"\r\n        android:src=\"@drawable/parking_sign\" />\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:textSize=\"@dimen/text_size_h1\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Login\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etEmail\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:hint=\"Email\"\r\n        android:inputType=\"textEmailAddress\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:textAlignment=\"center\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textColorHint=\"@color/primaryColor\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n\r\n    <EditText\r\n        android:id=\"@+id/etPassword\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:background=\"@drawable/round_input\"\r\n        android:hint=\"Password\"\r\n        android:inputType=\"textPassword\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:textAlignment=\"center\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textColorHint=\"@color/primaryColor\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n\r\n    <Button\r\n        android:id=\"@+id/btnLogin\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:background=\"@drawable/round_button\"\r\n        android:padding=\"@dimen/padding_textbox\"\r\n        android:text=\"Login\"\r\n        android:textColor=\"@color/white\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/tvRegister\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"20dp\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Don't have an account? Register\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginTop=\"10dp\"\r\n        android:gravity=\"center\"\r\n        android:text=\"Forgot Password?\"\r\n        android:textColor=\"@color/primaryColor\"\r\n        android:textSize=\"@dimen/text_size_body\" />\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1671040205253)
+@@ -11,7 +11,8 @@
+     <ImageView
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/logo_height"
+-        android:src="@drawable/parking_sign" />
++        android:src="@drawable/ic_logo" />
++
+     <TextView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+@@ -25,7 +26,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:hint="Email"
+         android:inputType="textEmailAddress"
+         android:padding="@dimen/padding_textbox"
+@@ -39,7 +40,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+-        android:background="@drawable/round_input"
++        android:background="@drawable/btn_round"
+         android:hint="Password"
+         android:inputType="textPassword"
+         android:padding="@dimen/padding_textbox"
+@@ -53,7 +54,7 @@
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+-        android:background="@drawable/round_button"
++        android:background="@drawable/btn_square"
+         android:padding="@dimen/padding_textbox"
+         android:text="Login"
+         android:textColor="@color/white"
+Index: app/src/main/java/com/example/parkingmanager/activities/ParkingActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager.activities;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.camera.core.Camera;\r\nimport androidx.camera.core.CameraSelector;\r\nimport androidx.camera.core.Preview;\r\nimport androidx.camera.lifecycle.ProcessCameraProvider;\r\nimport androidx.camera.view.PreviewView;\r\nimport androidx.core.content.ContextCompat;\r\nimport androidx.lifecycle.LifecycleOwner;\r\n\r\nimport android.os.Bundle;\r\nimport android.widget.Toast;\r\n\r\nimport com.example.parkingmanager.R;\r\nimport com.google.common.util.concurrent.ListenableFuture;\r\n\r\nimport java.util.concurrent.ExecutionException;\r\n\r\npublic class ParkingActivity extends AppCompatActivity {\r\n\r\n    private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;\r\n\r\n    @Override\r\n    protected void onCreate(@Nullable Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_parking);\r\n//        PreviewView previewView = (PreviewView) findViewById(R.id.previewView);\r\n//        cameraProviderFuture = ProcessCameraProvider.getInstance(previewView.getContext());\r\n//        cameraProviderFuture.addListener(() -> {\r\n//            try {\r\n//                Toast.makeText(this, \"Camera provider future\", Toast.LENGTH_SHORT).show();\r\n//                ProcessCameraProvider cameraProvider = cameraProviderFuture.get();\r\n//                bindPreview(cameraProvider, previewView);\r\n//            } catch (ExecutionException | InterruptedException e) {\r\n//                // No errors need to be handled for this Future.\r\n//                // This should never be reached.\r\n//            }\r\n//        }, ContextCompat.getMainExecutor(this));\r\n//    }\r\n//\r\n//    void bindPreview(@NonNull ProcessCameraProvider cameraProvider, PreviewView previewView) {\r\n//        Preview preview = new Preview.Builder()\r\n//                .build();\r\n//\r\n//        CameraSelector cameraSelector = new CameraSelector.Builder()\r\n//                .requireLensFacing(CameraSelector.LENS_FACING_BACK)\r\n//                .build();\r\n//\r\n//        preview.setSurfaceProvider(previewView.getSurfaceProvider());\r\n//\r\n//        Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner) this, cameraSelector, preview);\r\n//        camera.getCameraControl().enableTorch(true);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/activities/ParkingActivity.java b/app/src/main/java/com/example/parkingmanager/activities/ParkingActivity.java
+--- a/app/src/main/java/com/example/parkingmanager/activities/ParkingActivity.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/activities/ParkingActivity.java	(date 1671040205206)
+@@ -1,58 +1,15 @@
+ package com.example.parkingmanager.activities;
+ 
+-import androidx.annotation.NonNull;
+-import androidx.annotation.Nullable;
+-import androidx.appcompat.app.AppCompatActivity;
+-import androidx.camera.core.Camera;
+-import androidx.camera.core.CameraSelector;
+-import androidx.camera.core.Preview;
+-import androidx.camera.lifecycle.ProcessCameraProvider;
+-import androidx.camera.view.PreviewView;
+-import androidx.core.content.ContextCompat;
+-import androidx.lifecycle.LifecycleOwner;
+-
++import android.app.Activity;
+ import android.os.Bundle;
+-import android.widget.Toast;
+ 
+ import com.example.parkingmanager.R;
+-import com.google.common.util.concurrent.ListenableFuture;
+-
+-import java.util.concurrent.ExecutionException;
+ 
+-public class ParkingActivity extends AppCompatActivity {
+-
+-    private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
++public class ParkingActivity extends Activity {
+ 
+     @Override
+-    protected void onCreate(@Nullable Bundle savedInstanceState) {
++    protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_parking);
+-//        PreviewView previewView = (PreviewView) findViewById(R.id.previewView);
+-//        cameraProviderFuture = ProcessCameraProvider.getInstance(previewView.getContext());
+-//        cameraProviderFuture.addListener(() -> {
+-//            try {
+-//                Toast.makeText(this, "Camera provider future", Toast.LENGTH_SHORT).show();
+-//                ProcessCameraProvider cameraProvider = cameraProviderFuture.get();
+-//                bindPreview(cameraProvider, previewView);
+-//            } catch (ExecutionException | InterruptedException e) {
+-//                // No errors need to be handled for this Future.
+-//                // This should never be reached.
+-//            }
+-//        }, ContextCompat.getMainExecutor(this));
+-//    }
+-//
+-//    void bindPreview(@NonNull ProcessCameraProvider cameraProvider, PreviewView previewView) {
+-//        Preview preview = new Preview.Builder()
+-//                .build();
+-//
+-//        CameraSelector cameraSelector = new CameraSelector.Builder()
+-//                .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+-//                .build();
+-//
+-//        preview.setSurfaceProvider(previewView.getSurfaceProvider());
+-//
+-//        Camera camera = cameraProvider.bindToLifecycle((LifecycleOwner) this, cameraSelector, preview);
+-//        camera.getCameraControl().enableTorch(true);
+     }
+-
+ }
+Index: app/src/main/res/layout/activity_my_info.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@drawable/bg_circle_blue\"\r\n    android:orientation=\"vertical\"\r\n    android:paddingLeft=\"20dp\"\r\n    android:paddingTop=\"5dp\"\r\n    android:paddingRight=\"20dp\"\r\n    android:paddingBottom=\"20dp\"\r\n    tools:context=\".activities.MyInfoActivity\">\r\n\r\n    <RelativeLayout\r\n        android:id=\"@+id/rlProfileImage\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"30dp\"\r\n\r\n        >\r\n\r\n        <ImageButton\r\n            android:id=\"@+id/ibedit\"\r\n            android:layout_width=\"30dp\"\r\n            android:layout_height=\"30dp\"\r\n            android:layout_alignParentRight=\"true\"\r\n            android:background=\"@drawable/ic_edit\"></ImageButton>\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"match_parent\"\r\n            android:layout_centerHorizontal=\"true\"\r\n            android:text=\"Profile\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"25sp\"\r\n            android:textStyle=\"bold\" />\r\n\r\n        <ImageButton\r\n            android:layout_width=\"30dp\"\r\n            android:layout_height=\"30dp\"\r\n            android:layout_alignParentLeft=\"true\"\r\n            android:background=\"@drawable/ic_back\"></ImageButton>\r\n\r\n    </RelativeLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_weight=\"10\"\r\n        android:gravity=\"center\">\r\n\r\n        <de.hdodenhof.circleimageview.CircleImageView\r\n            android:id=\"@+id/profile_image\"\r\n            android:layout_width=\"@dimen/profile_image_size\"\r\n            android:layout_height=\"@dimen/profile_image_size\"\r\n            android:src=\"@drawable/person\"\r\n            app:civ_border_color=\"@color/primaryColor\"\r\n            app:civ_border_width=\"@dimen/border_width\" />\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:layout_weight=\"6\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/tvName\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:textAlignment=\"center\"\r\n            android:hint=\"Name\"\r\n            android:padding=\"@dimen/padding_textbox\"\r\n            android:textColor=\"@color/primaryColor\"\r\n            android:textSize=\"@dimen/text_size_h1\">\r\n\r\n        </TextView>\r\n\r\n        <TextView\r\n            android:id=\"@+id/tvEmail\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:background=\"@drawable/round_in\"\r\n            android:hint=\"Email\"\r\n            android:padding=\"10dp\"\r\n            android:textSize=\"25dp\"></TextView>\r\n\r\n        <TextView\r\n            android:id=\"@+id/tvPhone\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:background=\"@drawable/round_in\"\r\n            android:hint=\"Phone\"\r\n            android:padding=\"10dp\"\r\n            android:textSize=\"25dp\"></TextView>\r\n        <TextView\r\n            android:id=\"@+id/tvPassword\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"50dp\"\r\n            android:layout_marginTop=\"@dimen/margin_body\"\r\n            android:background=\"@drawable/round_in\"\r\n            android:hint=\"Password\"\r\n            android:inputType=\"textPassword\"\r\n            android:padding=\"10dp\"\r\n            android:textSize=\"25dp\"></TextView>\r\n\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_my_info.xml b/app/src/main/res/layout/activity_my_info.xml
+--- a/app/src/main/res/layout/activity_my_info.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_my_info.xml	(date 1671041819653)
+@@ -53,7 +53,7 @@
+             android:id="@+id/profile_image"
+             android:layout_width="@dimen/profile_image_size"
+             android:layout_height="@dimen/profile_image_size"
+-            android:src="@drawable/person"
++            android:src="@drawable/ic_person"
+             app:civ_border_color="@color/primaryColor"
+             app:civ_border_width="@dimen/border_width" />
+     </LinearLayout>
+@@ -82,7 +82,7 @@
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:layout_marginTop="@dimen/margin_body"
+-            android:background="@drawable/round_in"
++            android:background="@drawable/txt_round"
+             android:hint="Email"
+             android:padding="10dp"
+             android:textSize="25dp"></TextView>
+@@ -92,7 +92,7 @@
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:layout_marginTop="@dimen/margin_body"
+-            android:background="@drawable/round_in"
++            android:background="@drawable/txt_round"
+             android:hint="Phone"
+             android:padding="10dp"
+             android:textSize="25dp"></TextView>
+@@ -101,7 +101,7 @@
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:layout_marginTop="@dimen/margin_body"
+-            android:background="@drawable/round_in"
++            android:background="@drawable/txt_round"
+             android:hint="Password"
+             android:inputType="textPassword"
+             android:padding="10dp"
+Index: app/src/main/res/layout/activity_parking.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n\r\n    android:orientation=\"vertical\"\r\n    tools:context=\".activities.ParkingActivity\">\r\n\r\n    <LinearLayout\r\n        android:id=\"@+id/container\"\r\n        android:padding=\"5dp\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"212dp\"\r\n\r\n        android:orientation=\"vertical\">\r\n<ImageButton\r\n    android:layout_width=\"30dp\"\r\n    android:layout_height=\"30dp\"\r\n    android:background=\"@drawable/ic_back\"\r\n    android:layout_marginLeft=\"5dp\"\r\n    >\r\n\r\n</ImageButton>\r\n        <ImageView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n\r\n            android:background=\"@drawable/image\">\r\n\r\n        </ImageView>\r\n    </LinearLayout>\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n\r\n        android:orientation=\"vertical\"\r\n\r\n        android:padding=\"@dimen/padding_body\">\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Transportation:\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"16sp\"\r\n            android:textStyle=\"bold\" />\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"40dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:hint=\"Loai xe\"\r\n            android:padding=\"8dp\"\r\n            android:background=\"@drawable/input_1\"\r\n            android:textSize=\"20sp\"\r\n            >\r\n        </TextView>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Time in:\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"16sp\"\r\n            android:textStyle=\"bold\" />\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"40dp\"\r\n            android:hint=\"Time In\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:padding=\"8dp\"\r\n            android:background=\"@drawable/input_1\"\r\n            android:textSize=\"20sp\"\r\n            >\r\n        </TextView>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Time out:\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"16sp\"\r\n            android:textStyle=\"bold\" />\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"40dp\"\r\n            android:hint=\"Time out\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:padding=\"8dp\"\r\n            android:background=\"@drawable/input_1\"\r\n            android:textSize=\"20sp\"\r\n            >\r\n        </TextView>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"License plate:\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"16sp\"\r\n            android:textStyle=\"bold\" />\r\n        <EditText\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"40dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:hint=\"BSX\"\r\n            android:padding=\"8dp\"\r\n            android:background=\"@drawable/input_1\"\r\n            android:textSize=\"20sp\"\r\n            >\r\n        </EditText>\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Total:\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"16sp\"\r\n            android:textStyle=\"bold\" />\r\n        <TextView\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"40dp\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:hint=\"Tong tien\"\r\n            android:padding=\"6dp\"\r\n            android:background=\"@drawable/input_1\"\r\n            android:textSize=\"20sp\">\r\n        </TextView>\r\n    </LinearLayout>\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_parking.xml b/app/src/main/res/layout/activity_parking.xml
+--- a/app/src/main/res/layout/activity_parking.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/layout/activity_parking.xml	(date 1671041819654)
+@@ -27,7 +27,7 @@
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+ 
+-            android:background="@drawable/image">
++            android:background="@drawable/ic_image">
+ 
+         </ImageView>
+     </LinearLayout>
+@@ -52,7 +52,7 @@
+             android:layout_marginTop="5dp"
+             android:hint="Loai xe"
+             android:padding="8dp"
+-            android:background="@drawable/input_1"
++            android:background="@drawable/txt_round"
+             android:textSize="20sp"
+             >
+         </TextView>
+@@ -69,7 +69,7 @@
+             android:hint="Time In"
+             android:layout_marginTop="5dp"
+             android:padding="8dp"
+-            android:background="@drawable/input_1"
++            android:background="@drawable/txt_round"
+             android:textSize="20sp"
+             >
+         </TextView>
+@@ -86,7 +86,7 @@
+             android:hint="Time out"
+             android:layout_marginTop="5dp"
+             android:padding="8dp"
+-            android:background="@drawable/input_1"
++            android:background="@drawable/txt_round"
+             android:textSize="20sp"
+             >
+         </TextView>
+@@ -103,7 +103,7 @@
+             android:layout_marginTop="5dp"
+             android:hint="BSX"
+             android:padding="8dp"
+-            android:background="@drawable/input_1"
++            android:background="@drawable/txt_round"
+             android:textSize="20sp"
+             >
+         </EditText>
+@@ -120,7 +120,7 @@
+             android:layout_marginTop="5dp"
+             android:hint="Tong tien"
+             android:padding="6dp"
+-            android:background="@drawable/input_1"
++            android:background="@drawable/txt_round"
+             android:textSize="20sp">
+         </TextView>
+     </LinearLayout>
+Index: app/src/main/res/values/dimens.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <dimen name=\"text_size_body\">24sp</dimen>\r\n    <dimen name=\"text_size_h1\">32sp</dimen>\r\n    <dimen name=\"text_size_h2\">28sp</dimen>\r\n    <dimen name=\"padding_body\">20sp</dimen>\r\n    <dimen name=\"padding_textbox\">10sp</dimen>\r\n    <dimen name=\"logo_height\">200sp</dimen>\r\n    <dimen name=\"border_width\">2sp</dimen>\r\n    <dimen name=\"profile_image_size\">160sp</dimen>\r\n    <dimen name=\"margin_body\">10sp</dimen>\r\n    <dimen name=\"margin_verticle\">30sp</dimen>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/dimens.xml b/app/src/main/res/values/dimens.xml
+--- a/app/src/main/res/values/dimens.xml	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/res/values/dimens.xml	(date 1671040205253)
+@@ -3,11 +3,12 @@
+     <dimen name="text_size_body">24sp</dimen>
+     <dimen name="text_size_h1">32sp</dimen>
+     <dimen name="text_size_h2">28sp</dimen>
++    <dimen name="text_size_quote">20dp</dimen>
+     <dimen name="padding_body">20sp</dimen>
+     <dimen name="padding_textbox">10sp</dimen>
++    <dimen name="margin_body">10sp</dimen>
++    <dimen name="margin_verticle">30sp</dimen>
+     <dimen name="logo_height">200sp</dimen>
+     <dimen name="border_width">2sp</dimen>
+     <dimen name="profile_image_size">160sp</dimen>
+-    <dimen name="margin_body">10sp</dimen>
+-    <dimen name="margin_verticle">30sp</dimen>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/java/com/example/parkingmanager/entities/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.parkingmanager.entities;\r\n\r\nimport androidx.room.Entity;\r\nimport androidx.room.PrimaryKey;\r\n\r\nimport java.util.Enumeration;\r\n@Entity (tableName = \"users\")\r\npublic class User {\r\n    @PrimaryKey(autoGenerate = true)\r\n    private String id;\r\n    private String name;\r\n    private String password;\r\n    private String email;\r\n    private String phone;\r\n    private Enumeration<Position> position;\r\n\r\n    public User(String id, String name, String password, String email, String phone, Enumeration<Position> position) {\r\n        this.id = id;\r\n        this.name = name;\r\n        this.password = password;\r\n        this.email = email;\r\n        this.phone = phone;\r\n        this.position = position;\r\n    }\r\n\r\n    public String getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(String id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n        this.password = password;\r\n    }\r\n\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n\r\n    public void setEmail(String email) {\r\n        this.email = email;\r\n    }\r\n\r\n    public String getPhone() {\r\n        return phone;\r\n    }\r\n\r\n    public void setPhone(String phone) {\r\n        this.phone = phone;\r\n    }\r\n\r\n    public Enumeration<Position> getPosition() {\r\n        return position;\r\n    }\r\n\r\n    public void setPosition(Enumeration<Position> position) {\r\n        this.position = position;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/entities/User.java b/app/src/main/java/com/example/parkingmanager/entities/User.java
+--- a/app/src/main/java/com/example/parkingmanager/entities/User.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/entities/User.java	(date 1671041819652)
+@@ -7,27 +7,48 @@
+ @Entity (tableName = "users")
+ public class User {
+     @PrimaryKey(autoGenerate = true)
+-    private String id;
++    private int id;
+     private String name;
+     private String password;
+-    private String email;
+-    private String phone;
+-    private Enumeration<Position> position;
++    private String username;
++    private String cardNumber;
++    private Position positions;
+ 
+-    public User(String id, String name, String password, String email, String phone, Enumeration<Position> position) {
++//    Constructor no argument
++    public User() {
++        this.id = 0;
++        this.name = "";
++        this.password = "";
++        this.username = "";
++        this.cardNumber = "";
++        this.positions = new Position();
++    }
++
++//    Constructor with full parameters
++    public User(int id, String name, String password, String username, String cardNumber, Position positions) {
+         this.id = id;
+         this.name = name;
+         this.password = password;
+-        this.email = email;
+-        this.phone = phone;
+-        this.position = position;
++        this.username = username;
++        this.cardNumber = cardNumber;
++        this.positions = positions;
++    }
++
++//  Constructor missing cardNumber
++    public User(int id, String name, String password, String username, Position positions) {
++        this.id = id;
++        this.name = name;
++        this.password = password;
++        this.username = username;
++        this.cardNumber = cardNumber;
++        this.positions = positions;
+     }
+ 
+-    public String getId() {
++    public int getId() {
+         return id;
+     }
+ 
+-    public void setId(String id) {
++    public void setId(int id) {
+         this.id = id;
+     }
+ 
+@@ -47,27 +68,31 @@
+         this.password = password;
+     }
+ 
+-    public String getEmail() {
+-        return email;
++    public String getUsername() {
++        return username;
++    }
++
++    public void setUsername(String username) {
++        this.username = username;
+     }
+ 
+-    public void setEmail(String email) {
+-        this.email = email;
++    public String getCardNumber() {
++        return cardNumber;
+     }
+ 
+-    public String getPhone() {
+-        return phone;
++    public String getCardNumberFormatted() {
++        return cardNumber.substring(0, 5) + "...";
+     }
+ 
+-    public void setPhone(String phone) {
+-        this.phone = phone;
++    public void setCardNumber(String cardNumber) {
++        this.cardNumber = cardNumber;
+     }
+ 
+-    public Enumeration<Position> getPosition() {
+-        return position;
++    public Position getPositions() {
++        return positions;
+     }
+ 
+-    public void setPosition(Enumeration<Position> position) {
+-        this.position = position;
++    public void setPositions(Position positions) {
++        this.positions = positions;
+     }
+ }
+Index: app/src/main/java/com/example/parkingmanager/activities/UserManagerActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//package com.example.parkingmanager.activities;\r\n//\r\n//import androidx.appcompat.app.AppCompatActivity;\r\n//\r\n//import android.os.Bundle;\r\n//import android.view.View;\r\n//import android.widget.AdapterView;\r\n//import android.widget.ArrayAdapter;\r\n//import android.widget.Spinner;\r\n//import android.widget.Toast;\r\n//\r\n//import com.example.parkingmanager.R;\r\n//\r\n//\r\n//public class UserManagerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{\r\n//\r\n//    @Override\r\n//    protected void onCreate(Bundle savedInstanceState) {\r\n//        super.onCreate(savedInstanceState);\r\n//        setContentView(R.layout.activity_user_manager);\r\n//        Spinner spinner = (Spinner) findViewById(R.id.spPosition);\r\n//\r\n//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.position, android.R.layout.simple_spinner_item);\r\n//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);\r\n//        spinner.setAdapter(adapter);\r\n//\r\n//        spinner.setOnItemSelectedListener(this);\r\n//\r\n//    }\r\n//\r\n//\r\n//    @Override\r\n//    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {\r\n//        String text = adapterView.getItemAtPosition(i).toString();\r\n//        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();\r\n//\r\n//    }\r\n//\r\n//    @Override\r\n//    public void onNothingSelected(AdapterView<?> adapterView) {\r\n//\r\n//    }\r\n//\r\n//\r\n//}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/parkingmanager/activities/UserManagerActivity.java b/app/src/main/java/com/example/parkingmanager/activities/UserManagerActivity.java
+--- a/app/src/main/java/com/example/parkingmanager/activities/UserManagerActivity.java	(revision f7a4b96957e5f46b845bbdbdef3bf1039b8fd4c0)
++++ b/app/src/main/java/com/example/parkingmanager/activities/UserManagerActivity.java	(date 1671040205206)
+@@ -1,45 +1,36 @@
+-//package com.example.parkingmanager.activities;
+-//
+-//import androidx.appcompat.app.AppCompatActivity;
+-//
+-//import android.os.Bundle;
+-//import android.view.View;
+-//import android.widget.AdapterView;
+-//import android.widget.ArrayAdapter;
+-//import android.widget.Spinner;
+-//import android.widget.Toast;
+-//
+-//import com.example.parkingmanager.R;
+-//
+-//
+-//public class UserManagerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+-//
+-//    @Override
+-//    protected void onCreate(Bundle savedInstanceState) {
+-//        super.onCreate(savedInstanceState);
+-//        setContentView(R.layout.activity_user_manager);
+-//        Spinner spinner = (Spinner) findViewById(R.id.spPosition);
+-//
+-//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.position, android.R.layout.simple_spinner_item);
+-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+-//        spinner.setAdapter(adapter);
+-//
+-//        spinner.setOnItemSelectedListener(this);
+-//
+-//    }
+-//
+-//
+-//    @Override
+-//    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+-//        String text = adapterView.getItemAtPosition(i).toString();
+-//        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
+-//
+-//    }
+-//
+-//    @Override
+-//    public void onNothingSelected(AdapterView<?> adapterView) {
+-//
+-//    }
+-//
+-//
+-//}
+\ No newline at end of file
++package com.example.parkingmanager.activities;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++import android.view.View;
++import android.widget.AdapterView;
++import android.widget.Toast;
++
++import com.example.parkingmanager.R;
++
++
++public class UserManagerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_user_manager);
++
++    }
++
++
++    @Override
++    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
++        String text = adapterView.getItemAtPosition(i).toString();
++        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
++
++    }
++
++    @Override
++    public void onNothingSelected(AdapterView<?> adapterView) {
++
++    }
++
++
++}
+\ No newline at end of file
