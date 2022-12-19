@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
 import java.util.Enumeration;
 @Entity (tableName = "users")
 public class User {
@@ -13,8 +14,9 @@ public class User {
     private String password;
     private String username;
     private String cardNumber;
-    private int idPosition;
-    private Position positions;
+    private int idPosition= new Position().getId();
+
+
 
 //    Constructor no argument
     public User() {
@@ -23,17 +25,40 @@ public class User {
         this.password = "";
         this.username = "";
         this.cardNumber = "";
-        this.positions = new Position();
+        this.idPosition = 0;
+
     }
 
-//    Constructor with full parameters
+    public User(int id, String name, String password, String username, String cardNumber, int idPosition, Position position) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.username = username;
+        this.cardNumber = cardNumber;
+        this.idPosition = idPosition;
+
+
+    }
+
+    public User(int id, String name, String password, String username, String cardNumber, int idPosition) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.username = username;
+        this.cardNumber = cardNumber;
+        this.idPosition = idPosition;
+    }
+
+    //    Constructor with full parameters
     public User(int id, String name, String password, String username, String cardNumber, Position positions) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.username = username;
         this.cardNumber = cardNumber;
-        this.positions = positions;
+        this.idPosition = idPosition;
+
+
     }
 
 //  Constructor missing cardNumber
@@ -43,7 +68,8 @@ public class User {
         this.password = password;
         this.username = username;
         this.cardNumber = cardNumber;
-        this.positions = positions;
+        this.idPosition = idPosition;
+
     }
 
     public int getId() {
@@ -94,14 +120,6 @@ public class User {
         this.cardNumber = cardNumber;
     }
 
-    public Position  getPositions() {
-        return positions;
-    }
-
-
-    public void setPositions(Position positions) {
-        this.positions = positions;
-    }
 
     public int getIdPosition() {
         return idPosition;
@@ -109,5 +127,20 @@ public class User {
 
     public void setIdPosition(int idPosition) {
         this.idPosition = idPosition;
+    }
+
+    public ArrayList getListData() {
+        Position position = new Position();
+        position.getListData();
+        ArrayList<User> results = new ArrayList<User>();
+        User user = new User(1, "John","pass", "john", "123456789", 1);
+        results.add(user);
+        user = new User(2,"Kathie", "pass","janedoe","1234567890123456", 2);
+        results.add(user);
+        user = new User(3,"John Smith", "pass","johnsmith","999999", 1);
+        results.add(user);
+        user = new User(4,"Daria", "pass","janesmith","1234567890123456", 3);
+        results.add(user);
+        return results;
     }
 }

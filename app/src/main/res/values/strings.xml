@@ -14,9 +14,5 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
 
-    <string-array name="position">
-        <item>Manager</item>
-        <item>Staff</item>
-        <item>Protector</item>
-    </string-array>
+
 </resources>

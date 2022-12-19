@@ -4,6 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity (tableName = "positions")
 public class Position {
     @PrimaryKey(autoGenerate = true)
@@ -52,4 +55,13 @@ public class Position {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<Position> getListData() {
+        List<Position> list = new ArrayList<>();
+        list.add(new Position(1, "Manager"));
+        list.add(new Position(2, "Staff"));
+        list.add(new Position(3, "Admin"));
+        return list;
+    }
+
 }

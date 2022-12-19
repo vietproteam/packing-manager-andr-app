@@ -5,6 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.ArrayList;
+
 @Entity
 public class ParkingRecord {
     @PrimaryKey (autoGenerate = true)
@@ -16,6 +18,17 @@ public class ParkingRecord {
     private String imgIn;
     private String imgOut;
     private String isLocking;
+
+    public ParkingRecord() {
+        this.id = 0;
+        this.IdUser = 0;
+        this.IdPosition = 0;
+        this.timeIn = "";
+        this.timeOut = "";
+        this.imgIn = "";
+        this.imgOut = "";
+        this.isLocking = "";
+    }
 
     public ParkingRecord(int id, int idUser, int idPosition, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking) {
         this.id = id;
@@ -90,5 +103,17 @@ public class ParkingRecord {
 
     public void setIsLocking(String isLocking) {
         this.isLocking = isLocking;
+    }
+
+    private ArrayList getListData() {
+
+        ArrayList<ParkingRecord> results = new ArrayList<ParkingRecord>();
+        ParkingRecord position = new ParkingRecord(1, 1, 1, "2020-12-12 12:12:12", "2020-12-12 12:12:12", "imgIn", "imgOut", "1");
+        results.add(position);
+        position = new ParkingRecord(2, 2, 2, "2020-12-12 12:12:12", "2020-12-12 12:12:12", "imgIn", "imgOut", "1");
+        results.add(position);
+        position = new ParkingRecord(3, 3, 3, "2020-12-12 12:12:12", "2020-12-12 12:12:12", "imgIn", "imgOut", "1");
+        results.add(position);
+        return results;
     }
 }

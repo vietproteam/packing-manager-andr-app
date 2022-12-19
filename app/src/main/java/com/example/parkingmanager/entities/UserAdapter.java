@@ -14,6 +14,8 @@ import com.example.parkingmanager.R;
 import java.util.ArrayList;
 
 public class UserAdapter extends BaseAdapter {
+
+
     private ArrayList<User> listData;
     private LayoutInflater layoutInflater;
     public UserAdapter(Context aContext, ArrayList<User> listData) {
@@ -33,6 +35,8 @@ public class UserAdapter extends BaseAdapter {
         return position;
     }
     public View getView(int position, View v, ViewGroup vg) {
+        Position position1 = new Position();
+        position1.getListData();
         ViewHolder holder;
         if (v == null) {
             v = layoutInflater.inflate(R.layout.card_user, null);
@@ -48,7 +52,14 @@ public class UserAdapter extends BaseAdapter {
         holder.uName.setText(listData.get(position).getName());
         holder.uUsername.setText(listData.get(position).getUsername());
         holder.uCardNumber.setText(listData.get(position).getCardNumberFormatted());
-        holder.uPosition.setText(listData.get(position).getPositions().getName());
+
+        for (int i = 0; i < position1.getListData().size(); i++) {
+            if (listData.get(position).getIdPosition() == position1.getListData().get(i).getId()) {
+                holder.uPosition.setText(position1.getListData().get(i).getName());
+            }
+        }
+
+
         return v;
     }
     static class ViewHolder {
