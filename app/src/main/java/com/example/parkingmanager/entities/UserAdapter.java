@@ -10,17 +10,23 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.parkingmanager.R;
+import com.example.parkingmanager.database.AppDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserAdapter extends BaseAdapter {
 
 
-    private ArrayList<User> listData;
+    private List<User> listData;
     private LayoutInflater layoutInflater;
-    public UserAdapter(Context aContext, ArrayList<User> listData) {
+    public UserAdapter(Context aContext, List<User> listData) {
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
+    }
+    public void setListData(List<User> listData) {
+        this.listData=listData;
+        notifyDataSetChanged();
     }
     @Override
     public int getCount() {
@@ -35,8 +41,8 @@ public class UserAdapter extends BaseAdapter {
         return position;
     }
     public View getView(int position, View v, ViewGroup vg) {
-        Position position1 = new Position();
-        position1.getListData();
+        List<Position> positions = new ArrayList<Position>();
+        positions = AppDatabase.getInstance(vg.getContext()).positionDAO().getAllPositions();
         ViewHolder holder;
         if (v == null) {
             v = layoutInflater.inflate(R.layout.card_user, null);
@@ -53,9 +59,9 @@ public class UserAdapter extends BaseAdapter {
         holder.uUsername.setText(listData.get(position).getUsername());
         holder.uCardNumber.setText(listData.get(position).getCardNumberFormatted());
 
-        for (int i = 0; i < position1.getListData().size(); i++) {
-            if (listData.get(position).getIdPosition() == position1.getListData().get(i).getId()) {
-                holder.uPosition.setText(position1.getListData().get(i).getName());
+        for (int i = 0; i < positions.size(); i++) {
+            if (listData.get(position).getIdPosition() == positions.get(i).getId()) {
+                holder.uPosition.setText(positions.get(i).getName());
             }
         }
 

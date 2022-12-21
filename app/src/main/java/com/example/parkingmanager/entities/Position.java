@@ -32,6 +32,11 @@ public class Position {
         this.description = "This is a description";
     }
 
+    public Position(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }
@@ -56,12 +61,6 @@ public class Position {
         this.description = description;
     }
 
-    public List<Position> getListData() {
-        List<Position> list = new ArrayList<>();
-        list.add(new Position(1, "Manager"));
-        list.add(new Position(2, "Staff"));
-        list.add(new Position(3, "Admin"));
-        return list;
-    }
+
 
 }

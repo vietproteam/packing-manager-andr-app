@@ -1,7 +1,9 @@
 package com.example.parkingmanager.activities;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -19,40 +21,55 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.parkingmanager.R;
+import com.example.parkingmanager.database.AppDatabase;
 import com.example.parkingmanager.entities.Position;
 import com.example.parkingmanager.entities.User;
 import com.example.parkingmanager.entities.UserAdapter;
 
 public class ListUserActivity extends Activity {
 
-    private RecyclerView lvUser;
-    private UserAdapter list;
 
+    private UserAdapter list;
+    private static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_user);
 
-
-
-
-        User user = new User();
-        Position position = new Position();
-        position.getListData();
         final ListView lv = (ListView) findViewById(R.id.lvUser);
-        lv.setAdapter(new UserAdapter(this, user.getListData()));
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        List<User> users= new ArrayList<User>();
+        users= AppDatabase.getInstance(this).userDAO().getAllUsers();
+
+        lv.setAdapter(new UserAdapter(this, users));
 
 
-            @Override
-            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                User user = (User) lv.getItemAtPosition(position);
-                Toast.makeText(ListUserActivity.this, "Selected :" + " " + user.getName()+", "+ user.getIdPosition(), Toast.LENGTH_SHORT).show();
-            }
+
+             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+                @Override
+                public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                    Object o= lv.getItemAtPosition(position);
+                    Intent intent = new Intent(ListUserActivity.this, UserManagerActivity.class);
+                    User user = (User) o;
+
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("users", user);
+                    intent.putExtras(bundle);
+                    startActivityForResult(intent, REQUEST_CODE);
+
+
+
+
+
+
+                }
         });
 
     }
+
+
 
 
 }

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_body"
+    tools:context=".activities.LoginActivity">
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_round"
+        android:hint="Name"
+        android:padding="@dimen/padding_textbox"
+        android:textAlignment="center"
+        android:textColor="@color/primaryColor"
+        android:textColorHint="@color/primaryColor"
+        android:textSize="@dimen/text_size_body" />
+
+    <EditText
+        android:id="@+id/etdescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_round"
+        android:hint="description"
+        android:padding="@dimen/padding_textbox"
+        android:textAlignment="center"
+        android:textColor="@color/primaryColor"
+        android:textColorHint="@color/primaryColor"
+        android:textSize="@dimen/text_size_body" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_square"
+        android:padding="@dimen/padding_textbox"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_body" />
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_square"
+        android:padding="@dimen/padding_textbox"
+        android:text="Delete"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_body" />
+
+</LinearLayout>

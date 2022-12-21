@@ -4,10 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Enumeration;
 @Entity (tableName = "users")
-public class User {
+public class User implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @NonNull private int id;
     private String name;
@@ -72,6 +73,12 @@ public class User {
 
     }
 
+    public User(String name, String username, String password) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+    }
+
     public int getId() {
         return id;
     }
@@ -109,11 +116,12 @@ public class User {
     }
 
     public String getCardNumberFormatted() {
-        if (cardNumber==null) {
-            return "no card";
-        } else {
-            return cardNumber.substring(0, 5) + "...";
-        }
+//        if (cardNumber==null) {
+//            return "no card";
+//        } else {
+//            return cardNumber.substring(0, 5) + "...";
+//        }
+        return cardNumber;
     }
 
     public void setCardNumber(String cardNumber) {
@@ -129,18 +137,6 @@ public class User {
         this.idPosition = idPosition;
     }
 
-    public ArrayList getListData() {
-        Position position = new Position();
-        position.getListData();
-        ArrayList<User> results = new ArrayList<User>();
-        User user = new User(1, "John","pass", "john", "123456789", 1);
-        results.add(user);
-        user = new User(2,"Kathie", "pass","janedoe","1234567890123456", 2);
-        results.add(user);
-        user = new User(3,"John Smith", "pass","johnsmith","999999", 1);
-        results.add(user);
-        user = new User(4,"Daria", "pass","janesmith","1234567890123456", 3);
-        results.add(user);
-        return results;
-    }
+
+
 }

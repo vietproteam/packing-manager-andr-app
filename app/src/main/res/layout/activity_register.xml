@@ -80,11 +80,12 @@
         android:textSize="24dp"
         android:textColor="@color/primaryTextColor" />
 
-    <TextView
-        android:id="@+id/tvLogin"
+    <Button
+        android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="@drawable/btn_square"
         android:gravity="center"
         android:text="Login"
         android:textSize="24dp"

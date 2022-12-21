@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -24,10 +25,11 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UpdateMyInfoActivity extends AppCompatActivity {
     private ImageButton btnCamera;
     private CircleImageView circleImageView;
+    private EditText etName;
+    private EditText etEmail;
+    private EditText etPassword;
     String path;
     Uri uri;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,7 @@ public class UpdateMyInfoActivity extends AppCompatActivity {
 
         btnCamera = findViewById(R.id.btnCamera);
         circleImageView = findViewById(R.id.profile_image);
+
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

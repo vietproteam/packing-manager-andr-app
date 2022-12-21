@@ -8,23 +8,24 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/padding_body"
-    tools:context=".activities.UpdateMyInfoActivity">
+    tools:context=".activities.UserManagerActivity">
 
 <!--User manager activity edit username,password,card number,position and delete user-->
-    <TextView
+    <EditText
+        android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_body"
+        android:autofillHints="phone"
         android:background="@drawable/btn_round"
-        android:padding="@dimen/padding_textbox"
-        android:textSize="@dimen/text_size_body"
-        android:textColor="@color/primaryColor"
-        android:textAlignment="center"
-        android:id="@+id/tvUserNames"
         android:hint="@string/user_name"
-        />
+        android:inputType="text|textPersonName"
+        android:padding="@dimen/padding_textbox"
+        android:textAlignment="center"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/text_size_body" />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_body"
@@ -33,11 +34,11 @@
         android:textSize="@dimen/text_size_body"
         android:textColor="@color/primaryColor"
         android:textAlignment="center"
-        android:id="@+id/tvPasswords"
+        android:id="@+id/edPasswords"
         android:hint="@string/password"
         />
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_body"
@@ -46,7 +47,7 @@
         android:textSize="@dimen/text_size_body"
         android:textColor="@color/primaryColor"
         android:textAlignment="center"
-        android:id="@+id/tvCardNumbers"
+        android:id="@+id/edCardNumbers"
         android:hint="@string/card_number"
         />
 
