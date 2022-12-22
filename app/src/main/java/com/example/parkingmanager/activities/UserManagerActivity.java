@@ -3,6 +3,7 @@ package com.example.parkingmanager.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,15 +25,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UserManagerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class UserManagerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-private EditText edUserNames;
-private EditText edPasswords;
-private EditText edCardNumbers;
-private Spinner spinner;
-private Button btnUpdate;
-private Button btnDelete;
-private User lUser;
+    private EditText edUserNames;
+    private EditText edPasswords;
+    private EditText edCardNumbers;
+    private Spinner spinner;
+    private Button btnUpdate;
+    private Button btnDelete;
+    private User lUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,27 +42,29 @@ private User lUser;
         init();
         setSpinner();
 
-        lUser= (User) getIntent().getExtras().get("users");
-        if(lUser!=null){
+        lUser = (User) getIntent().getExtras().get("users");
+        if (lUser != null) {
             edUserNames.setText(lUser.getUsername());
             edPasswords.setText(lUser.getPassword());
             edCardNumbers.setText(lUser.getCardNumber());
-            spinner.setSelection(lUser.getIdPosition()-1);
+            spinner.setSelection(lUser.getIdPosition() - 1);
         }
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 update();
+                onpenListUserActivity();
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 delete();
+                onpenListUserActivity();
+
             }
         });
     }
-
 
 
     @Override
@@ -74,7 +78,8 @@ private User lUser;
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
-    public void init(){
+
+    public void init() {
         edUserNames = findViewById(R.id.etUsername);
         edPasswords = findViewById(R.id.edPasswords);
         edCardNumbers = findViewById(R.id.edCardNumbers);
@@ -82,9 +87,10 @@ private User lUser;
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
     }
-    public void setSpinner(){
-        List<Position>  positions = new ArrayList<Position>();
-        positions= AppDatabase.getInstance(this).positionDAO().getAllPositions();
+
+    public void setSpinner() {
+        List<Position> positions = new ArrayList<Position>();
+        positions = AppDatabase.getInstance(this).positionDAO().getAllPositions();
         List<String> list = new ArrayList<>();
 
         for (int i = 0; i < positions.size(); i++) {
@@ -95,27 +101,43 @@ private User lUser;
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
     }
-    public void update(){
+
+    public void update() {
         User lUser;
-        lUser= (User) getIntent().getExtras().get("users");
+        lUser = (User) getIntent().getExtras().get("users");
         lUser.setUsername(edUserNames.getText().toString());
         lUser.setPassword(edPasswords.getText().toString());
         lUser.setCardNumber(edCardNumbers.getText().toString());
-        lUser.setIdPosition(spinner.getSelectedItemPosition()+1);
+        lUser.setIdPosition(spinner.getSelectedItemPosition() + 1);
         AppDatabase.getInstance(this).userDAO().updateUser(lUser);
+
         Toast toast = Toast.makeText(this, "User updated", Toast.LENGTH_SHORT);
     }
-    private boolean UserExists(@NotNull  User user){
-        List<User> list= (List<User>) AppDatabase.getInstance(this).userDAO().getUserByUsername(user.getUsername());
-        return list!=null && list.isEmpty();
+
+    private boolean UserExists(@NotNull User user) {
+        List<User> list = (List<User>) AppDatabase.getInstance(this).userDAO().getUserByUsername(user.getUsername());
+        return list != null && list.isEmpty();
 
 
     }
-    public void delete(){
+
+    public void delete() {
         User lUser;
-        lUser= (User) getIntent().getExtras().get("users");
+        lUser = (User) getIntent().getExtras().get("users");
         AppDatabase.getInstance(this).userDAO().deleteUser(lUser);
         Toast toast = Toast.makeText(this, "User deleted", Toast.LENGTH_SHORT);
+
+
+    }
+
+    public void onpenListUserActivity() {
+        lUser = (User) getIntent().getExtras().get("users");
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("users", lUser);
+        intent.putExtras(bundle);
+        setResult(RESULT_OK, intent);
+        finish();
 
 
     }

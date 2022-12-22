@@ -38,38 +38,34 @@ public class ListUserActivity extends Activity {
         setContentView(R.layout.activity_list_user);
 
         final ListView lv = (ListView) findViewById(R.id.lvUser);
-        List<User> users= new ArrayList<User>();
-        users= AppDatabase.getInstance(this).userDAO().getAllUsers();
-
+        List<User> users = new ArrayList<User>();
+        users = AppDatabase.getInstance(this).userDAO().getAllUsers();
         lv.setAdapter(new UserAdapter(this, users));
 
-
-
-             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-
-                @Override
-                public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                    Object o= lv.getItemAtPosition(position);
-                    Intent intent = new Intent(ListUserActivity.this, UserManagerActivity.class);
-                    User user = (User) o;
-
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("users", user);
-                    intent.putExtras(bundle);
-                    startActivityForResult(intent, REQUEST_CODE);
-
-
-
-
-
-
-                }
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+                Object o = lv.getItemAtPosition(position);
+                Intent intent = new Intent(ListUserActivity.this, UserManagerActivity.class);
+                User user = (User) o;
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("users", user);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
         });
 
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                recreate();
+            }
+        }
+    }
 
 
 }
