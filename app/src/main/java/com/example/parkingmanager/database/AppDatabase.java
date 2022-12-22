@@ -8,11 +8,11 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 import com.example.parkingmanager.entities.Card;
-import com.example.parkingmanager.entities.ParkingRecord;
+import com.example.parkingmanager.entities.Record;
 import com.example.parkingmanager.entities.Position;
 import com.example.parkingmanager.entities.User;
 
-@Database(entities = {User.class, Position.class, Card.class, ParkingRecord.class}, version = 1)
+@Database(entities = {User.class, Position.class, Card.class, Record.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
 
 
@@ -35,6 +35,6 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract CardDAO cardDAO();
 
-    public abstract ParkingRecordDAO parkingRecordDAO();
+    public abstract RecordDAO parkingRecordDAO();
 }
 
