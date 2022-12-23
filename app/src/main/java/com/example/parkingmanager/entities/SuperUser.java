@@ -3,6 +3,9 @@ package com.example.parkingmanager.entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Entity (tableName = "super_users")
 public class SuperUser {
     @PrimaryKey(autoGenerate = true)
@@ -99,5 +102,69 @@ public class SuperUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Map<String, String> toMap() {
+        Map<String, String> map = new HashMap<>();
+        map.put("id", id);
+        map.put("name", name);
+        map.put("phone", phone);
+        map.put("email", email);
+        map.put("address", address);
+        map.put("company", company);
+        map.put("taxNumber", taxNumber);
+        map.put("password", password);
+        return map;
+    }
+
+    public void mapStringToSuperUser(Map<String, String> map) {
+        this.id = map.get("id");
+        this.name = map.get("name");
+        this.phone = map.get("phone");
+        this.email = map.get("email");
+        this.address = map.get("address");
+        this.company = map.get("company");
+        this.taxNumber = map.get("taxNumber");
+        this.password = map.get("password");
+    }
+
+    public void fromMap(Map<String,String> all) {
+        this.id = all.get("id");
+        this.name = all.get("name");
+        this.phone = all.get("phone");
+        this.email = all.get("email");
+        this.address = all.get("address");
+        this.company = all.get("company");
+        this.taxNumber = all.get("taxNumber");
+        this.password = all.get("password");
+    }
+
+    public void set(String k, String string) {
+        switch (k) {
+            case "id":
+                this.id = string;
+                break;
+            case "name":
+                this.name = string;
+                break;
+            case "phone":
+                this.phone = string;
+                break;
+            case "email":
+                this.email = string;
+                break;
+            case "address":
+                this.address = string;
+                break;
+            case "company":
+                this.company = string;
+                break;
+            case "taxNumber":
+                this.taxNumber = string;
+                break;
+            case "password":
+                this.password = string;
+                break;
+        }
     }
 }

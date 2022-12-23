@@ -61,21 +61,21 @@
         android:textSize="@dimen/text_size_body" />
 
     <TextView
-        android:id="@+id/tvRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_body"
         android:gravity="center"
-        android:text="Don't have an account? Register"
+        android:text="@string/fogot_password"
         android:textColor="@color/primaryColor"
         android:textSize="@dimen/text_size_body" />
 
     <TextView
+        android:id="@+id/tvRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_body"
         android:gravity="center"
-        android:text="Forgot Password?"
+        android:text="@string/register_please"
         android:textColor="@color/primaryColor"
         android:textSize="@dimen/text_size_body" />
 

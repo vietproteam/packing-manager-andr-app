@@ -1,6 +1,7 @@
 <!--?xml version="1.0" encoding="UTF-8"?-->
 <resources>
     <string name="app_name">Parking Manager</string>
+    <string name="app_id">parking_manager</string>
     <string name="slogan">Hello world!</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
@@ -13,6 +14,8 @@
     <string name="position">Choose a position</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="register_please">Don\'t have an account? Register</string>
+    <string name="fogot_password">Forgot Password?</string>
 
 
 </resources>
