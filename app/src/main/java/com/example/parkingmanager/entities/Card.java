@@ -4,18 +4,23 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(tableName = "cards")
 public class Card {
     @PrimaryKey (autoGenerate = true)
     @NonNull private int id;
     private String type;
     private String name;
 
-    public Card(int id, String type, String name) {
-        this.id = id;
+    public Card(String type, String name) {
         this.type = type;
         this.name = name;
     }
+//    public Card(int id, String type, String name) {
+//        this.id = id;
+//        this.type = type;
+//        this.name = name;
+//    }
+
 
     public int getId() {
         return id;

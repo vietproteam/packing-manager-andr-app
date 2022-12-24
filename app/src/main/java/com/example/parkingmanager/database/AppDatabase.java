@@ -34,7 +34,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract PositionDAO positionDAO();
 
     public abstract CardDAO cardDAO();
-
     public abstract RecordDAO parkingRecordDAO();
 }
 
