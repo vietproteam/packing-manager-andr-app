@@ -1,4 +1,4 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,13 +8,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.parkingmanager.R;
+import com.example.parkingmanager.activities.HomeActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class SuperLoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_super_login);
 
         TextView tvRegister = findViewById(R.id.tvRegister);
         TextView etEmail = findViewById(R.id.etEmail);
@@ -22,13 +23,13 @@ public class LoginActivity extends AppCompatActivity {
         Button btnLogin = findViewById(R.id.btnLogin);
 
         tvRegister.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            Intent intent = new Intent(SuperLoginActivity.this, SuperRegisterActivity.class);
             startActivity(intent);
         });
 
         btnLogin.setOnClickListener(v -> {
 
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            Intent intent = new Intent(SuperLoginActivity.this, HomeActivity.class);
             startActivity(intent);
         });
     }

@@ -3,6 +3,7 @@ package com.example.parkingmanager.database;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.parkingmanager.entities.Card;
@@ -11,6 +12,12 @@ import com.example.parkingmanager.entities.Card;
 public interface CardDAO {
     @Insert
     void insertCard(Card card);
+
+    @Query("SELECT * FROM card WHERE id = :cardId")
+    Card getCardById(int cardId);
+
+    @Query("SELECT * FROM card")
+    Card[] getAllCards();
 
     @Delete
     void deleteCard(Card card);

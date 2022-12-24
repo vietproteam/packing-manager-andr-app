@@ -12,13 +12,12 @@ import com.example.parkingmanager.R;
 
 
 public class MyInfoActivity extends AppCompatActivity {
-private ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
 
-        imageButton =(ImageButton) findViewById(ibedit);
+        ImageButton imageButton = (ImageButton) findViewById(ibedit);
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

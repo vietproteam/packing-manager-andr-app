@@ -2,11 +2,11 @@ package com.example.parkingmanager.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -14,9 +14,10 @@ import android.widget.TextView;
 
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
-import com.example.parkingmanager.entities.SuperUser;
+import com.example.parkingmanager.activities.admin.SuperLoginActivity;
 
 
+@SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -42,7 +43,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if (pakingManagerApplication.getEncSharedPrefs().getString("id").equals("")) {
-                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), SuperLoginActivity.class);
                     startActivity(intent);
                 } else {
                     pakingManagerApplication.getEncSharedPrefs().getSuperUser();

@@ -1,18 +1,18 @@
 package com.example.parkingmanager;
 
 import android.app.Application;
-import android.content.Intent;
+import android.content.res.Configuration;
 
-import com.example.parkingmanager.activities.HomeActivity;
-import com.example.parkingmanager.activities.LoginActivity;
 import com.example.parkingmanager.entities.SuperUser;
 import com.example.parkingmanager.entities.User;
+import com.example.parkingmanager.functions.AppConfig;
 import com.example.parkingmanager.functions.EncSharedPrefs;
 
 public class PakingManagerApplication extends Application {
     private EncSharedPrefs encSharedPrefs;
     private SuperUser superUser;
     private User user;
+    public AppConfig appConfig;
 
     public SuperUser getSuperUser() {
         superUser = encSharedPrefs.getSuperUser();
@@ -40,6 +40,13 @@ public class PakingManagerApplication extends Application {
     public void onCreate() {
         super.onCreate();
         encSharedPrefs = new EncSharedPrefs(this);
+        appConfig = new AppConfig(this);
+    }
+
+    // Configuration for app
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     @Override

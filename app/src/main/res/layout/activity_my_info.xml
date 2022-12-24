@@ -25,7 +25,7 @@
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/ic_edit"
-            />
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:layout_height="30dp"
             android:layout_alignParentStart="true"
             android:background="@drawable/ic_back"
-            />
+            android:contentDescription="TODO" />
 
     </RelativeLayout>
 
@@ -52,7 +52,7 @@
         android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
+            android:id="@+id/avatar"
             android:layout_width="@dimen/profile_image_size"
             android:layout_height="@dimen/profile_image_size"
             android:src="@drawable/ic_person"
@@ -86,8 +86,8 @@
             android:layout_marginTop="@dimen/margin_body"
             android:background="@drawable/txt_round"
             android:hint="Email"
-            android:padding="10dp"
-            android:textSize="25dp"/>
+            android:padding="@dimen/padding_body"
+            android:textSize="@dimen/text_size_body"/>
 
         <TextView
             android:id="@+id/tvPhone"
@@ -96,8 +96,8 @@
             android:layout_marginTop="@dimen/margin_body"
             android:background="@drawable/txt_round"
             android:hint="Phone"
-            android:padding="10dp"
-            android:textSize="25dp"/>
+            android:padding="@dimen/padding_body"
+            android:textSize="@dimen/text_size_body"/>
         <TextView
             android:id="@+id/tvPassword"
             android:layout_width="match_parent"
@@ -106,8 +106,8 @@
             android:background="@drawable/txt_round"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="10dp"
-            android:textSize="25dp"/>
+            android:padding="@dimen/padding_body"
+            android:textSize="@dimen/text_size_body"/>
 
     </LinearLayout>
 

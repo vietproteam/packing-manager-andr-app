@@ -112,6 +112,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
         AppDatabase.getInstance(this).userDAO().updateUser(lUser);
 
         Toast toast = Toast.makeText(this, "User updated", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     private boolean UserExists(@NotNull User user) {
@@ -126,8 +127,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
         lUser = (User) getIntent().getExtras().get("users");
         AppDatabase.getInstance(this).userDAO().deleteUser(lUser);
         Toast toast = Toast.makeText(this, "User deleted", Toast.LENGTH_SHORT);
-
-
+        toast.show();
     }
 
     public void onpenListUserActivity() {

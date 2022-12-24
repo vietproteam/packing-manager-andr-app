@@ -51,8 +51,13 @@ public class EncSharedPrefs {
     public void commit() {
         editor.commit();
     }
+
     public String getString(String key) {
         return sharedPreferences.getString(key, "");
+    }
+
+    public String getStringWithDefault(String key, String defaultValue) {
+        return sharedPreferences.getString(key, defaultValue);
     }
 
     public int getInt(String key) {
