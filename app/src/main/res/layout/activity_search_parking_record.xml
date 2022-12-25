@@ -4,99 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding_body"
+    android:background="@drawable/bg_circle_blue"
     android:orientation="vertical"
-    tools:context=".activities.SearchParkingRecordActivity">
-
-    <ImageView
+    tools:context=".activities.RevenueActivity">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/transport_height"
-        android:background="@drawable/ic_image"
-        android:contentDescription="TODO" />
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_body">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <ImageButton
+                android:id="@+id/btnDateFrom"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/ic_calendar"
+                android:contentDescription="TODO" />
+            <ImageButton
+                android:id="@+id/btnTimeFrom"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/edFrom"
+                android:layout_weight="0.5"
+                android:background="@drawable/ic_time"
+                android:contentDescription="TODO" />
+            <EditText
+                android:id="@+id/edFrom"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="3.5"
+                android:layout_toRightOf="@+id/btnDateFrom"
+                android:background="@drawable/txt_square"
+                android:hint="From: DD/MM/YYYY"
+                android:inputType="date"
+                android:paddingLeft="10dp"
+                android:textSize="18dp"></EditText>
+        </RelativeLayout>
+        <View
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_down"></View>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <ImageButton
+                android:id="@+id/btnDateTo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/ic_calendar"
+                android:contentDescription="TODO">
+            </ImageButton>
+            <ImageButton
+                android:id="@+id/btnTimeTo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/edTo"
+                android:layout_weight="0.5"
+                android:background="@drawable/ic_time"
+                android:contentDescription="TODO">
 
-    <TextView
-        android:layout_width="wrap_content"
+            </ImageButton>
+            <EditText
+                android:id="@+id/edTo"
+                android:layout_width="290dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="3.5"
+                android:layout_toRightOf="@+id/btnDateTo"
+                android:background="@drawable/txt_square"
+                android:hint="To: DD/MM/YYYY"
+                android:inputType="date"
+                android:paddingLeft="10dp"
+                android:textSize="18dp">
+            </EditText>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_body">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:text="Danh Sách"
+            android:textSize="@dimen/text_size_h2">
+
+        </TextView>
+        <ListView
+            android:id="@+id/lvParkingRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Transportation:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="@dimen/margin_body"
-        android:background="@drawable/txt_round"
-        android:hint="Loai xe"
-        android:padding="8dp"
-        android:textSize="20sp"></TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time in:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/txt_round"
-        android:hint="Time In"
-        android:padding="8dp"
-        android:textSize="20sp"></TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Time out:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/txt_round"
-        android:hint="Time out"
-        android:padding="8dp"
-        android:textSize="20sp"></TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="License plate:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/txt_round"
-        android:hint="BSX"
-        android:padding="8dp"
-        android:textSize="20sp"></EditText>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Total:"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/txt_round"
-        android:hint="Tong tien"
-        android:padding="6dp"
-        android:textSize="20sp"></TextView>
-
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_square"
+        android:padding="@dimen/padding_textbox"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_body" />
 </LinearLayout>

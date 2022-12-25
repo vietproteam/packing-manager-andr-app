@@ -80,8 +80,8 @@ public class RevenueActivity extends AppCompatActivity {
                     edFrom.setError("Please enter date");
                     edTo.setError("Please enter date");
                 }else {
-                    tvTotal.setText("String.valueOf(total)");
-                    tvRevenue.setText("String.valueOf(revenue)");
+                    tvTotal.setText(String.valueOf(tvTotal));
+                    tvRevenue.setText(String.valueOf(tvRevenue));
                 }
             }
 

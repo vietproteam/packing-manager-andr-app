@@ -7,6 +7,7 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -45,6 +46,17 @@ public class Record {
         this.isLocking = isLocking;
         this.idUser = idUser;
         this.idCard = idCard;
+    }
+
+    public Record(String s, String s1, String s2, String s3, String s4, String s5, int i) {
+        this.id = 0;
+        this.timeIn = s;
+        this.timeOut = s1;
+        this.imgIn = s2;
+        this.imgOut = s3;
+        this.isLocking = s4;
+        this.idUser = i;
+        this.idCard = s5;
     }
 
     @NonNull
@@ -126,5 +138,14 @@ public class Record {
 
     public void setCard(Card card) {
         this.card = card;
+    }
+
+    public List<Record> getAdapter() {
+        ArrayList<Record> records = new ArrayList<Record>();
+        records.add(new Record("1","1","1","1","1","1",1));
+        records.add(new Record("2","2","2","2","2","2",2));
+        records.add(new Record("3","3","3","3","3","3",3));
+        return  records;
+
     }
 }

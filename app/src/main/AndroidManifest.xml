@@ -34,6 +34,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkingManager"
         tools:targetApi="33">
+
         <activity
             android:name=".activities.user.LoginActivity"
             android:exported="false">
@@ -43,13 +44,21 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.admin.SummaryReportActivity"
+            android:name=".activities.SearchParkingRecordActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.admin.SummaryReportActivity"
+            android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -63,7 +72,8 @@
         </activity>
         <activity
             android:name=".activities.RevenueActivity"
-            android:exported="false">
+            android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
