@@ -7,6 +7,11 @@
         android:icon="@drawable/ic_person"
         android:title="@string/action_user_management"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_list_card"
+        android:icon="@drawable/ic_person"
+        android:title="@string/action_list_card"
+        app:showAsAction="never" />
 
     <!--    Report-->
     <item

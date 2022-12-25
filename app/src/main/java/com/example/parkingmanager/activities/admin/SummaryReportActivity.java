@@ -47,13 +47,10 @@ public class SummaryReportActivity extends AppCompatActivity implements OnChartV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_summary_report);
 
-        MenuAdminFragment menuAdminFragment = new MenuAdminFragment();
 
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, menuAdminFragment).commit();
+
 
         MChart();
         CombinedChart();
