@@ -1,25 +1,17 @@
 package com.example.parkingmanager.activities.user;
 
 import android.content.Intent;
-import android.nfc.NfcAdapter;
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
-import com.example.parkingmanager.activities.ParkingActivity;
 import com.example.parkingmanager.activities.admin.SummaryReportActivity;
 import com.example.parkingmanager.database.AppDatabase;
-import com.example.parkingmanager.entities.User;
-import com.example.parkingmanager.functions.NFCEx;
 import com.example.parkingmanager.functions.PermissionEx;
 
 public class LoginActivity extends AppCompatActivity {
@@ -80,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        Intent intent = new Intent(LoginActivity.this, ParkingActivity.class);
+        Intent intent = new Intent(LoginActivity.this, SummaryReportActivity.class);
         startActivity(intent);
         this.finish();
     }

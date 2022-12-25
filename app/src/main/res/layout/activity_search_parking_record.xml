@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_circle_blue"
     android:orientation="vertical"
-    tools:context=".activities.RevenueActivity">
+    tools:context=".activities.user.RevenueActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"

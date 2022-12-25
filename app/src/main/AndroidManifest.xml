@@ -43,7 +43,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.SearchParkingRecordActivity"
+            android:name=".activities.user.SearchParkingRecordActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.nfc.action.TAG_DISCOVERED"/>
@@ -68,14 +68,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.RevenueActivity"
+            android:name=".activities.user.RevenueActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.UserManagerActivity"
+            android:name=".activities.admin.UserManagerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -89,7 +89,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.ListUserActivity"
+            android:name=".activities.admin.ListUserActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -103,7 +103,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.UpdateMyInfoActivity"
+            android:name=".activities.admin.UpdateMyInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -112,11 +112,11 @@
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -129,13 +129,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.ParkingActivity"
+            android:name=".activities.user.ParkingActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             <intent-filter>
                 <action android:name="android.nfc.action.TAG_DISCOVERED"/>
 

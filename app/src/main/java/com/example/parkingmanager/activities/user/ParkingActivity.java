@@ -1,4 +1,4 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.user;
 
 import android.app.Activity;
 import android.app.AppComponentFactory;

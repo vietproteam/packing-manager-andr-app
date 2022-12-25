@@ -1,4 +1,4 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 

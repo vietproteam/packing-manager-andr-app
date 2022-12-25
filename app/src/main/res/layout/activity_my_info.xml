@@ -10,7 +10,7 @@
     android:paddingTop="5dp"
     android:paddingRight="20dp"
     android:paddingBottom="20dp"
-    tools:context=".activities.MyInfoActivity">
+    tools:context=".activities.admin.MyInfoActivity">
 
     <RelativeLayout
         android:id="@+id/rlProfileImage"
