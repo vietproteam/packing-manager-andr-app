@@ -6,17 +6,21 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.parkingmanager.activities.user.LoginActivity;
+
 public class NFCEx {
 
-    NfcAdapter mAdapter;
-    PendingIntent mPendingIntent;
-    Tag card;
-    String cardId = "";
-    Activity activity;
-    Toast toast;
+    private NfcAdapter mAdapter;
+    private PendingIntent mPendingIntent;
+    private Tag card;
+    private String cardId = "";
+    private Activity activity;
+    private Toast toast;
 
     public NFCEx(Activity activity) {
         this.activity = activity;
@@ -31,12 +35,24 @@ public class NFCEx {
         filter.addAction(NfcAdapter.ACTION_TECH_DISCOVERED);
     }
 
-    public void getCardId(NfcAdapter.ReaderCallback readerCallback) {
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void onTap(Runnable runnableCallback) {
         // enabling foreground dispatch for getting intent from NFC event:
         NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this.activity);
         nfcAdapter.enableReaderMode(
                 this.activity,
-                readerCallback,
+                new NfcAdapter.ReaderCallback() {
+                    @Override
+                    public void onTagDiscovered(Tag tag) {
+                        card = tag;
+                        cardId = ByteArrayToHexString(tag.getId());
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.post(runnableCallback);
+                    }
+                },
                 NfcAdapter.FLAG_READER_NFC_A |
                         NfcAdapter.FLAG_READER_NFC_B |
                         NfcAdapter.FLAG_READER_NFC_F |
@@ -49,11 +65,10 @@ public class NFCEx {
 
     public String ByteArrayToHexString(byte[] inarray) {
         int i, j, in;
-        String [] hex = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
-        String out= "";
+        String[] hex = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"};
+        String out = "";
 
-        for(j = 0 ; j < inarray.length ; ++j)
-        {
+        for (j = 0; j < inarray.length; ++j) {
             in = (int) inarray[j] & 0xff;
             i = (in >> 4) & 0x0f;
             out += hex[i];

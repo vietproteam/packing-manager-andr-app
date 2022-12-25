@@ -21,7 +21,7 @@
         android:layout_below="@+id/tvName"
         android:textSize="@dimen/text_size_quote"
         android:id="@+id/tvUsername"
-        android:text="@string/user_name"/>
+        android:text="@string/username"/>
 
     <TextView
         android:layout_width="wrap_content"

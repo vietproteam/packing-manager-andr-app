@@ -14,7 +14,7 @@ import com.example.parkingmanager.entities.Position;
 import com.example.parkingmanager.entities.Type;
 import com.example.parkingmanager.entities.User;
 
-@Database(entities = {User.class, Position.class, Calculator.class, Type.class, Card.class, Record.class}, version = 1)
+@Database(entities = {User.class, Position.class, Calculator.class, Type.class, Card.class, Record.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
 
 
@@ -26,6 +26,7 @@ public abstract class AppDatabase extends RoomDatabase {
             instance = Room.databaseBuilder(context.getApplicationContext(),
                     AppDatabase.class, DB_NAME)
                     .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
                     .build();
         }
         return instance;

@@ -20,8 +20,6 @@ import com.example.parkingmanager.R;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.concurrent.ExecutionException;
-
-//  Detect license plate from camera
 public class CameraEx {
         private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
         private AppCompatActivity activity;

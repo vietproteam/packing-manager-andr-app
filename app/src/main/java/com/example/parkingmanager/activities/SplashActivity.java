@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.activities.admin.SuperLoginActivity;
+import com.example.parkingmanager.functions.PermissionEx;
 
 
 @SuppressLint("CustomSplashScreen")
@@ -37,19 +38,13 @@ public class SplashActivity extends AppCompatActivity {
         textView.startAnimation(aniText);
 
         PakingManagerApplication pakingManagerApplication = (PakingManagerApplication) getApplicationContext();
-
         //splash screen
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (pakingManagerApplication.getEncSharedPrefs().getString("id").equals("")) {
-                    Intent intent = new Intent(getApplicationContext(), SuperLoginActivity.class);
-                    startActivity(intent);
-                } else {
-                    pakingManagerApplication.getEncSharedPrefs().getSuperUser();
-                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getApplicationContext(), SuperLoginActivity.class);
+                startActivity(intent);
+                finish();
             }
         }, 2500);
     }

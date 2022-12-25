@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/margin_body"
         android:autofillHints="phone"
         android:background="@drawable/btn_round"
-        android:hint="@string/user_name"
+        android:hint="@string/username"
         android:inputType="text|textPersonName"
         android:padding="@dimen/padding_textbox"
         android:textAlignment="center"
