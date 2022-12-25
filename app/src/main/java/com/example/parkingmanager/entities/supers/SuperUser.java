@@ -1,4 +1,4 @@
-package com.example.parkingmanager.entities;
+package com.example.parkingmanager.entities.supers;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

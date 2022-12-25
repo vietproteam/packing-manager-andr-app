@@ -3,7 +3,7 @@ package com.example.parkingmanager;
 import android.app.Application;
 import android.content.res.Configuration;
 
-import com.example.parkingmanager.entities.SuperUser;
+import com.example.parkingmanager.entities.supers.SuperUser;
 import com.example.parkingmanager.entities.User;
 import com.example.parkingmanager.functions.AppConfig;
 import com.example.parkingmanager.functions.EncSharedPrefs;

@@ -21,9 +21,6 @@ public interface UserDAO {
     @Query("SELECT * FROM users WHERE id = :id")
     User getUserById(int id);
 
-    @Query("SELECT * FROM users WHERE username = :username")
-    User getUserByUsername(String username);
-
     @Query("SELECT * FROM users WHERE cardNumber = :cardNumber")
     User getUserByCardNumber(String cardNumber);
 

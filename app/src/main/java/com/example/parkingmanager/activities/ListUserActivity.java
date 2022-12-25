@@ -7,24 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RadioGroup;
-import android.widget.Toast;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.database.AppDatabase;
-import com.example.parkingmanager.entities.Position;
 import com.example.parkingmanager.entities.User;
-import com.example.parkingmanager.entities.UserAdapter;
+import com.example.parkingmanager.entities.adapters.UserAdapter;
 
 public class ListUserActivity extends Activity {
 

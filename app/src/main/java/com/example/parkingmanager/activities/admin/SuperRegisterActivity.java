@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.database.AppDatabase;
 import com.example.parkingmanager.entities.User;
+import com.example.parkingmanager.entities.supers.SuperUser;
 
 public class SuperRegisterActivity extends AppCompatActivity {
 
@@ -64,9 +65,9 @@ public class SuperRegisterActivity extends AppCompatActivity {
             return;
         }
 
-        User user = new User(name, email, password);
-        AppDatabase.getInstance(this).userDAO().insertUser(user);
-        Toast.makeText(this, "User registered", Toast.LENGTH_SHORT).show();
+//        SuperUser user = new SuperUser(name, email, password);
+//        AppDatabase.getInstance(this).userDAO().insertUser(user);
+//        Toast.makeText(this, "User registered", Toast.LENGTH_SHORT).show();
     }
 
 

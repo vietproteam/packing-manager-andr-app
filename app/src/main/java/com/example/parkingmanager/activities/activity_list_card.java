@@ -8,14 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.database.AppDatabase;
 import com.example.parkingmanager.entities.Card;
-import com.example.parkingmanager.entities.CardAdapter;
-import com.example.parkingmanager.entities.UserAdapter;
+import com.example.parkingmanager.entities.adapters.CardAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,9 +49,7 @@ public class activity_list_card extends AppCompatActivity {
 
     }
     public void AddCard(){
-
-        Card card = new Card(txtType.getText().toString(), txtName.getText().toString());
-//        lv.setAdapter(adapter);
+        Card card = new Card();
         AppDatabase.getInstance(this).cardDAO().insertCard(card);
         cardss = AppDatabase.getInstance(this).cardDAO().getAllCard();
         adapter.notifyDataSetChanged();

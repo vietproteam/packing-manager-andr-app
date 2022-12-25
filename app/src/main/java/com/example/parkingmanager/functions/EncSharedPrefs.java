@@ -2,14 +2,13 @@ package com.example.parkingmanager.functions;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
-import com.example.parkingmanager.entities.SuperUser;
+import com.example.parkingmanager.entities.supers.SuperUser;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;

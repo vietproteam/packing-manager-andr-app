@@ -1,6 +1,5 @@
 package com.example.parkingmanager.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.parkingmanager.R;
@@ -116,7 +114,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
     }
 
     private boolean UserExists(@NotNull User user) {
-        List<User> list = (List<User>) AppDatabase.getInstance(this).userDAO().getUserByUsername(user.getUsername());
+        List<User> list = (List<User>) AppDatabase.getInstance(this).userDAO().getUserById(user.getId());
         return list != null && list.isEmpty();
 
 

@@ -1,7 +1,6 @@
 package com.example.parkingmanager.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.Toast;
 
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.database.AppDatabase;
-import com.example.parkingmanager.database.PositionDAO;
 import com.example.parkingmanager.entities.Position;
 
 public class InsertPositionActivity extends AppCompatActivity {

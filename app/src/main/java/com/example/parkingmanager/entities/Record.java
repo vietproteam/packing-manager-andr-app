@@ -3,66 +3,57 @@ package com.example.parkingmanager.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 @Entity
 public class Record {
     @PrimaryKey (autoGenerate = true)
-    @NonNull private int id;
-    private int IdUser;
-    private int IdPosition;
+    @NonNull private long id;
     private String timeIn;
     private String timeOut;
     private String imgIn;
     private String imgOut;
     private String isLocking;
+    private int idUser;
+    @Ignore
+    private User user;
+    private String idCard;
+    @Ignore
+    private Card card;
 
     public Record() {
         this.id = 0;
-        this.IdUser = 0;
-        this.IdPosition = 0;
         this.timeIn = "";
         this.timeOut = "";
         this.imgIn = "";
         this.imgOut = "";
         this.isLocking = "";
+        this.idUser = 0;
+        this.idCard = "";
     }
 
-    public Record(int id, int idUser, int idPosition, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking) {
+    public Record(Long id, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking, int idUser, String idCard) {
         this.id = id;
-        IdUser = idUser;
-        IdPosition = idPosition;
         this.timeIn = timeIn;
         this.timeOut = timeOut;
         this.imgIn = imgIn;
         this.imgOut = imgOut;
         this.isLocking = isLocking;
+        this.idUser = idUser;
+        this.idCard = idCard;
     }
 
-    public int getId() {
+    @NonNull
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(@NonNull Long id) {
         this.id = id;
-    }
-
-    public int getIdUser() {
-        return IdUser;
-    }
-
-    public void setIdUser(int idUser) {
-        IdUser = idUser;
-    }
-
-    public int getIdPosition() {
-        return IdPosition;
-    }
-
-    public void setIdPosition(int idPosition) {
-        IdPosition = idPosition;
     }
 
     public String getTimeIn() {
@@ -105,15 +96,35 @@ public class Record {
         this.isLocking = isLocking;
     }
 
-    private ArrayList getListData() {
+    public int getIdUser() {
+        return idUser;
+    }
 
-        ArrayList<Record> results = new ArrayList<Record>();
-        Record position = new Record(1, 1, 1, "2020-12-12 12:12:12", "2020-12-12 12:12:12", "imgIn", "imgOut", "1");
-        results.add(position);
-        position = new Record(2, 2, 2, "2020-12-12 12:12:12", "2020-12-12 12:12:12", "imgIn", "imgOut", "1");
-        results.add(position);
-        position = new Record(3, 3, 3, "2020-12-12 12:12:12", "2020-12-12 12:12:12", "imgIn", "imgOut", "1");
-        results.add(position);
-        return results;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
     }
 }

@@ -2,40 +2,37 @@ package com.example.parkingmanager.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "cards")
 public class Card {
-    @PrimaryKey (autoGenerate = true)
-    @NonNull private int id;
-    private String type;
+    @PrimaryKey ()
+    @NonNull private String id;
     private String name;
+    private int typeId;
+    @Ignore
+    private Type type;
 
-    public Card(String type, String name) {
-        this.type = type;
-        this.name = name;
+    public Card() {
+        id = "";
+        name = "";
+        typeId = 0;
     }
-//    public Card(int id, String type, String name) {
-//        this.id = id;
-//        this.type = type;
-//        this.name = name;
-//    }
 
+    public Card(String id, String name, int typeId) {
+        this.id = id;
+        this.name = name;
+        this.typeId = typeId;
+    }
 
-    public int getId() {
+    @NonNull
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(@NonNull String id) {
         this.id = id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getName() {
@@ -44,5 +41,21 @@ public class Card {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 }
