@@ -40,9 +40,6 @@ public class SuperRegisterActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
     public void init(){
         etName = findViewById(R.id.etName);

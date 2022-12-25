@@ -9,7 +9,8 @@
     <string name="phone">Phone</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
-    <string name="user_name">Username</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
     <string name="card_number">Read your card</string>
     <string name="position">Choose a position</string>
     <string name="update">Update</string>
@@ -23,8 +24,6 @@
     <string name="action_settings">Settings</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="login">Login</string>
-    <string name="username">Username</string>
     <string name="scan_nfc_card">If your account has a card.\nJust tap it!</string>
 
 

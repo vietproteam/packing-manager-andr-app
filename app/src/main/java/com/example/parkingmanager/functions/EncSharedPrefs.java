@@ -45,9 +45,6 @@ public class EncSharedPrefs {
 
     public void putString(String key, String value) {
         editor.putString(key, value);
-    }
-
-    public void commit() {
         editor.commit();
     }
 
