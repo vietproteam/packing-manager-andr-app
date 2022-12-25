@@ -1,10 +1,11 @@
 package com.example.parkingmanager.activities.admin;
-
+import com.example.parkingmanager.functions.ExampleDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -38,6 +39,18 @@ public class ListCardActivity extends AppCompatActivity {
         adapter=new CardAdapter(this,R.layout.card_card, cardss);
         lv.setAdapter(adapter);
 
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ExampleDialog exampleDialog = new ExampleDialog();
+                exampleDialog.show(getSupportFragmentManager(), "example dialog");
+            }
+        });
+
+
+
+
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,12 +62,12 @@ public class ListCardActivity extends AppCompatActivity {
 
     }
     public void AddCard(){
-        Card card = new Card();
+        Card card = new Card(txtName.getText().toString(),Integer.parseInt(txtType.getText().toString()));
+
         AppDatabase.getInstance(this).cardDAO().insertCard(card);
         cardss = AppDatabase.getInstance(this).cardDAO().getAllCard();
         adapter.notifyDataSetChanged();
         Toast.makeText(this, "Thêm card thành công", Toast.LENGTH_SHORT).show();
-
 
     }
 }

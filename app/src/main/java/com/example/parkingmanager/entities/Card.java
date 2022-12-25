@@ -19,12 +19,15 @@ public class Card {
         name = "";
         typeId = 0;
     }
-
-    public Card(String id, String name, int typeId) {
-        this.id = id;
+    public Card( String name, int typeId) {
         this.name = name;
         this.typeId = typeId;
     }
+//    public Card(String id, String name, int typeId) {
+//        this.id = id;
+//        this.name = name;
+//        this.typeId = typeId;
+//    }
 
     @NonNull
     public String getId() {
