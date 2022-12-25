@@ -21,6 +21,9 @@ public interface PositionDAO {
     @Query("SELECT * FROM positions")
     List<Position> getAllPositions();
 
+    @Query("SELECT * FROM positions WHERE id = :id")
+    Position getPositionById(int id);
+
     @Delete
     void deletePosition(Position position);
 

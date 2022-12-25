@@ -15,10 +15,10 @@ public interface CardDAO {
     @Insert
     void insertCard(Card card);
 
-    @Query("SELECT * FROM card WHERE id = :cardId")
+    @Query("SELECT * FROM cards WHERE id = :cardId")
     Card getCardById(int cardId);
 
-    @Query("SELECT * FROM card")
+    @Query("SELECT * FROM cards")
     Card[] getAllCards();
 
     @Delete

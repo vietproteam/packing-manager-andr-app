@@ -2,6 +2,7 @@ package com.example.parkingmanager.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
@@ -16,6 +17,8 @@ public class User implements Serializable {
     private String username;
     private String cardNumber;
     private int idPosition= new Position().getId();
+    @Ignore
+    private Position position;
 
 
 
@@ -27,9 +30,10 @@ public class User implements Serializable {
         this.username = "";
         this.cardNumber = "";
         this.idPosition = 0;
-
+        this.position = new Position();
     }
 
+    @Ignore
     public User(int id, String name, String password, String username, String cardNumber, int idPosition, Position position) {
         this.id = id;
         this.name = name;
@@ -37,8 +41,7 @@ public class User implements Serializable {
         this.username = username;
         this.cardNumber = cardNumber;
         this.idPosition = idPosition;
-
-
+        this.position = position;
     }
 
     public User(int id, String name, String password, String username, String cardNumber, int idPosition) {
@@ -137,6 +140,11 @@ public class User implements Serializable {
         this.idPosition = idPosition;
     }
 
+    public Position getPosition() {
+        return position;
+    }
 
-
+    public void setPosition(Position position) {
+        this.position = position;
+    }
 }
