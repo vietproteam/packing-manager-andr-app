@@ -23,7 +23,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/ic_calendar" />
+                android:background="@drawable/ic_calendar"
+                android:contentDescription="TODO" />
             <EditText
                 android:id="@+id/edFrom"
                 android:layout_width="0dp"
@@ -54,7 +55,8 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:background="@drawable/ic_calendar"></ImageView>
+                android:background="@drawable/ic_calendar"
+                android:contentDescription="TODO"></ImageView>
             <EditText
                 android:id="@+id/edTo"
                 android:layout_width="0dp"

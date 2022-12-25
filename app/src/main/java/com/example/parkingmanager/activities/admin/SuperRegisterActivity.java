@@ -1,8 +1,8 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +11,9 @@ import android.widget.Toast;
 
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.database.AppDatabase;
-import com.example.parkingmanager.database.UserDAO;
 import com.example.parkingmanager.entities.User;
 
-public class RegisterActivity extends AppCompatActivity {
+public class SuperRegisterActivity extends AppCompatActivity {
 
     private EditText etName;
     private EditText etEmail;
@@ -25,12 +24,19 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_super_register);
         init();
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 register();
+            }
+        });
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SuperRegisterActivity.this, SuperLoginActivity.class);
+                startActivity(intent);
             }
         });
 

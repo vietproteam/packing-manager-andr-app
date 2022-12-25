@@ -15,6 +15,12 @@ public interface CardDAO {
     @Insert
     void insertCard(Card card);
 
+    @Query("SELECT * FROM card WHERE id = :cardId")
+    Card getCardById(int cardId);
+
+    @Query("SELECT * FROM card")
+    Card[] getAllCards();
+
     @Delete
     void deleteCard(Card card);
 

@@ -3,21 +3,18 @@ package com.example.parkingmanager.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.example.parkingmanager.R;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 
-
-import java.io.File;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -28,15 +25,17 @@ public class UpdateMyInfoActivity extends AppCompatActivity {
     private EditText etName;
     private EditText etEmail;
     private EditText etPassword;
-    String path;
-    Uri uri;
+    private ImageView avatar;
+
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_my_info);
 
         btnCamera = findViewById(R.id.btnCamera);
-        circleImageView = findViewById(R.id.profile_image);
+        circleImageView = findViewById(R.id.avatar);
 
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,15 +53,11 @@ public class UpdateMyInfoActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        if (resultCode == Activity.RESULT_OK && requestCode==101) {
-            //Image Uri will not be null for RESULT_OK
-            uri = data.getData();
-            circleImageView.setImageURI(uri);
-
-
-//        } else {
-//            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show();
-//        }
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            circleImageView.setImageBitmap(imageBitmap);
+        }
     }
 
 }
