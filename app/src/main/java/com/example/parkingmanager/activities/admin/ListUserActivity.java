@@ -1,4 +1,4 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.admin;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/padding_body"
-    tools:context=".activities.UserManagerActivity">
+    tools:context=".activities.admin.UserManagerActivity">
 
 <!--User manager activity edit username,password,card number,position and delete user-->
     <EditText
@@ -18,7 +18,7 @@
         android:layout_marginTop="@dimen/margin_body"
         android:autofillHints="phone"
         android:background="@drawable/btn_round"
-        android:hint="@string/user_name"
+        android:hint="@string/username"
         android:inputType="text|textPersonName"
         android:padding="@dimen/padding_textbox"
         android:textAlignment="center"

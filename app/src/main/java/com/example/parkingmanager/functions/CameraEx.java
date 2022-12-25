@@ -4,6 +4,8 @@ package com.example.parkingmanager.functions;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -20,8 +22,6 @@ import com.example.parkingmanager.R;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.concurrent.ExecutionException;
-
-//  Detect license plate from camera
 public class CameraEx {
         private ListenableFuture<ProcessCameraProvider> cameraProviderFuture;
         private AppCompatActivity activity;
@@ -59,9 +59,13 @@ public class CameraEx {
         }
 
         public void showBitMapInSeconds(Bitmap bitmap, Long timeToPreview) {
-                previewView.postDelayed(() -> {
-                        previewView.draw(new Canvas(bitmap));
-                }, timeToPreview);
+                if(bitmap != null) {
+                        previewView.post(() -> {
+                                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                        previewView.draw(new Canvas(bitmap));
+                                }, timeToPreview);
+                        });
+                }
         }
 
         public Bitmap takePicture() {

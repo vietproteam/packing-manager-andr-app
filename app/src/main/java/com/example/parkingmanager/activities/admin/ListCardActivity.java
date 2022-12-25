@@ -1,4 +1,4 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.admin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +18,7 @@ import com.example.parkingmanager.entities.adapters.CardAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class activity_list_card extends AppCompatActivity {
+public class ListCardActivity extends AppCompatActivity {
     Button btnThem;
     EditText txtName;
     EditText txtType;

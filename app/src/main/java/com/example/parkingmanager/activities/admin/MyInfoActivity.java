@@ -1,4 +1,4 @@
-package com.example.parkingmanager.activities;
+package com.example.parkingmanager.activities.admin;
 
 import static com.example.parkingmanager.R.id.ibedit;
 

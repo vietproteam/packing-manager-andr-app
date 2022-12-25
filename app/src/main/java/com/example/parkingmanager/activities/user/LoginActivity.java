@@ -1,58 +1,55 @@
 package com.example.parkingmanager.activities.user;
 
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.nfc.NfcAdapter;
-import android.nfc.Tag;
-import android.nfc.tech.IsoDep;
-import android.nfc.tech.MifareClassic;
-import android.nfc.tech.MifareUltralight;
-import android.nfc.tech.Ndef;
-import android.nfc.tech.NfcA;
-import android.nfc.tech.NfcB;
-import android.nfc.tech.NfcF;
-import android.nfc.tech.NfcV;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.activities.admin.SummaryReportActivity;
-import com.example.parkingmanager.functions.NFCActivity;
-import com.example.parkingmanager.functions.NFCEx;
+import com.example.parkingmanager.database.AppDatabase;
+import com.example.parkingmanager.functions.PermissionEx;
 
 public class LoginActivity extends AppCompatActivity {
     private TextView edtUsername, edtPassword;
-    private NFCEx nfcEx;
+//    private NFCEx nfcEx;
     private Toast toast;
-    NfcAdapter.ReaderCallback readerCallback;
-    String cardId;
-
+    private Runnable runnableCallback;
+    private String cardId;
+    private AppDatabase db;
+    private PakingManagerApplication application;
+    String data = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        nfcEx = new NFCEx(this);
+        new PermissionEx().request(this);
+//        nfcEx = new NFCEx(this);
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
         Button btnLogin = findViewById(R.id.btnLogin);
         toast = Toast.makeText(getApplicationContext(),"", Toast.LENGTH_SHORT);
+        db = AppDatabase.getInstance(getApplication());
+        application = (PakingManagerApplication) getApplication();
 
-        readerCallback = new NfcAdapter.ReaderCallback() {
-            @Override
-            public void onTagDiscovered(Tag tag) {
-                cardId = nfcEx.ByteArrayToHexString(tag.getId());
-                Log.d("NFC", "onTagDiscovered: " + cardId);
-                toast.setText("onTagDiscovered: " + cardId);
-                toast.show();
+        runnableCallback = new Runnable() {
+            public void run() {
+//                cardId = nfcEx.getCardId();
+                db.userDAO().getLiveUserByCardId(cardId).observe(LoginActivity.this, user -> {
+                    if (user != null) {
+                        toast.setText("Welcome " + user.getUsername());
+                        toast.show();
+                        login();
+                    } else {
+                        toast.setText("User not found");
+                        toast.show();
+                    }
+                });
             }
         };
 
@@ -87,6 +84,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        nfcEx.getCardId(readerCallback);
+//        nfcEx.onTap(runnableCallback);
     }
 }

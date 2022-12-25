@@ -34,7 +34,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkingManager"
         tools:targetApi="33">
-
         <activity
             android:name=".activities.user.LoginActivity"
             android:exported="false">
@@ -44,21 +43,19 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.SearchParkingRecordActivity"
+            android:name=".activities.user.SearchParkingRecordActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"></category>
+                <action android:name="android.nfc.action.TAG_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".activities.admin.SummaryReportActivity"
-            android:exported="true">
-
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -71,15 +68,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.RevenueActivity"
-            android:exported="true">
-
+            android:name=".activities.user.RevenueActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.UserManagerActivity"
+            android:name=".activities.admin.UserManagerActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -93,7 +89,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.ListUserActivity"
+            android:name=".activities.admin.ListUserActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -102,13 +98,12 @@
         <activity
             android:name=".activities.admin.SuperLoginActivity"
             android:exported="true">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.UpdateMyInfoActivity"
+            android:name=".activities.admin.UpdateMyInfoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -116,7 +111,12 @@
         </activity>
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -129,9 +129,13 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.ParkingActivity"
-            android:exported="false">
+            android:name=".activities.user.ParkingActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED"/>
 
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

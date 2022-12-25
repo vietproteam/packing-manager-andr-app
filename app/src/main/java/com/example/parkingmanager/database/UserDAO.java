@@ -1,5 +1,6 @@
 package com.example.parkingmanager.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -33,7 +34,6 @@ public interface UserDAO {
     @Delete
     void deleteUser(User user);
 
-
-
-
+    @Query("SELECT * FROM users WHERE cardNumber = :cardId")
+    LiveData<User> getLiveUserByCardId(String cardId);
 }

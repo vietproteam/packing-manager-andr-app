@@ -8,76 +8,91 @@
     android:padding="@dimen/padding_body"
     tools:context=".activities.admin.SuperLoginActivity">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/logo_height"
-        android:src="@drawable/ic_logo"
-        android:contentDescription="TODO" />
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/logo_height"
+            android:src="@drawable/ic_logo"
+            android:contentDescription="TODO" />
+    </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="@dimen/text_size_h1"
-        android:gravity="center"
-        android:text="Login" />
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_round"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="@dimen/padding_textbox"
-        android:textAlignment="center"
-        android:textColor="@color/primaryColor"
-        android:textColorHint="@color/primaryColor"
-        android:textSize="@dimen/text_size_body" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_round"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="@dimen/padding_textbox"
-        android:textAlignment="center"
-        android:textColor="@color/primaryColor"
-        android:textColorHint="@color/primaryColor"
-        android:textSize="@dimen/text_size_body" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/text_size_h1"
+            android:gravity="center"
+            android:text="Login" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_square"
-        android:padding="@dimen/padding_textbox"
-        android:text="Login"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_body" />
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_verticle"
+            android:background="@drawable/btn_round"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/padding_textbox"
+            android:textAlignment="center"
+            android:textColor="@color/primaryColor"
+            android:textColorHint="@color/primaryColor"
+            android:textSize="@dimen/text_size_body" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_body"
-        android:gravity="center"
-        android:text="@string/fogot_password"
-        android:textColor="@color/primaryColor"
-        android:textSize="@dimen/text_size_body" />
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_round"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="@dimen/padding_textbox"
+            android:textAlignment="center"
+            android:textColor="@color/primaryColor"
+            android:textColorHint="@color/primaryColor"
+            android:textSize="@dimen/text_size_body" />
 
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_body"
-        android:gravity="center"
-        android:text="@string/register_please"
-        android:textColor="@color/primaryColor"
-        android:textSize="@dimen/text_size_body" />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_verticle"
+            android:background="@drawable/btn_square"
+            android:padding="@dimen/padding_textbox"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_body" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_body"
+            android:gravity="center"
+            android:text="@string/fogot_password"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_size_body" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin_verticle"
+            android:gravity="center"
+            android:text="@string/register_please"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_size_body" />
+    </LinearLayout>
 
 </LinearLayout>
