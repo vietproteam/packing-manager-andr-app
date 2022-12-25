@@ -1,6 +1,7 @@
 package com.example.parkingmanager.entities;
 
 import androidx.annotation.NonNull;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -10,14 +11,12 @@ import java.io.Serializable;
 @Entity(tableName = "users")
 public class User implements Serializable {
     @PrimaryKey(autoGenerate = true)
-    @NonNull
-    private int id;
+    @NonNull private int id;
     private String name;
     private String password;
     private String username;
     private String cardNumber;
-    private int idPosition = new Position().getId();
-    @Ignore
+    @Embedded(prefix = "position_")
     private Position position;
 
     public User() {
@@ -26,25 +25,25 @@ public class User implements Serializable {
         this.password = "";
         this.username = "";
         this.cardNumber = "";
-        this.idPosition = 0;
+        this.position = new Position();
     }
 
-    public User(int id, String name, String password, String username, String cardNumber, int idPosition) {
+    public User(int id, String name, String password, String username, String cardNumber, Position position) {
         this.id = id;
         this.name = name;
         this.password = password;
         this.username = username;
         this.cardNumber = cardNumber;
-        this.idPosition = idPosition;
+        this.position = new Position();
     }
 
-    public User(String name, String password, String username, String cardNumber, int idPosition) {
+    public User(String name, String password, String username, String cardNumber, Position position) {
         this.id = 0;
         this.name = name;
         this.password = password;
         this.username = username;
         this.cardNumber = cardNumber;
-        this.idPosition = idPosition;
+        this.position = new Position();
     }
 
     public int getId() {
@@ -85,14 +84,6 @@ public class User implements Serializable {
 
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
-    }
-
-    public int getIdPosition() {
-        return idPosition;
-    }
-
-    public void setIdPosition(int idPosition) {
-        this.idPosition = idPosition;
     }
 
     public Position getPosition() {

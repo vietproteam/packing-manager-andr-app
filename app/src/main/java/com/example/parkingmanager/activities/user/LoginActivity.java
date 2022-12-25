@@ -12,11 +12,12 @@ import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.activities.admin.SummaryReportActivity;
 import com.example.parkingmanager.database.AppDatabase;
+import com.example.parkingmanager.functions.NFCEx;
 import com.example.parkingmanager.functions.PermissionEx;
 
 public class LoginActivity extends AppCompatActivity {
     private TextView edtUsername, edtPassword;
-//    private NFCEx nfcEx;
+    private NFCEx nfcEx;
     private Toast toast;
     private Runnable runnableCallback;
     private String cardId;
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         new PermissionEx().request(this);
-//        nfcEx = new NFCEx(this);
+        nfcEx = new NFCEx(this);
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
         Button btnLogin = findViewById(R.id.btnLogin);
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
 
         runnableCallback = new Runnable() {
             public void run() {
-//                cardId = nfcEx.getCardId();
+                cardId = nfcEx.getCardId();
                 db.userDAO().getLiveUserByCardId(cardId).observe(LoginActivity.this, user -> {
                     if (user != null) {
                         toast.setText("Welcome " + user.getUsername());
@@ -84,6 +85,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        nfcEx.onTap(runnableCallback);
+        nfcEx.onTap(runnableCallback);
     }
 }

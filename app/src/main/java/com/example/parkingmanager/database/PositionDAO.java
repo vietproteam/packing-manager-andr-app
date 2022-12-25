@@ -23,6 +23,9 @@ public interface PositionDAO {
     @Query("SELECT * FROM positions WHERE id = :id")
     Position getPositionById(int id);
 
+    @Query("SELECT * FROM positions WHERE name = :name")
+    Position getPositionByName(String name);
+
     @Update
     void updatePosition(Position position);
 

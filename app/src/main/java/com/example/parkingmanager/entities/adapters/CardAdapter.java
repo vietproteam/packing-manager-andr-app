@@ -56,7 +56,7 @@ public class CardAdapter extends BaseAdapter {
             ID.setText(String.valueOf(listData.get(positionId).getId()));
 
             TypeCard = v.findViewById(R.id.TypeCard);
-        TypeCard.setText(listData.get(positionId).getTypeId());
+        TypeCard.setText(listData.get(positionId).getType().getName());
         return v;
     }
 }

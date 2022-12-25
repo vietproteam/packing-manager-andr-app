@@ -1,6 +1,7 @@
 package com.example.parkingmanager.entities;
 
 import androidx.annotation.NonNull;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -10,20 +11,19 @@ public class Card {
     @PrimaryKey ()
     @NonNull private String id;
     private String name;
-    private int typeId;
-    @Ignore
+    @Embedded(prefix = "type_")
     private Type type;
 
     public Card() {
         id = "";
         name = "";
-        typeId = 0;
+        type = new Type();
     }
 
-    public Card(String id, String name, int typeId) {
+    public Card(String id, String name, Type type) {
         this.id = id;
         this.name = name;
-        this.typeId = typeId;
+        this.type = type;
     }
 
     @NonNull
@@ -41,14 +41,6 @@ public class Card {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getTypeId() {
-        return typeId;
-    }
-
-    public void setTypeId(int typeId) {
-        this.typeId = typeId;
     }
 
     public Type getType() {
