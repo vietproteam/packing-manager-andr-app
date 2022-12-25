@@ -33,5 +33,8 @@ public interface RecordDAO {
     @Query("SELECT * FROM Record WHERE timeOut = :timeOut")
     Record getParkingRecordByTimeOut(String timeOut);
 
+    @Query("SELECT * FROM Record WHERE imgOut=null AND idCard = :idCard")
+    Record getParkingRecordByImgOutNull(String idCard);
+
 
 }

@@ -59,6 +59,14 @@ public class Record {
         this.idCard = s5;
     }
 
+    public Record(long l, String timeOut, String imgOut, int idUser, String idCard) {
+        this.id = l;
+        this.timeOut = timeOut;
+        this.imgOut = imgOut;
+        this.idUser = idUser;
+        this.idCard = idCard;
+    }
+
     @NonNull
     public Long getId() {
         return id;
