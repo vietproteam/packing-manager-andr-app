@@ -4,6 +4,8 @@ package com.example.parkingmanager.functions;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -57,9 +59,13 @@ public class CameraEx {
         }
 
         public void showBitMapInSeconds(Bitmap bitmap, Long timeToPreview) {
-                previewView.postDelayed(() -> {
-                        previewView.draw(new Canvas(bitmap));
-                }, timeToPreview);
+                if(bitmap != null) {
+                        previewView.post(() -> {
+                                new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                        previewView.draw(new Canvas(bitmap));
+                                }, timeToPreview);
+                        });
+                }
         }
 
         public Bitmap takePicture() {
