@@ -39,9 +39,8 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_user_manager);
         init();
         setSpinner();
-
-        lUser = (User) getIntent().getExtras().get("users");
-        if (lUser != null) {
+        if (getIntent().getIntExtra("userId", 0) != 0) {
+            lUser = AppDatabase.getInstance(this).userDAO().getUserById(getIntent().getIntExtra("userId", 0));
             initc();
         }
         btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +58,15 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
 
             }
         });
+    }
+
+    public void init() {
+        edUserNames = findViewById(R.id.etUsername);
+        edPasswords = findViewById(R.id.edPasswords);
+        edCardNumbers = findViewById(R.id.edCardNumbers);
+        spinner = findViewById(R.id.spPositions);
+        btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
     }
 
     private void initc() {
@@ -80,15 +88,6 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
 
     }
 
-    public void init() {
-        edUserNames = findViewById(R.id.etUsername);
-        edPasswords = findViewById(R.id.edPasswords);
-        edCardNumbers = findViewById(R.id.edCardNumbers);
-        spinner = findViewById(R.id.spPositions);
-        btnUpdate = findViewById(R.id.btnUpdate);
-        btnDelete = findViewById(R.id.btnDelete);
-    }
-
     public void setSpinner() {
         List<Position> positions = new ArrayList<Position>();
         positions = AppDatabase.getInstance(this).positionDAO().getAllPositions();
@@ -104,8 +103,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
     }
 
     public void update() {
-        User lUser;
-        lUser = (User) getIntent().getExtras().get("users");
+
         lUser.setUsername(edUserNames.getText().toString());
         lUser.setPassword(edPasswords.getText().toString());
         lUser.setCardNumber(edCardNumbers.getText().toString());
@@ -131,13 +129,12 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
         toast.show();
     }
 
+
     public void onpenListUserActivity() {
-        int userId = getIntent().getIntExtra("users", 0);
-        lUser = AppDatabase.getInstance(this).userDAO().getUserById(userId);
-        initc();
+        int userId = getIntent().getIntExtra("userId", 0);
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("userId", userId);
+        bundle.putInt("userId", userId);
         intent.putExtras(bundle);
         setResult(RESULT_OK, intent);
         finish();
