@@ -2,6 +2,7 @@ package com.example.parkingmanager.entities;
 
 
 import androidx.annotation.NonNull;
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -19,11 +20,9 @@ public class Record {
     private String imgIn;
     private String imgOut;
     private String isLocking;
-    private int idUser;
-    @Ignore
+    @Embedded(prefix = "user_")
     private User user;
-    private String idCard;
-    @Ignore
+    @Embedded(prefix = "card_")
     private Card card;
 
     public Record() {
@@ -33,30 +32,19 @@ public class Record {
         this.imgIn = "";
         this.imgOut = "";
         this.isLocking = "";
-        this.idUser = 0;
-        this.idCard = "";
+        this.user = new User();
+        this.card = new Card();
     }
 
-    public Record(Long id, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking, int idUser, String idCard) {
+    public Record(Long id, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking, User user, Card card) {
         this.id = id;
         this.timeIn = timeIn;
         this.timeOut = timeOut;
         this.imgIn = imgIn;
         this.imgOut = imgOut;
         this.isLocking = isLocking;
-        this.idUser = idUser;
-        this.idCard = idCard;
-    }
-
-    public Record(String s, String s1, String s2, String s3, String s4, String s5, int i) {
-        this.id = 0;
-        this.timeIn = s;
-        this.timeOut = s1;
-        this.imgIn = s2;
-        this.imgOut = s3;
-        this.isLocking = s4;
-        this.idUser = i;
-        this.idCard = s5;
+        this.user = user;
+        this.card = card;
     }
 
     @NonNull
@@ -108,28 +96,12 @@ public class Record {
         this.isLocking = isLocking;
     }
 
-    public int getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
     }
 
     public Card getCard() {
@@ -142,9 +114,9 @@ public class Record {
 
     public List<Record> getAdapter() {
         ArrayList<Record> records = new ArrayList<Record>();
-        records.add(new Record("1","1","1","1","1","1",1));
-        records.add(new Record("2","2","2","2","2","2",2));
-        records.add(new Record("3","3","3","3","3","3",3));
+        records.add(new Record(1L, "2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
+        records.add(new Record(2L, "2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
+        records.add(new Record(3L, "2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
         return  records;
 
     }

@@ -40,7 +40,7 @@ public class ListUserActivity extends Activity {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("users", user);
                 intent.putExtras(bundle);
-                startActivityForResult(intent, REQUEST_CODE);
+                startActivity(intent);
             }
         });
 

@@ -60,7 +60,7 @@ public class UserAdapter extends BaseAdapter {
         holder.uCardNumber.setText(listData.get(position).getCardNumberFormatted());
 
         for (int i = 0; i < positions.size(); i++) {
-            if (listData.get(position).getIdPosition() == positions.get(i).getId()) {
+            if (listData.get(position).getPosition().getId() == positions.get(i).getId()) {
                 holder.uPosition.setText(positions.get(i).getName());
             }
         }

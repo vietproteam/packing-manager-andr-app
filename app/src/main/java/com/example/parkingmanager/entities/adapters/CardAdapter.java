@@ -2,12 +2,10 @@
 package com.example.parkingmanager.entities.adapters;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.parkingmanager.R;
@@ -20,7 +18,6 @@ public class CardAdapter extends BaseAdapter {
     TextView ID;
     TextView nameCard;
     TextView TypeCard;
-    ListView lvCard;
     int mylayout;
     private List<Card> listData;
     public CardAdapter(Context aContext,int layout, List<Card> listData) {
@@ -28,7 +25,6 @@ public class CardAdapter extends BaseAdapter {
         myContext = aContext;
         this.mylayout=layout;
     }
-
 
 
     public void setListData(List<Card> listData) {
@@ -47,10 +43,10 @@ public class CardAdapter extends BaseAdapter {
     public long getItemId(int position) {
         return position;
     }
-
     public View getView(int positionId, View v, ViewGroup vg) {
         LayoutInflater layoutInflater= (LayoutInflater) myContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v=layoutInflater.inflate(mylayout,null);
+        System.out.println("abc");
 
 
         nameCard = v.findViewById(R.id.nameCard);
@@ -60,7 +56,7 @@ public class CardAdapter extends BaseAdapter {
             ID.setText(String.valueOf(listData.get(positionId).getId()));
 
             TypeCard = v.findViewById(R.id.TypeCard);
-        TypeCard.setText(String.valueOf(listData.get(positionId).getTypeId()));
+        TypeCard.setText(listData.get(positionId).getType().getName());
         return v;
     }
 }

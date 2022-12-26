@@ -16,7 +16,7 @@ public interface CardDAO {
     void insertCard(Card card);
 
     @Query("SELECT * FROM cards WHERE id = :cardId")
-    Card getCardById(int cardId);
+    Card getCardById(String cardId);
 
     @Query("SELECT * FROM cards")
     Card[] getAllCards();

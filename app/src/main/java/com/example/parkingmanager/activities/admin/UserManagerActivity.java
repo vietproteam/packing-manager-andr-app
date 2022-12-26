@@ -45,7 +45,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
             edUserNames.setText(lUser.getUsername());
             edPasswords.setText(lUser.getPassword());
             edCardNumbers.setText(lUser.getCardNumber());
-            spinner.setSelection(lUser.getIdPosition() - 1);
+            spinner.setSelection(lUser.getPosition().getId() - 1);
         }
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,7 +106,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
         lUser.setUsername(edUserNames.getText().toString());
         lUser.setPassword(edPasswords.getText().toString());
         lUser.setCardNumber(edCardNumbers.getText().toString());
-        lUser.setIdPosition(spinner.getSelectedItemPosition() + 1);
+        lUser.setPosition(AppDatabase.getInstance(this).positionDAO().getPositionByName(spinner.getSelectedItem().toString()));
         AppDatabase.getInstance(this).userDAO().updateUser(lUser);
 
         Toast toast = Toast.makeText(this, "User updated", Toast.LENGTH_SHORT);

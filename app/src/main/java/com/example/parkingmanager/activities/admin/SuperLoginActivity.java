@@ -19,6 +19,7 @@ import com.example.parkingmanager.R;
 import com.example.parkingmanager.activities.HomeActivity;
 import com.example.parkingmanager.activities.user.LoginActivity;
 import com.example.parkingmanager.database.AppDatabase;
+import com.example.parkingmanager.entities.Position;
 import com.example.parkingmanager.entities.User;
 import com.example.parkingmanager.functions.EncSharedPrefs;
 
@@ -76,8 +77,14 @@ public class SuperLoginActivity extends AppCompatActivity {
     private void saveUserCache(String email, String password) {
         encSharedPrefs.putString("username", email);
         encSharedPrefs.putString("password", password);
-        User user = new User(1,email,password,email,"1E88A063",1);
-        AppDatabase.getInstance(this).userDAO().insertUser(user);
+        // init 3 positions (Admin, Manager, User)
+        AppDatabase db = AppDatabase.getInstance(this);
+        db.positionDAO().insertPosition(new Position(1, "Admin"));
+        db.positionDAO().insertPosition(new Position(2, "Manager"));
+        db.positionDAO().insertPosition(new Position(3, "User"));
+
+        User user = new User(1,email,password,email,"1E88A063", db.positionDAO().getPositionById(1));
+        db.userDAO().insertUser(user);
     }
 
     private boolean offlineLoginCheck(String email, String password) {

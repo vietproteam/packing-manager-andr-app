@@ -1,5 +1,6 @@
 package com.example.parkingmanager.entities;
 
+import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -11,8 +12,7 @@ public class Type {
     private String name;
     private String description;
     private int price;
-    private int calculatorId;
-    @Ignore
+    @Embedded(prefix = "calculator_")
     private Calculator calculator;
 
     public Type() {
@@ -20,17 +20,15 @@ public class Type {
         this.name = "";
         this.description = "";
         this.price = 0;
-        this.calculatorId = 0;
         this.calculator = new Calculator();
     }
 
-    public Type(int id, String name, String description, int price, int calculatorId) {
+    public Type(int id, String name, String description, int price, Calculator calculator) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.calculatorId = calculatorId;
-        this.calculator = new Calculator();
+        this.calculator = calculator;
     }
 
     public int getId() {
@@ -63,14 +61,6 @@ public class Type {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getCalculatorId() {
-        return calculatorId;
-    }
-
-    public void setCalculatorId(int calculatorId) {
-        this.calculatorId = calculatorId;
     }
 
     public Calculator getCalculator() {

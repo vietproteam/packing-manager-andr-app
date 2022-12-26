@@ -22,9 +22,7 @@ public interface RecordDAO {
     @Query("SELECT * FROM Record")
     Record getAllParkingRecord();
 
-
-
-    @Query("SELECT * FROM Record WHERE idCard = :idCard")
+    @Query("SELECT * FROM Record WHERE card_id = :idCard")
     Record getParkingRecordByIdCard(String idCard);
 
     @Query("SELECT * FROM Record WHERE timeIn = :timeIn")
@@ -32,6 +30,9 @@ public interface RecordDAO {
 
     @Query("SELECT * FROM Record WHERE timeOut = :timeOut")
     Record getParkingRecordByTimeOut(String timeOut);
+
+    @Query("SELECT * FROM Record WHERE timeOut=null AND card_id = :idCard")
+    Record getParkingRecordByImgOutNull(String idCard);
 
 
 }

@@ -22,9 +22,10 @@
     <string name="action_user_management">User Manager</string>
     <string name="action_report">Report</string>
     <string name="action_settings">Settings</string>
+    <string name="action_list_card">List Card</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="scan_nfc_card">If your account has a card.\nJust tap it!</string>
 
-
+    action_list_card
 </resources>

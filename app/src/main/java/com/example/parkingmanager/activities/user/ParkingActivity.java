@@ -1,20 +1,8 @@
 package com.example.parkingmanager.activities.user;
 
-import android.app.Activity;
-import android.app.AppComponentFactory;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.nfc.FormatException;
-import android.nfc.NdefMessage;
-import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.TagLostException;
-import android.nfc.tech.Ndef;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -23,11 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.camera.core.Camera;
-import androidx.camera.core.CameraSelector;
-import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
 import androidx.core.app.ActivityCompat;
@@ -37,11 +21,16 @@ import androidx.lifecycle.LifecycleOwner;
 import com.example.parkingmanager.Manifest;
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
+import com.example.parkingmanager.database.AppDatabase;
+import com.example.parkingmanager.entities.Record;
 import com.example.parkingmanager.functions.CameraEx;
 import com.example.parkingmanager.functions.FileEx;
-import com.example.parkingmanager.functions.NFCEx;
 import com.google.common.util.concurrent.ListenableFuture;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -56,6 +45,7 @@ public class ParkingActivity extends AppCompatActivity implements NfcAdapter.Rea
     private Bitmap bitmap;
     private String cardId;
     private NfcAdapter mNfcAdapter;
+    private PakingManagerApplication application;
 
     ImageView imageView;
     Button button;
@@ -64,6 +54,12 @@ public class ParkingActivity extends AppCompatActivity implements NfcAdapter.Rea
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking);
+        previewView = findViewById(R.id.previewView);
+        application = (PakingManagerApplication) getApplication();
+        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        fileEx = new FileEx((PakingManagerApplication) getApplication());
+        cameraEx = new CameraEx(this, previewView);
+        cameraEx.showPreview();
 //        previewView = findViewById(R.id.previewView);
 
 //        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
@@ -181,5 +177,43 @@ public class ParkingActivity extends AppCompatActivity implements NfcAdapter.Rea
             return;
         }
     }
+
+    private void dataIn(String cardId, Bitmap image) {
+
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-ddThh:mm:ss");
+        String strDate = dateFormat.format(date);
+        DateFormat fileNameFormat=new SimpleDateFormat("yyyymmddhhmmss");
+        String imageName=fileNameFormat.format(date);
+        Record record = new Record(1l, strDate,"1",imageName,"","1", application.getUser(), AppDatabase.getInstance(this).cardDAO().getCardById(cardId));
+        AppDatabase.getInstance(this).recordDAO().insertParkingRecord(record);
+
+        fileEx.saveToInternalStorage(image, "parking_record", imageName);
+    }
+
+    private void dataOut(Record record,Bitmap image){
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-ddThh:mm:ss");
+        String strDate = dateFormat.format(date);
+        DateFormat fileNameFormat=new SimpleDateFormat("yyyymmddhhmmss");
+        String imageName=fileNameFormat.format(date);
+        record.setImgOut(imageName);
+        record.setTimeOut(strDate);
+        AppDatabase.getInstance(this).recordDAO().updateParkingRecord(record);
+
+        fileEx.saveToInternalStorage(image, "parking_record", imageName);
+
+    }
+    private void save(){
+        if (cardId != null) {
+            Record record = AppDatabase.getInstance(this).recordDAO().getParkingRecordByImgOutNull(cardId);
+            if (record != null) {
+                dataOut(record,bitmap);
+            } else {
+                dataIn(cardId,bitmap);
+            }
+        }
+    }
+
 
 }
