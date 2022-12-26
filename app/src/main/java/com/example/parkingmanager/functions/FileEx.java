@@ -4,8 +4,13 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.util.Iterator;
 
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
@@ -25,18 +30,32 @@ public class FileEx {
 
     public void saveToInternalStorage(Bitmap bitmapImage, String subFolder, String fileName) {
         // Create imageDir
-        File filePath = new File(application.appConfig.savePath + subFolder, fileName + ".jpg");
-
+        String p = application.getFilesDir().getAbsolutePath();
+        File path = new File(application.appConfig.savePath + subFolder);
+        if (!path.exists()) {
+            path.mkdirs();
+        }
+        path.setWritable(true);
+        String file = fileName + ".jpg";
+        File filePath = new File(path.getPath()+file);
         FileOutputStream fos = null;
         try {
+            filePath.canWrite( );
+            if (!filePath.exists() && !filePath.canWrite()) {
+                filePath.createNewFile();
+            }
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            bitmapImage.compress(Bitmap.CompressFormat.JPEG, 100, out);
             fos = new FileOutputStream(filePath);
             // Use the compress method on the BitMap object to write image to the OutputStream
-            bitmapImage.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.write(out.toByteArray());
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
-                fos.close();
+                if(fos != null) {
+                    fos.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

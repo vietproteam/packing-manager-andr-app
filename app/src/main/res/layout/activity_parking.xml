@@ -9,10 +9,11 @@
     android:background="@drawable/bg_circle_blue"
     tools:context=".activities.user.ParkingActivity">
 
-<!--    <androidx.camera.view.PreviewView-->
-<!--        android:id="@+id/previewView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/transport_height"/>-->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/transport_height"
+        android:visibility="gone"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

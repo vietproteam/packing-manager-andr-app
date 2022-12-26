@@ -79,11 +79,11 @@ public class SuperLoginActivity extends AppCompatActivity {
         encSharedPrefs.putString("password", password);
         // init 3 positions (Admin, Manager, User)
         AppDatabase db = AppDatabase.getInstance(this);
-        db.positionDAO().insertPosition(new Position(1, "Admin"));
-        db.positionDAO().insertPosition(new Position(2, "Manager"));
-        db.positionDAO().insertPosition(new Position(3, "User"));
+//        db.positionDAO().insertPosition(new Position(1, "Admin"));
+//        db.positionDAO().insertPosition(new Position(2, "Manager"));
+//        db.positionDAO().insertPosition(new Position(3, "User"));
 
-        User user = new User(1,email,password,email,"1E88A063", db.positionDAO().getPositionById(1));
+        User user = new User(email,password,email,"1E88A063", db.positionDAO().getPositionById(1));
         db.userDAO().insertUser(user);
     }
 

@@ -42,10 +42,7 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
 
         lUser = (User) getIntent().getExtras().get("users");
         if (lUser != null) {
-            edUserNames.setText(lUser.getUsername());
-            edPasswords.setText(lUser.getPassword());
-            edCardNumbers.setText(lUser.getCardNumber());
-            spinner.setSelection(lUser.getPosition().getId() - 1);
+            initc();
         }
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +59,13 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
 
             }
         });
+    }
+
+    private void initc() {
+        edUserNames.setText(lUser.getUsername());
+        edPasswords.setText(lUser.getPassword());
+        edCardNumbers.setText(lUser.getCardNumber());
+        spinner.setSelection(lUser.getPosition().getId() - 1);
     }
 
     @Override
@@ -128,8 +132,14 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
     }
 
     public void onpenListUserActivity() {
-        lUser = (User) getIntent().getExtras().get("users");
+        int userId = getIntent().getIntExtra("users", 0);
+        lUser = AppDatabase.getInstance(this).userDAO().getUserById(userId);
+        initc();
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("userId", userId);
+        intent.putExtras(bundle);
+        setResult(RESULT_OK, intent);
+        finish();
     }
-
-
 }

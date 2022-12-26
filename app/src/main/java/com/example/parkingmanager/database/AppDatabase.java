@@ -14,7 +14,7 @@ import com.example.parkingmanager.entities.Position;
 import com.example.parkingmanager.entities.Type;
 import com.example.parkingmanager.entities.User;
 
-@Database(entities = {User.class, Position.class, Calculator.class, Type.class, Card.class, Record.class}, version = 4)
+@Database(entities = {User.class, Position.class, Calculator.class, Type.class, Card.class, Record.class}, version = 5)
 public abstract class AppDatabase extends RoomDatabase {
 
 

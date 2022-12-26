@@ -22,6 +22,12 @@ public class Calculator {
         this.description = description;
     }
 
+    public Calculator(String name, String description) {
+        this.id = 0;
+        this.name = name;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }

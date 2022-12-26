@@ -21,6 +21,7 @@ import java.util.List;
 
 public class ListCardActivity extends AppCompatActivity {
     Button btnThem;
+    EditText txtId;
     EditText txtName;
     EditText txtType;
     CardAdapter adapter;
@@ -32,6 +33,7 @@ public class ListCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_card);
         btnThem= findViewById(R.id.btnThem);
+        txtId = findViewById(R.id.txtId);
         txtName=  findViewById(R.id.txtName);
         txtType= findViewById(R.id.txtType);
         lv = (ListView) findViewById(R.id.lvCard);
@@ -62,7 +64,11 @@ public class ListCardActivity extends AppCompatActivity {
 
     }
     public void AddCard(){
-        Card card = new Card(txtName.getText().toString(),Integer.parseInt(txtType.getText().toString()));
+        Card card = new Card(
+                txtId.getText().toString(),
+                txtName.getText().toString(),
+                AppDatabase.getInstance(this).typeDAO().getTypeById(
+                        Integer.parseInt(txtType.getText().toString())));
 
         AppDatabase.getInstance(this).cardDAO().insertCard(card);
         cardss = AppDatabase.getInstance(this).cardDAO().getAllCard();

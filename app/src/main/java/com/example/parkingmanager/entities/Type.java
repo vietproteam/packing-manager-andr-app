@@ -31,6 +31,14 @@ public class Type {
         this.calculator = calculator;
     }
 
+    public Type(String name, String description, int price, Calculator calculator) {
+        this.id = 0;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.calculator = calculator;
+    }
+
     public int getId() {
         return id;
     }

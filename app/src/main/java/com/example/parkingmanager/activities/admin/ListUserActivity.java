@@ -34,13 +34,13 @@ public class ListUserActivity extends Activity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-                Object o = lv.getItemAtPosition(position);
+                User o = (User) lv.getItemAtPosition(position);
                 Intent intent = new Intent(ListUserActivity.this, UserManagerActivity.class);
-                User user = (User) o;
+                int userId = o.getId();
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("users", user);
+                bundle.putInt("userId", userId);
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE, bundle);
             }
         });
 

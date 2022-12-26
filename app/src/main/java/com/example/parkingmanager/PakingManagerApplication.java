@@ -46,6 +46,7 @@ public class PakingManagerApplication extends Application {
         super.onCreate();
         encSharedPrefs = new EncSharedPrefs(this);
         appConfig = new AppConfig(this);
+//        initDB();
     }
 
     // Configuration for app
@@ -80,17 +81,17 @@ public class PakingManagerApplication extends Application {
         db.userDAO().insertUser(new User("John", "nopass", "joh","kkkkdgfhdh", db.positionDAO().getPositionById(3)));
 
         // init calculator
-        db.calculatorDAO().insertCalculator(new Calculator(1,"Option 1", "Something"));
-        db.calculatorDAO().insertCalculator(new Calculator(2,"Option 2", "Something"));
-        db.calculatorDAO().insertCalculator(new Calculator(3,"Option 3", "Something"));
+        db.calculatorDAO().insertCalculator(new Calculator("Option 1", "Something"));
+        db.calculatorDAO().insertCalculator(new Calculator("Option 2", "Something"));
+        db.calculatorDAO().insertCalculator(new Calculator("Option 3", "Something"));
 
         // init types
-        db.typeDAO().insertType(new Type(1, "Car","Car",10000,db.calculatorDAO().getCalculatorById(1)));
-        db.typeDAO().insertType(new Type(2, "Motorcycle","Motorcycle",5000,db.calculatorDAO().getCalculatorById(2)));
-        db.typeDAO().insertType(new Type(3, "Truck","Truck",15000,db.calculatorDAO().getCalculatorById(3)));
+        db.typeDAO().insertType(new Type("Car","Car",10000,db.calculatorDAO().getCalculatorById(1)));
+        db.typeDAO().insertType(new Type("Motorcycle","Motorcycle",5000,db.calculatorDAO().getCalculatorById(2)));
+        db.typeDAO().insertType(new Type("Truck","Truck",15000,db.calculatorDAO().getCalculatorById(3)));
 
         // init cards
-        db.cardDAO().insertCard(new Card("1fdgdsfggfs", "Card 1", db.typeDAO().getTypeById(1)));
+        db.cardDAO().insertCard(new Card("1E88A063", "Card 1", db.typeDAO().getTypeById(1)));
         db.cardDAO().insertCard(new Card("2fdgdsfggfs", "Card 2", db.typeDAO().getTypeById(2)));
         db.cardDAO().insertCard(new Card("3fdgdsfggfs", "Card 3", db.typeDAO().getTypeById(3)));
         db.cardDAO().insertCard(new Card("4fdgdsfggfs", "Card 4", db.typeDAO().getTypeById(1)));

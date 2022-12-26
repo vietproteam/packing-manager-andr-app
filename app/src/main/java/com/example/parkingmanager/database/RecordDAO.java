@@ -19,19 +19,19 @@ public interface RecordDAO {
     @Update
     void updateParkingRecord(Record record);
 
-    @Query("SELECT * FROM Record")
+    @Query("SELECT * FROM records")
     Record getAllParkingRecord();
 
-    @Query("SELECT * FROM Record WHERE card_id = :idCard")
+    @Query("SELECT * FROM records WHERE card_id = :idCard")
     Record getParkingRecordByIdCard(String idCard);
 
-    @Query("SELECT * FROM Record WHERE timeIn = :timeIn")
+    @Query("SELECT * FROM records WHERE timeIn = :timeIn")
     Record getParkingRecordByTimeIn(String timeIn);
 
-    @Query("SELECT * FROM Record WHERE timeOut = :timeOut")
+    @Query("SELECT * FROM records WHERE timeOut = :timeOut")
     Record getParkingRecordByTimeOut(String timeOut);
 
-    @Query("SELECT * FROM Record WHERE timeOut=null AND card_id = :idCard")
+    @Query("SELECT * FROM records WHERE timeOut=null AND card_id = :idCard")
     Record getParkingRecordByImgOutNull(String idCard);
 
 

@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
+@Entity(tableName = "records")
 public class Record {
     @PrimaryKey (autoGenerate = true)
-    @NonNull private long id;
+    @NonNull private int id;
     private String timeIn;
     private String timeOut;
     private String imgIn;
@@ -36,7 +36,7 @@ public class Record {
         this.card = new Card();
     }
 
-    public Record(Long id, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking, User user, Card card) {
+    public Record(int id, String timeIn, String timeOut, String imgIn, String imgOut, String isLocking, User user, Card card) {
         this.id = id;
         this.timeIn = timeIn;
         this.timeOut = timeOut;
@@ -47,12 +47,23 @@ public class Record {
         this.card = card;
     }
 
+    public Record(String timeIn, String timeOut, String imgIn, String imgOut, String isLocking, User user, Card card) {
+        this.id = 0;
+        this.timeIn = timeIn;
+        this.timeOut = timeOut;
+        this.imgIn = imgIn;
+        this.imgOut = imgOut;
+        this.isLocking = isLocking;
+        this.user = user;
+        this.card = card;
+    }
+
     @NonNull
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(@NonNull Long id) {
+    public void setId(@NonNull int id) {
         this.id = id;
     }
 
@@ -114,9 +125,9 @@ public class Record {
 
     public List<Record> getAdapter() {
         ArrayList<Record> records = new ArrayList<Record>();
-        records.add(new Record(1L, "2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
-        records.add(new Record(2L, "2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
-        records.add(new Record(3L, "2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
+        records.add(new Record("2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
+        records.add(new Record("2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
+        records.add(new Record("2020-01-01 00:00:00", "2020-01-01 00:00:00", "imgIn", "imgOut", "true", new User(), new Card()));
         return  records;
 
     }

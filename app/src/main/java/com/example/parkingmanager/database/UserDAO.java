@@ -36,4 +36,7 @@ public interface UserDAO {
 
     @Query("SELECT * FROM users WHERE cardNumber = :cardId")
     LiveData<User> getLiveUserByCardId(String cardId);
+
+    @Query("SELECT id FROM users WHERE rowid = :rowId")
+    int getUserIdByRowId(int rowId);
 }
