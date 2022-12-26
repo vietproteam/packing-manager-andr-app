@@ -64,7 +64,6 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
         });
     }
 
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
@@ -130,14 +129,6 @@ public class UserManagerActivity extends AppCompatActivity implements AdapterVie
 
     public void onpenListUserActivity() {
         lUser = (User) getIntent().getExtras().get("users");
-        Intent intent = new Intent();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("users", lUser);
-        intent.putExtras(bundle);
-        setResult(RESULT_OK, intent);
-        finish();
-
-
     }
 
 

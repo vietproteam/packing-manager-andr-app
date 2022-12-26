@@ -21,7 +21,9 @@ import com.example.parkingmanager.activities.admin.ListCardActivity;
 import com.example.parkingmanager.activities.admin.ListUserActivity;
 import com.example.parkingmanager.activities.admin.SuperLoginActivity;
 import com.example.parkingmanager.activities.admin.UserManagerActivity;
+import com.example.parkingmanager.activities.user.ParkingActivity;
 import com.example.parkingmanager.activities.user.RevenueActivity;
+import com.example.parkingmanager.activities.user.SearchParkingRecordActivity;
 
 
 public class MenuAdminFragment extends Fragment {
@@ -37,12 +39,12 @@ public class MenuAdminFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_menu_admin, container, false);
+        View v = inflater.inflate(R.layout.fragment_menu_admin, container, false);
         return v;
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_admin, menu);
         super.onCreateOptionsMenu(menu, inflater);
 
@@ -53,10 +55,8 @@ public class MenuAdminFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_user_management:
-
                 openActivity(ListUserActivity.class);
                 return true;
-
             case R.id.action_report:
                 openActivity(RevenueActivity.class);
                 return true;
@@ -68,11 +68,17 @@ public class MenuAdminFragment extends Fragment {
             case R.id.action_logout:
                 openActivity(SuperLoginActivity.class);
                 return true;
-
+            case R.id.action_parking_management:
+                openActivity(ParkingActivity.class);
+                return true;
+            case R.id.action_search_record:
+                openActivity(SearchParkingRecordActivity.class);
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
     }
+
     public void openActivity(Class<? extends Activity> activityClass) {
         Intent intent = new Intent(getActivity(), activityClass);
         startActivity(intent);

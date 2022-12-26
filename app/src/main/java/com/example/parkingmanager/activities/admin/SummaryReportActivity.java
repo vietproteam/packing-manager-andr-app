@@ -131,7 +131,7 @@ public class SummaryReportActivity extends AppCompatActivity implements OnChartV
             xEntrys.add(xData[i]);
         }
 
-        PieDataSet pieDataSet = new PieDataSet(yEntrys, "Employee Sales");
+        PieDataSet pieDataSet = new PieDataSet(yEntrys, "Monthly Report");
         pieDataSet.setSliceSpace(2);
         pieDataSet.setValueTextSize(12);
 
@@ -184,7 +184,7 @@ public class SummaryReportActivity extends AppCompatActivity implements OnChartV
     private static DataSet dataChart() {
 
         LineData d = new LineData();
-        int[] data = new int[] { 1, 2, 2, 1, 1, 1, 2, 1, 1, 2, 1, 9 };
+        int[] data = new int[] { 5000, 4500, 2500, 4000, 3500, 3700, 3750, 3800, 3950, 3650, 4000, 4500 };
 
         ArrayList<Entry> entries = new ArrayList<Entry>();
 
@@ -202,7 +202,6 @@ public class SummaryReportActivity extends AppCompatActivity implements OnChartV
         set.setDrawValues(true);
         set.setValueTextSize(10f);
         set.setValueTextColor(Color.GREEN);
-
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         d.addDataSet(set);
 

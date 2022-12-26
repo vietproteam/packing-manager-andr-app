@@ -20,6 +20,20 @@
         android:title="@string/action_report"
         app:showAsAction="collapseActionView" />
 
+    <!--    Parking manager-->
+    <item
+        android:id="@+id/action_parking_management"
+        android:icon="@drawable/ic_parking"
+        android:title="@string/action_parking_management"
+        app:showAsAction="never" />
+
+    <!--    Search Record-->
+    <item
+        android:id="@+id/action_search_record"
+        android:icon="@drawable/ic_search"
+        android:title="@string/action_search_record"
+        app:showAsAction="never" />
+
     <!--    Settings-->
     <item
         android:id="@+id/action_settings"
