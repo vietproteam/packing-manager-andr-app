@@ -3,6 +3,7 @@ package com.example.parkingmanager.activities.user;
 import android.app.Activity;
 import android.app.AppComponentFactory;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -15,7 +16,11 @@ import android.nfc.Tag;
 import android.nfc.TagLostException;
 import android.nfc.tech.Ndef;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,15 +30,19 @@ import androidx.camera.core.CameraSelector;
 import androidx.camera.core.Preview;
 import androidx.camera.lifecycle.ProcessCameraProvider;
 import androidx.camera.view.PreviewView;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LifecycleOwner;
 
+import com.example.parkingmanager.Manifest;
 import com.example.parkingmanager.PakingManagerApplication;
 import com.example.parkingmanager.R;
 import com.example.parkingmanager.functions.CameraEx;
 import com.example.parkingmanager.functions.FileEx;
 import com.example.parkingmanager.functions.NFCEx;
 import com.google.common.util.concurrent.ListenableFuture;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -48,25 +57,57 @@ public class ParkingActivity extends AppCompatActivity implements NfcAdapter.Rea
     private String cardId;
     private NfcAdapter mNfcAdapter;
 
+    ImageView imageView;
+    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parking);
-        previewView = findViewById(R.id.previewView);
+//        previewView = findViewById(R.id.previewView);
 
-        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+//        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+//
+//        cameraEx = new CameraEx(this, previewView);
+//        cameraEx.showPreview();
+//
 
-        cameraEx = new CameraEx(this, previewView);
-        cameraEx.showPreview();
+
+
+
+        imageView=findViewById(R.id.imageview);
+        button=findViewById(R.id.button);
+
+//        if(ContextCompat.checkSelfPermission(ParkingActivity.this, Manifest.permission.)!= PackageManager.PERMISSION_GRANTED){
+//            ActivityCompat.requestPermissions(ParkingActivity.this,new String[]{
+//                    Manifest.permission.CAMERA
+//            },100);
+//        }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,100);
+            }
+        });
+
 
     }
-
-    private void parkingRecord() {
-        Bitmap bitmap = cameraEx.takePicture();
-        FileEx fileEx = new FileEx((PakingManagerApplication) getApplication());
-
-        fileEx.saveToInternalStorage(bitmap, "parking_record", "parking_record");
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==100){
+            Bitmap bitmap=(Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(bitmap);
+        }
     }
+//
+//    private void parkingRecord() {
+//        Bitmap bitmap = cameraEx.takePicture();
+//        FileEx fileEx = new FileEx((PakingManagerApplication) getApplication());
+//
+//        fileEx.saveToInternalStorage(bitmap, "parking_record", "parking_record");
+//    }
 
     @Override
     protected void onResume() {

@@ -9,9 +9,19 @@
     android:background="@drawable/bg_circle_blue"
     tools:context=".activities.user.ParkingActivity">
 
-    <androidx.camera.view.PreviewView
-        android:id="@+id/previewView"
+<!--    <androidx.camera.view.PreviewView-->
+<!--        android:id="@+id/previewView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/transport_height"/>-->
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/transport_height"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/imageview"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture Image"
+        android:id="@+id/button"/>
 
 </LinearLayout>
